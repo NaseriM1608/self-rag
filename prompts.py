@@ -84,9 +84,17 @@ generation_prompt = ChatPromptTemplate.from_template(
     - Be concise but complete
     - If multiple documents are relevant, combine their information
     
+    Citations:
+    - Cite sources for every key statement
+    - Use the format: [source_id]
+    - Each document will include a source identifier (e.g., [1], [2])
+    - Place citations immediately after the relevant information
+    - If multiple sources support a statement, include multiple citations (e.g., [1][3])
+    
     Output:
     - Provide a clear, direct answer to the question
-    - Do not mention the documents or say "according to the documents"
+    - Include citations inline as specified
+    - Do not mention the documents explicitly (e.g., do not say "according to the documents")
     
     User Question:
     {question}
