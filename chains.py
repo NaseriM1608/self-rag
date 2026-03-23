@@ -1,4 +1,6 @@
+from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+from llm import llm
 
 
 # 1. Retrieval decision
@@ -30,6 +32,8 @@ retrieval_prompt = ChatPromptTemplate.from_template(
     {question}
     """
 )
+
+retrieval_chain = retrieval_prompt | llm | StrOutputParser()
 
 
 # 2. Relevance prompt
@@ -68,32 +72,43 @@ relevance_prompt = ChatPromptTemplate.from_template(
     """
 )
 
+relevance_chain = relevance_prompt | llm | StrOutputParser()
+
 
 # 3. Generation prompt
 generation_prompt = ChatPromptTemplate.from_template(
     """
     You are a question-answering system using retrieved documents.
 
-    Your task is to answer the user’s question using ONLY the provided documents.
+    Your task is to answer the user’s question using the provided documents when they are available.
     
     Rules:
-    - Use only the information from the documents
-    - Do NOT use prior knowledge or make up information
-    - If the answer is not contained in the documents, say:
-      "I don't know based on the provided documents."
+    - If documents are provided:
+      - Use only the information from the documents
+      - Do NOT use prior knowledge or make up information beyond the documents
+      - If the answer is not contained in the documents, say:
+        "I don't know based on the provided documents."
+    
+    - If NO documents are provided:
+      - Answer using your own knowledge
+    
     - Be concise but complete
     - If multiple documents are relevant, combine their information
     
     Citations:
-    - Cite sources for every key statement
-    - Use the format: [source_id]
-    - Each document will include a source identifier (e.g., [1], [2])
-    - Place citations immediately after the relevant information
-    - If multiple sources support a statement, include multiple citations (e.g., [1][3])
+    - If documents are provided:
+      - Cite sources for every key statement
+      - Use the format: [source_id]
+      - Each document will include a source identifier (e.g., [1], [2])
+      - Place citations immediately after the relevant information
+      - If multiple sources support a statement, include multiple citations (e.g., [1][3])
+    
+    - If NO documents are provided:
+      - Do NOT include citations
     
     Output:
     - Provide a clear, direct answer to the question
-    - Include citations inline as specified
+    - Follow the citation rules depending on whether documents are provided
     - Do not mention the documents explicitly (e.g., do not say "according to the documents")
     
     User Question:
@@ -103,6 +118,8 @@ generation_prompt = ChatPromptTemplate.from_template(
     {documents}
     """
 )
+
+generation_chain = generation_prompt | llm | StrOutputParser()
 
 
 # 4. Grounding check
@@ -141,6 +158,8 @@ grounding_prompt = ChatPromptTemplate.from_template(
     """
 )
 
+grounding_chain = grounding_prompt | llm | StrOutputParser()
+
 
 # 5. Usefulness check
 usefulness_prompt = ChatPromptTemplate.from_template(
@@ -178,3 +197,5 @@ usefulness_prompt = ChatPromptTemplate.from_template(
     {answer}
     """
 )
+
+usefulness_chain = usefulness_prompt | llm | StrOutputParser()

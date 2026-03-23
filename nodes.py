@@ -1,13 +1,9 @@
-from langchain_core.output_parsers import StrOutputParser
-from prompts import *
+from chains import *
 from state import AgentState
-from llm import llm
 from retriever import search
 
 
-def decide_retrieval(state: AgentState) -> AgentState:
-    retrieval_chain = retrieval_prompt | llm | StrOutputParser()
-
+def decide_retrieval(state: AgentState) -> dict:
     result = retrieval_chain.invoke({
         "question": state["question"]
     })
@@ -15,20 +11,19 @@ def decide_retrieval(state: AgentState) -> AgentState:
     decision = result.strip().lower()
 
     return {
-        "should_retrieve": decision == "yes"
+        "should_retrieve": decision == "yes",
+        "llm_calls": 1
     }
 
 
-def retrieve(state: AgentState) -> AgentState:
+def retrieve(state: AgentState) -> dict:
     documents = search(query=state["question"])
     return {
         "documents": documents
     }
 
 
-def grade_relevance(state: AgentState) -> AgentState:
-    relevance_chain = relevance_prompt | llm | StrOutputParser()
-
+def grade_relevance(state: AgentState) -> dict:
     filtered_documents = []
 
     for doc in state["documents"]:
@@ -41,13 +36,12 @@ def grade_relevance(state: AgentState) -> AgentState:
             filtered_documents.append(doc)
 
     return {
-        "documents": filtered_documents
+        "documents": filtered_documents,
+        "llm_calls": state["llm_calls"] + 1
     }
 
 
-def generate(state: AgentState) -> AgentState:
-    generation_chain = generation_prompt | llm | StrOutputParser()
-
+def generate(state: AgentState) -> dict:
     documents = "\n\n".join(
         f"[{i + 1}] {doc.page_content} (source: {doc.metadata.get('source', 'unknown')})"
         for i, doc in enumerate(state["documents"])
@@ -58,13 +52,12 @@ def generate(state: AgentState) -> AgentState:
     })
 
     return {
-        "generation": str(result)
+        "generation": str(result),
+        "llm_calls": state["llm_calls"] + 1
     }
 
 
-def check_grounding(state: AgentState) -> AgentState:
-    grounding_chain = grounding_prompt | llm | StrOutputParser()
-
+def check_grounding(state: AgentState) -> dict:
     documents = '\n\n'.join(f"{doc.page_content}" for doc in state["documents"])
 
     result = grounding_chain.invoke({
@@ -75,13 +68,12 @@ def check_grounding(state: AgentState) -> AgentState:
     decision = result.strip().lower()
 
     return {
-        "is_grounded": decision == "yes"
+        "is_grounded": decision == "yes",
+        "llm_calls": state["llm_calls"] + 1
     }
 
 
-def check_usefulness(state: AgentState) -> AgentState:
-    usefulness_chain = usefulness_prompt | llm | StrOutputParser()
-
+def check_usefulness(state: AgentState) -> dict:
     result = usefulness_chain.invoke({
         "question": state["question"],
         "answer": state["generation"]
@@ -90,7 +82,8 @@ def check_usefulness(state: AgentState) -> AgentState:
     decision = result.strip().lower()
 
     return {
-        "is_useful": decision == "yes"
+        "is_useful": decision == "yes",
+        "llm_calls": state["llm_calls"] + 1
     }
 
 
