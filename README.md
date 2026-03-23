@@ -57,7 +57,7 @@ The system distinguishes between three failure modes: no relevant documents foun
 self-rag/
 ├── state.py         # AgentState TypedDict
 ├── retriever.py     # ChromaDB vector store and search
-├── prompts.py       # All ChatPromptTemplate definitions
+├── chains.py       # All ChatPromptTemplate definitions
 ├── llm.py           # Groq LLM instances
 ├── nodes.py         # LangGraph node functions
 ├── graph.py         # Graph construction and conditional routing
@@ -72,7 +72,7 @@ self-rag/
 - LangGraph — graph construction and stateful execution
 - ChromaDB — vector store with persistent storage
 - BAAI/bge-m3 — local embeddings via sentence-transformers
-- Groq — LLM inference (llama-3.1-8b-instant, llama-3.3-70b-versatile)
+- Groq — LLM inference (llama-3.3-70b-versatile)
 - LangChain — prompt templates and LCEL chains
 
 ---
