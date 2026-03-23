@@ -3,19 +3,6 @@ from state import AgentState
 from retriever import search
 
 
-def decide_retrieval(state: AgentState) -> dict:
-    result = retrieval_chain.invoke({
-        "question": state["question"]
-    })
-
-    decision = result.strip().lower()
-
-    return {
-        "should_retrieve": decision == "yes",
-        "llm_calls": 1
-    }
-
-
 def retrieve(state: AgentState) -> dict:
     documents = search(query=state["question"])
     return {

@@ -87,10 +87,3 @@ def build_vectorstore():
     chunks = split_text(documents)
     embeddings = calculate_embeddings(chunks)
     save_to_chroma(embeddings, chunks)
-
-
-
-if __name__ == '__main__':
-    build_vectorstore()
-
-

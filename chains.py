@@ -3,40 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from llm import llm
 
 
-# 1. Retrieval decision
-retrieval_prompt = ChatPromptTemplate.from_template(
-    """
-    You are a decision system for a retrieval-augmented AI.
-
-    Your task is to determine whether external documents are required to answer the user’s question.
-    
-    Rules:
-    - Answer "YES" if:
-      - The question requires up-to-date, real-time, or changing information
-      - The question depends on specific documents, proprietary data, or unknown context
-      - The answer requires high factual precision and cannot rely on general knowledge
-      - You are uncertain about the answer
-    
-    - Answer "NO" if:
-      - The question can be answered using general knowledge
-      - The question is conceptual, explanatory, or common knowledge
-      - The answer does not depend on external or private data
-    
-    Output format:
-    - Respond with only one word:
-      - YES
-      - NO
-    - Do not explain your answer.
-    
-    User Question:
-    {question}
-    """
-)
-
-retrieval_chain = retrieval_prompt | llm | StrOutputParser()
-
-
-# 2. Relevance prompt
+# 1. Relevance prompt
 relevance_prompt = ChatPromptTemplate.from_template(
     """
     You are a relevance grader in a retrieval-augmented system.
@@ -75,41 +42,28 @@ relevance_prompt = ChatPromptTemplate.from_template(
 relevance_chain = relevance_prompt | llm | StrOutputParser()
 
 
-# 3. Generation prompt
+# 2. Generation prompt
 generation_prompt = ChatPromptTemplate.from_template(
     """
-    You are a question-answering system using retrieved documents.
+    You are a question-answering system that must answer using only the retrieved documents provided in the prompt.
 
-    Your task is to answer the user’s question using the provided documents when they are available.
-    
-    Rules:
+    Instructions:
     - If documents are provided:
-      - Use only the information from the documents
-      - Do NOT use prior knowledge or make up information beyond the documents
-      - If the answer is not contained in the documents, say:
-        "I don't know based on the provided documents."
+      - Use only the information contained in those documents.
+      - Do not use outside knowledge.
+      - Do not guess or invent missing details.
+      - If the answer cannot be found in the documents, reply exactly: "I don't know based on the provided documents."
+    - If no documents are provided, or the documents field is empty, reply exactly: "No relevant documents were found."
+    - Be concise, but include all important information that is supported by the documents.
+    - If multiple documents are relevant, combine their information into one answer.
     
-    - If NO documents are provided:
-      - Answer using your own knowledge
-    
-    - Be concise but complete
-    - If multiple documents are relevant, combine their information
-    
-    Citations:
-    - If documents are provided:
-      - Cite sources for every key statement
-      - Use the format: [source_id]
-      - Each document will include a source identifier (e.g., [1], [2])
-      - Place citations immediately after the relevant information
-      - If multiple sources support a statement, include multiple citations (e.g., [1][3])
-    
-    - If NO documents are provided:
-      - Do NOT include citations
-    
-    Output:
-    - Provide a clear, direct answer to the question
-    - Follow the citation rules depending on whether documents are provided
-    - Do not mention the documents explicitly (e.g., do not say "according to the documents")
+    Citation rules:
+    - Every factual statement taken from a document must be cited immediately after the statement.
+    - Each document is labeled like [1], [2], etc., and has a source name/title after the label.
+    - Cite using this format: [1: Source Name]
+    - If more than one document supports the same statement, include all relevant citations.
+    - Do not invent, modify, or assume any source identifiers or titles.
+    - Only cite identifiers and titles that appear in the provided documents.
     
     User Question:
     {question}
@@ -122,7 +76,7 @@ generation_prompt = ChatPromptTemplate.from_template(
 generation_chain = generation_prompt | llm | StrOutputParser()
 
 
-# 4. Grounding check
+# 3. Grounding check
 grounding_prompt = ChatPromptTemplate.from_template(
     """
     You are a grounding verifier in a retrieval-augmented system.
@@ -161,7 +115,7 @@ grounding_prompt = ChatPromptTemplate.from_template(
 grounding_chain = grounding_prompt | llm | StrOutputParser()
 
 
-# 5. Usefulness check
+# 4. Usefulness check
 usefulness_prompt = ChatPromptTemplate.from_template(
     """
     You are a usefulness evaluator in a question-answering system.
