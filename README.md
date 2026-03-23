@@ -57,7 +57,7 @@ The system distinguishes between three failure modes: no relevant documents foun
 self-rag/
 ├── state.py         # AgentState TypedDict
 ├── retriever.py     # ChromaDB vector store and search
-├── chains.py       # All ChatPromptTemplate definitions
+├── chains.py        # All ChatPromptTemplate definitions
 ├── llm.py           # Groq LLM instances
 ├── nodes.py         # LangGraph node functions
 ├── graph.py         # Graph construction and conditional routing
