@@ -1,89 +1,84 @@
-from sentence_transformers import SentenceTransformer
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import DirectoryLoader
+"""Corpus ingestion utilities shared by every retrieval backend.
+
+Loads documents, splits them with deterministic content-hash chunk ids, and
+produces embeddings. Storage-specific sync/search live with their backends
+(neo4j_store.py for the runtime store; retrievers.DenseRetriever keeps a
+Chromadb baseline purely for eval comparisons).
+"""
+
+import hashlib
+import logging
+from functools import lru_cache
+
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.documents import Document
-import chromadb
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from sentence_transformers import SentenceTransformer
 
-DOCUMENTS_PATH = 'documents'
-CHROMA_PATH = './chroma'
+from config import settings
 
-
-embedding_model = SentenceTransformer('BAAI/bge-m3', local_files_only=False)
-client = chromadb.PersistentClient(path=CHROMA_PATH)
-collection = client.get_or_create_collection(name="my_collection", metadata={"hnsw:space": "ip"})
+logger = logging.getLogger(__name__)
 
 
-def load_documents():
-    try:
-        loader = DirectoryLoader(
-            DOCUMENTS_PATH,
-            glob='*.txt',
-        )
-        documents = loader.load()
-
-        if not documents:
-            raise ValueError(f"No documents found in {DOCUMENTS_PATH}")
-
-        return documents
-    except Exception as e:
-        raise Exception(f"Error loading documents: {str(e)}")
+@lru_cache(maxsize=1)
+def embedding_model() -> SentenceTransformer:
+    logger.info("Loading embedding model %s", settings.embedding_model_name)
+    return SentenceTransformer(settings.embedding_model_name)
 
 
-def split_text(documents):
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=200,
-        length_function=len,
-        add_start_index=True
+def load_documents() -> list[Document]:
+    loader = DirectoryLoader(
+        settings.documents_path,
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"autodetect_encoding": True},
     )
+    documents = loader.load()
+    if not documents:
+        raise ValueError(f"No .txt documents found in {settings.documents_path}")
+    logger.info("Loaded %d documents from %s", len(documents), settings.documents_path)
+    return documents
 
+
+def split_text(documents: list[Document]) -> list[Document]:
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=settings.chunk_size,
+        chunk_overlap=settings.chunk_overlap,
+        length_function=len,
+        add_start_index=True,
+    )
     chunks = text_splitter.split_documents(documents)
-
     if not chunks:
         raise ValueError("No chunks created from documents")
-
+    logger.info("Split %d documents into %d chunks", len(documents), len(chunks))
     return chunks
 
 
-def calculate_embeddings(chunks):
-    texts = [doc.page_content for doc in chunks]
-    embeddings = embedding_model.encode(texts, batch_size=32, show_progress_bar=True, normalize_embeddings=True)
+def chunk_id(chunk: Document) -> str:
+    """Deterministic ID from source + content — stable across re-syncs."""
+    source = str(chunk.metadata.get("source", ""))
+    digest = hashlib.sha1(f"{source}::{chunk.page_content}".encode()).hexdigest()
+    return f"chunk_{digest[:24]}"
 
-    return embeddings
 
-
-def save_to_chroma(embeddings, chunks):
-    collection.add(
-        ids = [f'chunk_{i}' for i in range(len(chunks))],
-        embeddings = embeddings,
-        documents = [chunk.page_content for chunk in chunks],
-        metadatas = [chunk.metadata for chunk in chunks]
-
+def embed_texts(texts: list[str]) -> list[list[float]]:
+    embeddings = embedding_model().encode(
+        texts,
+        batch_size=32,
+        show_progress_bar=len(texts) > 16,
+        normalize_embeddings=True,
     )
+    return embeddings.tolist()
 
 
-def search(query: str, n_results: int = 5):
-    query_embedding = embedding_model.encode(
-        query,
-        normalize_embeddings=True
-    ).tolist()
-
-    results = collection.query(
-        query_embeddings=[query_embedding],
-        n_results=n_results,
-    )
-
-    zipped_results = list(zip(results["documents"][0], results["metadatas"][0]))
-    results_doc = [Document(page_content=doc[0], metadata=doc[1]) for doc in zipped_results]
-
-    return results_doc
+def clean_metadata(metadata: dict) -> dict:
+    # Store metadata values must be scalars; drop anything None/complex.
+    return {
+        key: value
+        for key, value in metadata.items()
+        if isinstance(value, (str, int, float, bool))
+    }
 
 
-def build_vectorstore():
-    if collection.count() > 0:
-        print('vector store already exists')
-        return
-    documents = load_documents()
-    chunks = split_text(documents)
-    embeddings = calculate_embeddings(chunks)
-    save_to_chroma(embeddings, chunks)
+# Historical name kept so existing imports/tests keep working.
+_clean_metadata = clean_metadata
