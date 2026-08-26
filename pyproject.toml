@@ -9,6 +9,9 @@ markers = [
     "live: tests that hit the real LLM/index (deselected in CI)",
 ]
 addopts = "-m 'not live'"
+# Tests import top-level modules (chains, retriever, evals.*) regardless of
+# whether pytest is invoked as `pytest`, `pytest tests`, or `python -m pytest`.
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 88

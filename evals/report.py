@@ -41,11 +41,13 @@ def retrieval_section(lines: list[str]) -> None:
     for path in result_files:
         m = json.loads(path.read_text(encoding="utf-8"))
         mh = m.get("multi_hop")
-        mh_cell = f" {pct(mh['recall@5'])} |" if mh else ""
+        # Emit "—" for variants without multi-hop data so every row keeps the
+        # full column count when the header includes the multi-hop column.
+        mh_cell = f" {pct(mh['recall@5'])} |" if mh else " — |"
         lines.append(
             f"| {m['variant']} | {m['n_questions']} "
             f"| {pct(m['recall@5'])} | {pct(m.get('recall@10', 0))} "
-            f"| {m['mrr']:.3f} | {m['p50_latency_ms']:.0f} ms{mh_cell}"
+            f"| {m['mrr']:.3f} | {m['p50_latency_ms']:.0f} ms |{mh_cell}"
         )
     lines.append("")
 

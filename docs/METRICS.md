@@ -1,6 +1,6 @@
 # Measured Performance
 
-_Generated 2026-08-26 12:24 UTC — every number below is produced by `python -m evals.*` against the live index and LLM; regenerate to refresh._
+_Generated 2026-08-26 18:46 UTC — every number below is produced by `python -m evals.*` against the live index and LLM; regenerate to refresh._
 
 - Golden retrieval set: 43 answerable questions + 5 unanswerable controls
 - Grounding-judge set: 30 labeled claims
@@ -9,10 +9,11 @@ _Generated 2026-08-26 12:24 UTC — every number below is produced by `python -m
 
 | Variant | n | Recall@5 | Recall@10 | MRR | p50 latency | Multi-hop R@5 |
 |---|---|---|---|---|---|---|
-| dense | 43 | 86.0% | 90.7% | 0.737 | 345 ms 90.9% |
-| fulltext | 43 | 83.7% | 93.0% | 0.745 | 25 ms 100.0% |
-| hybrid | 43 | 93.0% | 95.3% | 0.758 | 548 ms 90.9% |
-| neo4j-dense | 43 | 86.0% | 90.7% | 0.737 | 543 ms 90.9% |
+| dense | 43 | 86.0% | 90.7% | 0.737 | 368 ms | 100.0% |
+| fulltext | 43 | 83.7% | 93.0% | 0.745 | 25 ms | 100.0% |
+| graph-expand | 43 | 93.0% | 95.3% | 0.758 | 570 ms | 100.0% |
+| hybrid | 43 | 93.0% | 95.3% | 0.758 | 479 ms | 100.0% |
+| neo4j-dense | 43 | 86.0% | 90.7% | 0.737 | 543 ms | 90.9% |
 
 ## Grounding-judge self-accuracy
 

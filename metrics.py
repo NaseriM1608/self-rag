@@ -24,7 +24,6 @@ logger = logging.getLogger(__name__)
 # (openrouter.ai/models). stealth/ox-alpha is currently listed at $0/$0.
 MODEL_PRICES_PER_MTOK: dict[str, tuple[float, float]] = {
     "stealth/ox-alpha": (0.0, 0.0),
-    "llama-3.3-70b-versatile": (0.59, 0.79),
 }
 
 RUNS_FILE = Path("evals/results/runs.jsonl")

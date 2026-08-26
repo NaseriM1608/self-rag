@@ -218,8 +218,13 @@ class GraphExpandRetriever:
         return merged[:final_k]
 
 
-def get_retriever(name: str = "dense") -> Retriever:
-    """Resolve a retriever implementation by registered name."""
+def get_retriever(name: str | None = None) -> Retriever:
+    """Resolve a retriever implementation by registered name.
+
+    `None` (or empty) falls back to `settings.default_retriever`, keeping the
+    config as the single source of truth for the runtime default.
+    """
+    name = name or settings.default_retriever
     if name == "dense":
         return DenseRetriever()
     if name == "neo4j-dense":

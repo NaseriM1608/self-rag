@@ -4,17 +4,18 @@ flags a valid logical inference as an unsupported claim ("YES/NO" ->
 here treated as grounded/ungrounded), the exact failure mode named in
 the README under "Strict grounding" and in the paper.
 
-Drop this file in the repo root (next to chains.py) and run:
+Lives in tests/ but marked `live` (real LLM calls) — deselected by the
+default pytest addopts and by CI; run explicitly with:
 
-    pytest test_grounding.py -v -s
+    pytest tests/test_grounding.py -v -s -m live
 
 or, for the standalone printed report:
 
-    python test_grounding.py
+    python tests/test_grounding.py
 
-Requires GROQ_API_KEY in your environment / .env (same as the rest of
-the project) since grounding_chain makes a real LLM call. Tests are
-skipped automatically if the key isn't set.
+Requires OPENROUTER_API_KEY (or legacy GROQ_API_KEY) in your environment
+/ .env since grounding_chain makes a real LLM call. Tests are skipped
+automatically if the key isn't set.
 """
 
 from __future__ import annotations
@@ -28,6 +29,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from chains import GroundingVerdict, grounding_chain  # noqa: E402 (needs dotenv first)
+
+# Real LLM calls — excluded from the default suite via `-m 'not live'`.
+pytestmark = pytest.mark.live
 
 HAS_LLM_KEY = bool(os.getenv("OPENROUTER_API_KEY") or os.getenv("GROQ_API_KEY"))
 skip_no_key = pytest.mark.skipif(
