@@ -1,0 +1,135 @@
+{
+  "variant": "hybrid+kg",
+  "slice": "multi_hop",
+  "n_questions": 11,
+  "aborted": null,
+  "avg_score": 1.6363636363636365,
+  "pct_correct": 0.7272727272727273,
+  "grounded_rate": 1.0,
+  "p50_duration_s": 136.458,
+  "avg_llm_calls": 11.272727272727273,
+  "total_cost_usd": 0.0,
+  "per_question": {
+    "llm-05": {
+      "score": 2,
+      "reasoning": "The candidate correctly identifies DeepSeek-R1 as the open-weight model released in January 2025 with performance comparable to OpenAI o1, and includes the key detail of its 671-billion-parameter size, matching the reference completely.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 312.885,
+      "llm_calls": 12,
+      "input_tokens": 6973,
+      "output_tokens": 2516,
+      "cost_usd": 0.0
+    },
+    "llm-07": {
+      "score": 2,
+      "reasoning": "The candidate correctly states both key facts from the reference \u2014 GPT-2 cost about $50,000 in 2019 and PaLM cost about $8 million in 2022 \u2014 with only extra (accurate) detail on model sizes.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 155.26,
+      "llm_calls": 13,
+      "input_tokens": 7040,
+      "output_tokens": 2610,
+      "cost_usd": 0.0
+    },
+    "rag-09": {
+      "score": 2,
+      "reasoning": "The candidate correctly states both key facts from the reference: that Google Bard provided incorrect James Webb Space Telescope information during its demo and that this contributed to a $100 billion decline in the company's stock value, with only trivial wording differences (Google vs. Alphabet) and harmless extra detail.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 129.771,
+      "llm_calls": 13,
+      "input_tokens": 6634,
+      "output_tokens": 2689,
+      "cost_usd": 0.0
+    },
+    "mh-01": {
+      "score": 2,
+      "reasoning": "The candidate correctly identifies DeepSeek as the company, DeepSeek-R1 as the model, its 671-billion-parameter size, comparability to o1, and lower operating cost, matching all key facts of the reference with only harmless extra detail.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 130.809,
+      "llm_calls": 12,
+      "input_tokens": 6972,
+      "output_tokens": 2097,
+      "cost_usd": 0.0
+    },
+    "mh-02": {
+      "score": 2,
+      "reasoning": "The candidate correctly identifies both investors from the reference\u2014Sequoia Capital leading the over $20M round at a $200M+ valuation and Benchmark's $10M seed announced a week prior\u2014with only harmless extra detail about a later $25M Series A.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 158.364,
+      "llm_calls": 13,
+      "input_tokens": 7115,
+      "output_tokens": 1865,
+      "cost_usd": 0.0
+    },
+    "mh-03": {
+      "score": 2,
+      "reasoning": "The candidate correctly identifies all three algorithms from the reference\u2014BPE, WordPiece, and the unigram language model\u2014and frames them as subword tokenization used in text preprocessing, with only harmless extra detail about learning-free segmentation.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 142.38,
+      "llm_calls": 13,
+      "input_tokens": 7322,
+      "output_tokens": 2470,
+      "cost_usd": 0.0
+    },
+    "mh-04": {
+      "score": 2,
+      "reasoning": "The candidate correctly identifies that document embeddings are stored in a vector database and describes their use in query comparison/similarity retrieval, matching the reference's key facts, with only acceptable extra detail about document links.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 129.179,
+      "llm_calls": 10,
+      "input_tokens": 6430,
+      "output_tokens": 2861,
+      "cost_usd": 0.0
+    },
+    "mh-05": {
+      "score": 1,
+      "reasoning": "The candidate correctly states that RAG can operate on structured data such as knowledge graphs, but omits the reference's second key fact\u2014that a knowledge graph uses a graph-structured data model/topology to represent entities and relationships\u2014and incorrectly claims this definition is unavailable.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 136.458,
+      "llm_calls": 9,
+      "input_tokens": 4839,
+      "output_tokens": 3172,
+      "cost_usd": 0.0
+    },
+    "mh-06": {
+      "score": 0,
+      "reasoning": "The candidate refuses to answer despite the reference clearly stating that chain-of-thought prompting applies to LLMs built on the transformer architecture introduced in 2017.",
+      "is_grounded": true,
+      "is_useful": false,
+      "duration_s": 126.028,
+      "llm_calls": 8,
+      "input_tokens": 4509,
+      "output_tokens": 2837,
+      "cost_usd": 0.0
+    },
+    "mh-07": {
+      "score": 1,
+      "reasoning": "The candidate correctly identifies that LSTM-based encoder-decoder (Seq2Seq) architectures preceded the transformer and notes the 2017 emergence date, but it fails to state the key fact that the transformer was proposed in the 2017 paper \"Attention Is All You Need,\" instead claiming the venue is unstated, so only part of the reference is covered.",
+      "is_grounded": true,
+      "is_useful": false,
+      "duration_s": 238.095,
+      "llm_calls": 13,
+      "input_tokens": 7067,
+      "output_tokens": 5459,
+      "cost_usd": 0.0
+    },
+    "mh-08": {
+      "score": 2,
+      "reasoning": "The candidate correctly states that vector search engines store embeddings (vectors representing data in high-dimensional space) and identifies word2vec as the toolkit that popularized training such vectors for words, fully covering both key facts of the reference with accurate supporting detail.",
+      "is_grounded": true,
+      "is_useful": true,
+      "duration_s": 106.574,
+      "llm_calls": 8,
+      "input_tokens": 5887,
+      "output_tokens": 2770,
+      "cost_usd": 0.0
+    }
+  }
+}

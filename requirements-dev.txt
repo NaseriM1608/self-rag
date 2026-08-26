@@ -1,0 +1,16 @@
+-r requirements.txt
+
+# Service (Phase 5)
+fastapi==0.141.1
+uvicorn==0.52.4
+tenacity==9.1.4
+prometheus-client>=0.20
+
+# Graph store (Phase 2+)
+neo4j==6.2.0
+
+# Dev tooling
+httpx==0.28.1
+pytest==9.1.1
+pytest-cov==7.1.0
+ruff==0.16.4

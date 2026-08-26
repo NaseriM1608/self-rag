@@ -1,0 +1,6956 @@
+{
+ "chunk_7bf994ee9a55f1cd974d7c18": [],
+ "chunk_4b9c17f7be9baf71a6417c01": [],
+ "chunk_049fefa172cb1eae0ccc4115": [
+  {
+   "subject": "BM25",
+   "predicate": "is a",
+   "object": "bag-of-words retrieval function"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "ranks documents based on",
+   "object": "query terms appearing in each document"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "ignores term proximity within",
+   "object": "documents"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "is a family of",
+   "object": "scoring functions"
+  }
+ ],
+ "chunk_72feb3ce9d25f091704b2bf2": [
+  {
+   "subject": "k1",
+   "predicate": "has value range",
+   "object": "[1.2, 2.0]"
+  },
+  {
+   "subject": "b",
+   "predicate": "equals",
+   "object": "0.75"
+  },
+  {
+   "subject": "IDF(qi)",
+   "predicate": "is",
+   "object": "inverse document frequency weight of query term qi"
+  }
+ ],
+ "chunk_ff608e839d9858cbf95ed5ae": [],
+ "chunk_52e26efbd65d9bea7d18c838": [
+  {
+   "subject": "Okapi BM25",
+   "predicate": "is used by",
+   "object": "search engines"
+  },
+  {
+   "subject": "Okapi BM25",
+   "predicate": "is based on",
+   "object": "probabilistic retrieval framework"
+  },
+  {
+   "subject": "probabilistic retrieval framework",
+   "predicate": "developed by",
+   "object": "Stephen E. Robertson"
+  },
+  {
+   "subject": "probabilistic retrieval framework",
+   "predicate": "developed by",
+   "object": "Karen Spärck Jones"
+  },
+  {
+   "subject": "Okapi information retrieval system",
+   "predicate": "first used",
+   "object": "BM25"
+  },
+  {
+   "subject": "Okapi information retrieval system",
+   "predicate": "implemented at",
+   "object": "City University London"
+  },
+  {
+   "subject": "BM25F",
+   "predicate": "is a version of",
+   "object": "BM25"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "represents",
+   "object": "TF-IDF-like retrieval functions"
+  }
+ ],
+ "chunk_4055d9c7d31402b8b74bf2ba": [
+  {
+   "subject": "IDF",
+   "predicate": "is defined for",
+   "object": "query term q_i"
+  },
+  {
+   "subject": "IDF",
+   "predicate": "is computed as logarithm of",
+   "object": "(N - n(q_i) + 0.5)/(n(q_i) + 0.5) + 1"
+  },
+  {
+   "subject": "IDF formula",
+   "predicate": "uses",
+   "object": "N"
+  },
+  {
+   "subject": "IDF formula",
+   "predicate": "uses",
+   "object": "n(q_i)"
+  }
+ ],
+ "chunk_caf80fe3234507af28a86f94": [
+  {
+   "subject": "score",
+   "predicate": "weights term frequency by",
+   "object": "IDF"
+  },
+  {
+   "subject": "score",
+   "predicate": "normalizes document length by",
+   "object": "avgdl"
+  },
+  {
+   "subject": "score",
+   "predicate": "uses parameters",
+   "object": "k1 and b"
+  }
+ ],
+ "chunk_6578172a6325ad27764a2bee": [],
+ "chunk_beecd8db61411a7bc9b698b1": [
+  {
+   "subject": "N",
+   "predicate": "denotes total number of documents in",
+   "object": "collection"
+  },
+  {
+   "subject": "n(q_i)",
+   "predicate": "denotes number of documents containing",
+   "object": "q_i"
+  },
+  {
+   "subject": "IDF",
+   "predicate": "has slight variations of",
+   "object": "formula"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "derives IDF component from",
+   "object": "Binary Independence Model"
+  }
+ ],
+ "chunk_fe03b9744ffa42b818a904a2": [
+  {
+   "subject": "IDF",
+   "predicate": "has interpretation from",
+   "object": "information theory"
+  },
+  {
+   "subject": "randomly picked document D",
+   "predicate": "contains query term q with probability",
+   "object": "n(q)/N"
+  },
+  {
+   "subject": "N",
+   "predicate": "denotes cardinality of",
+   "object": "set of documents in the collection"
+  },
+  {
+   "subject": "query term q",
+   "predicate": "appears in",
+   "object": "n(q) documents"
+  }
+ ],
+ "chunk_19894d7f256fb7f2fce0961f": [
+  {
+   "subject": "IDF component of BM25",
+   "predicate": "expresses",
+   "object": "information content of the event"
+  },
+  {
+   "subject": "information content of the event",
+   "predicate": "is computed as",
+   "object": "sum of log(N/n(q_i))"
+  }
+ ],
+ "chunk_b682b93719ae1e53248c19c6": [
+  {
+   "subject": "q1",
+   "predicate": "is a",
+   "object": "query term"
+  },
+  {
+   "subject": "q2",
+   "predicate": "is a",
+   "object": "query term"
+  },
+  {
+   "subject": "q1",
+   "predicate": "occurs independently of",
+   "object": "q2"
+  },
+  {
+   "subject": "co-occurrence probability of q1 and q2",
+   "predicate": "is computed for",
+   "object": "randomly picked document"
+  }
+ ],
+ "chunk_a798f11820d32882068963dc": [
+  {
+   "subject": "BM25",
+   "predicate": "turns into",
+   "object": "BM11"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "turns into",
+   "object": "BM15"
+  },
+  {
+   "subject": "BM25F",
+   "predicate": "is a modification of",
+   "object": "BM25"
+  },
+  {
+   "subject": "BM25F",
+   "predicate": "composes documents from",
+   "object": "fields"
+  },
+  {
+   "subject": "BM25F",
+   "predicate": "defines fields as",
+   "object": "streams"
+  },
+  {
+   "subject": "BM25F",
+   "predicate": "applies per-stream weighting to",
+   "object": "streams"
+  }
+ ],
+ "chunk_337c487689116a7bbf1c6f60": [],
+ "chunk_feb2348983d476e88abf9754": [],
+ "chunk_09e98932b16e004d04cd5146": [
+  {
+   "subject": "BM25+",
+   "predicate": "is an extension of",
+   "object": "BM25"
+  },
+  {
+   "subject": "BM25+",
+   "predicate": "addresses a deficiency of",
+   "object": "BM25"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "does not properly lower-bound",
+   "object": "term frequency normalization by document length"
+  },
+  {
+   "subject": "BM25",
+   "predicate": "unfairly scores",
+   "object": "long documents"
+  },
+  {
+   "subject": "BM25+",
+   "predicate": "adds free parameter to scoring formula",
+   "object": "delta"
+  },
+  {
+   "subject": "delta",
+   "predicate": "has default value",
+   "object": "1.0"
+  }
+ ],
+ "chunk_1389d79272d8a0d38c90fd55": [],
+ "chunk_34e7d58b36e84bdb473e59ed": [
+  {
+   "subject": "Okapi at TREC-3",
+   "predicate": "authored by",
+   "object": "Stephen E. Robertson"
+  },
+  {
+   "subject": "Okapi at TREC-3",
+   "predicate": "published in",
+   "object": "Proceedings of the Third Text REtrieval Conference"
+  },
+  {
+   "subject": "Okapi at TREC-7",
+   "predicate": "authored by",
+   "object": "Stephen E. Robertson"
+  },
+  {
+   "subject": "Okapi at TREC-7",
+   "predicate": "published in",
+   "object": "Proceedings of the Seventh Text REtrieval Conference"
+  },
+  {
+   "subject": "A probabilistic model of information retrieval: Development and comparative experiments: Part 1",
+   "predicate": "authored by",
+   "object": "Spärck Jones"
+  },
+  {
+   "subject": "A probabilistic model of information retrieval: Development and comparative experiments: Part 1",
+   "predicate": "published in",
+   "object": "Information Processing & Management"
+  },
+  {
+   "subject": "A probabilistic model of information retrieval: Development and comparative experiments: Part 2",
+   "predicate": "authored by",
+   "object": "Spärck Jones"
+  },
+  {
+   "subject": "A probabilistic model of information retrieval: Development and comparative experiments: Part 2",
+   "predicate": "published in",
+   "object": "Information Processing & Management"
+  }
+ ],
+ "chunk_a1d08358dfae85a1039fb8ff": [
+  {
+   "subject": "score",
+   "predicate": "is a function of",
+   "object": "D and Q"
+  },
+  {
+   "subject": "score",
+   "predicate": "sums over",
+   "object": "i from 1 to n"
+  },
+  {
+   "subject": "score",
+   "predicate": "weights terms by",
+   "object": "IDF(q_i)"
+  },
+  {
+   "subject": "score",
+   "predicate": "depends on",
+   "object": "f(q_i, D)"
+  },
+  {
+   "subject": "score",
+   "predicate": "includes parameter",
+   "object": "k_1"
+  }
+ ],
+ "chunk_efbc3beb814d6436ae0c54f7": [],
+ "chunk_622103c439bc00d9dbf2230e": [
+  {
+   "subject": "Stephen Robertson",
+   "predicate": "wrote",
+   "object": "The Probabilistic Relevance Framework: BM25 and Beyond"
+  },
+  {
+   "subject": "Hugo Zaragoza",
+   "predicate": "wrote",
+   "object": "The Probabilistic Relevance Framework: BM25 and Beyond"
+  },
+  {
+   "subject": "The Probabilistic Relevance Framework: BM25 and Beyond",
+   "predicate": "published in",
+   "object": "Foundations and Trends in Information Retrieval"
+  },
+  {
+   "subject": "The Probabilistic Relevance Framework: BM25 and Beyond",
+   "predicate": "published in year",
+   "object": "2009"
+  }
+ ],
+ "chunk_5102baea1e3913b50fe3169e": [],
+ "chunk_94b740ba1035cd064e5ac707": [],
+ "chunk_e2aacf3f437f0c8ed9508e65": [
+  {
+   "subject": "knowledge graph",
+   "predicate": "is a",
+   "object": "knowledge base"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "uses",
+   "object": "graph-structured data model"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "stores",
+   "object": "interlinked descriptions of entities"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "encodes",
+   "object": "semantics and relationships of entities"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "is associated with",
+   "object": "linked open data projects"
+  },
+  {
+   "subject": "Google",
+   "predicate": "uses",
+   "object": "knowledge graph"
+  },
+  {
+   "subject": "WolframAlpha",
+   "predicate": "uses",
+   "object": "knowledge graph"
+  },
+  {
+   "subject": "LinkedIn",
+   "predicate": "uses",
+   "object": "knowledge graph"
+  }
+ ],
+ "chunk_81d6687eb2530ed5924d49d1": [
+  {
+   "subject": "graph neural networks",
+   "predicate": "advances broadened scope of",
+   "object": "knowledge graphs"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "traditionally used in",
+   "object": "search engines"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "traditionally used in",
+   "object": "recommender systems"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "increasingly used in",
+   "object": "scientific research"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "applied in",
+   "object": "genomics"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "applied in",
+   "object": "proteomics"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "applied in",
+   "object": "systems biology"
+  }
+ ],
+ "chunk_2d465102d0b5d67031b11bfd": [
+  {
+   "subject": "HumRRO",
+   "predicate": "described",
+   "object": "Subject-Matter Map"
+  },
+  {
+   "subject": "HumRRO",
+   "predicate": "formalized",
+   "object": "representing knowledge as a graph"
+  },
+  {
+   "subject": "Edgar W. Schneider",
+   "predicate": "cited",
+   "object": "HumRRO's presentation"
+  },
+  {
+   "subject": "Edgar W. Schneider",
+   "predicate": "coined the term",
+   "object": "Knowledge Graph"
+  },
+  {
+   "subject": "University of Groningen",
+   "predicate": "jointly began Knowledge Graphs project with",
+   "object": "University of Twente"
+  },
+  {
+   "subject": "Knowledge Graphs project",
+   "predicate": "focused on designing",
+   "object": "semantic networks"
+  },
+  {
+   "subject": "Knowledge Graphs project",
+   "predicate": "restricted edges to",
+   "object": "limited set of relations"
+  },
+  {
+   "subject": "semantic networks",
+   "predicate": "distinction blurred with",
+   "object": "knowledge graphs"
+  }
+ ],
+ "chunk_475d4788d855f57b2e9d2a54": [
+  {
+   "subject": "Wordnet",
+   "predicate": "was founded in",
+   "object": "1985"
+  },
+  {
+   "subject": "Wordnet",
+   "predicate": "captures",
+   "object": "semantic relationships between words and meanings"
+  },
+  {
+   "subject": "Marc Wirk",
+   "predicate": "founded",
+   "object": "Geonames"
+  },
+  {
+   "subject": "Geonames",
+   "predicate": "captures relationships between",
+   "object": "geographic names and locales"
+  },
+  {
+   "subject": "Andrew Edmonds",
+   "predicate": "created",
+   "object": "ThinkBase"
+  },
+  {
+   "subject": "ThinkBase",
+   "predicate": "offers",
+   "object": "fuzzy-logic based reasoning in a graphical context"
+  },
+  {
+   "subject": "DBpedia",
+   "predicate": "focuses exclusively on data extracted from",
+   "object": "Wikipedia"
+  },
+  {
+   "subject": "Freebase",
+   "predicate": "includes",
+   "object": "a range of public datasets"
+  }
+ ],
+ "chunk_f291f9828f227ee6722faa3c": [
+  {
+   "subject": "knowledge graph",
+   "predicate": "lacks",
+   "object": "single commonly accepted definition"
+  },
+  {
+   "subject": "knowledge graph definitions",
+   "predicate": "view through",
+   "object": "Semantic Web lens"
+  }
+ ],
+ "chunk_0d1e9c8d67ca08d04ac1391f": [
+  {
+   "subject": "knowledge graph",
+   "predicate": "is a",
+   "object": "digital structure"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "represents knowledge as",
+   "object": "concepts"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "represents facts as",
+   "object": "relationships between concepts"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "can include",
+   "object": "ontology"
+  },
+  {
+   "subject": "ontology",
+   "predicate": "allows humans and machines to understand and reason about",
+   "object": "contents of knowledge graph"
+  }
+ ],
+ "chunk_6655b7b9c3f27f2b4b2d90b9": [
+  {
+   "subject": "Google",
+   "predicate": "introduced",
+   "object": "Knowledge Graph"
+  },
+  {
+   "subject": "Knowledge Graph",
+   "predicate": "builds on",
+   "object": "DBpedia"
+  },
+  {
+   "subject": "Knowledge Graph",
+   "predicate": "builds on",
+   "object": "Freebase"
+  },
+  {
+   "subject": "Knowledge Graph",
+   "predicate": "incorporates RDFa, Microdata and JSON-LD from",
+   "object": "indexed web pages"
+  },
+  {
+   "subject": "Knowledge Graph",
+   "predicate": "uses data from",
+   "object": "Wikidata"
+  },
+  {
+   "subject": "Knowledge Graph",
+   "predicate": "organizes entity and relationship types using",
+   "object": "schema.org vocabulary"
+  },
+  {
+   "subject": "Google Knowledge Graph",
+   "predicate": "complements",
+   "object": "string-based search"
+  },
+  {
+   "subject": "IEEE",
+   "predicate": "combined conferences into",
+   "object": "International Conference on Knowledge Graph"
+  }
+ ],
+ "chunk_f631ba040c7644ab88d1052f": [
+  {
+   "subject": "IEEE",
+   "predicate": "combined conferences into",
+   "object": "International Conference on Knowledge Graph"
+  },
+  {
+   "subject": "large language models",
+   "predicate": "expanded interest in",
+   "object": "knowledge graph"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "structures information from",
+   "object": "unstructured text"
+  },
+  {
+   "subject": "advances in language processing",
+   "predicate": "enable automatic generation of",
+   "object": "knowledge graph"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "includes",
+   "object": "dynamically constructed and adaptive graph structures"
+  },
+  {
+   "subject": "adaptive graph structures",
+   "predicate": "support retrieval, reasoning, and summarization in",
+   "object": "generative systems"
+  },
+  {
+   "subject": "Microsoft Research",
+   "predicate": "developed",
+   "object": "GraphRAG"
+  },
+  {
+   "subject": "GraphRAG",
+   "predicate": "integrates LLM-generated graphs into",
+   "object": "retrieval-augmented generation"
+  }
+ ],
+ "chunk_f0c0dbd49dbb79f1863c165a": [],
+ "chunk_d5cd7ff00a02ad50acf462dc": [
+  {
+   "subject": "knowledge graph",
+   "predicate": "defines abstract classes in",
+   "object": "schema"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "describes",
+   "object": "real world entities"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "interrelates",
+   "object": "arbitrary entities"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "covers",
+   "object": "topical domains"
+  },
+  {
+   "subject": "properties",
+   "predicate": "are represented by",
+   "object": "categorical or numerical values"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "integrates information into",
+   "object": "ontology"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "applies",
+   "object": "reasoner"
+  },
+  {
+   "subject": "reasoner",
+   "predicate": "derives",
+   "object": "new knowledge"
+  }
+ ],
+ "chunk_70819c08f8beb8c621231f13": [
+  {
+   "subject": "virtual knowledge graph",
+   "predicate": "does not store information in",
+   "object": "specialized databases"
+  },
+  {
+   "subject": "virtual knowledge graph",
+   "predicate": "answers queries using",
+   "object": "relational database"
+  },
+  {
+   "subject": "virtual knowledge graph",
+   "predicate": "answers queries using",
+   "object": "data lake"
+  },
+  {
+   "subject": "mappings",
+   "predicate": "configure",
+   "object": "virtual knowledge graph system"
+  },
+  {
+   "subject": "mappings",
+   "predicate": "define relationship between",
+   "object": "data source elements and virtual knowledge graph structure and ontology"
+  }
+ ],
+ "chunk_1d420dde6de46209f5759f55": [],
+ "chunk_705c6ab7d998cd8e2ac3941d": [
+  {
+   "subject": "GNN",
+   "predicate": "generates",
+   "object": "knowledge graph embeddings"
+  },
+  {
+   "subject": "GNN",
+   "predicate": "is a type of",
+   "object": "deep learning architecture"
+  },
+  {
+   "subject": "GNN",
+   "predicate": "comprises",
+   "object": "nodes and edges"
+  },
+  {
+   "subject": "nodes",
+   "predicate": "correspond to",
+   "object": "entities of knowledge graphs"
+  },
+  {
+   "subject": "edges",
+   "predicate": "correspond to",
+   "object": "relationships of knowledge graphs"
+  },
+  {
+   "subject": "GNN",
+   "predicate": "is trained to predict",
+   "object": "node embedding and edge values"
+  },
+  {
+   "subject": "node and edge prediction tasks",
+   "predicate": "serve as fundamental abstractions for",
+   "object": "knowledge graph reasoning and alignment"
+  }
+ ],
+ "chunk_949ec2d9b42058fb1881ce9c": [
+  {
+   "subject": "knowledge graph",
+   "predicate": "represents",
+   "object": "semantics"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "describes",
+   "object": "entities and their relationships"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "uses ontologies as",
+   "object": "schema layer"
+  },
+  {
+   "subject": "knowledge graph",
+   "predicate": "allows logical inference for retrieving",
+   "object": "implicit knowledge"
+  },
+  {
+   "subject": "knowledge graph embedding",
+   "predicate": "connects knowledge graphs to",
+   "object": "machine learning methods"
+  },
+  {
+   "subject": "machine learning method",
+   "predicate": "requires",
+   "object": "feature vectors"
+  },
+  {
+   "subject": "word embedding",
+   "predicate": "is a type of",
+   "object": "feature vector"
+  }
+ ],
+ "chunk_908c41854e8b21921def5d63": [
+  {
+   "subject": "large language models",
+   "predicate": "are used in",
+   "object": "entity alignment"
+  },
+  {
+   "subject": "large language models",
+   "predicate": "produce",
+   "object": "syntactically meaningful embeddings"
+  },
+  {
+   "subject": "knowledge graphs",
+   "predicate": "store",
+   "object": "data"
+  },
+  {
+   "subject": "entity alignment",
+   "predicate": "is a step in",
+   "object": "integration and cohesion of knowledge graph data"
+  }
+ ],
+ "chunk_9e2ab7960a33ddcc880fd31c": [
+  {
+   "subject": "YAGO",
+   "predicate": "is an example of",
+   "object": "knowledge graph"
+  },
+  {
+   "subject": "Google Knowledge Graph",
+   "predicate": "is an example of",
+   "object": "knowledge graph"
+  },
+  {
+   "subject": "note-taking software",
+   "predicate": "allows users to build",
+   "object": "personal knowledge graph"
+  },
+  {
+   "subject": "popularization of knowledge graphs",
+   "predicate": "led to development of",
+   "object": "Neo4j"
+  },
+  {
+   "subject": "graph databases",
+   "predicate": "store data as",
+   "object": "entities and their interrelationships"
+  },
+  {
+   "subject": "graph databases",
+   "predicate": "facilitate",
+   "object": "data reasoning"
+  },
+  {
+   "subject": "graph databases",
+   "predicate": "facilitate",
+   "object": "node embedding"
+  },
+  {
+   "subject": "graph databases",
+   "predicate": "facilitate",
+   "object": "ontology development"
+  }
+ ],
+ "chunk_c2a8842a32c0a427a42c5532": [
+  {
+   "subject": "Diffbot",
+   "predicate": "is building",
+   "object": "biggest-ever knowledge graph"
+  },
+  {
+   "subject": "Diffbot",
+   "predicate": "applies",
+   "object": "image recognition"
+  },
+  {
+   "subject": "Diffbot",
+   "predicate": "applies",
+   "object": "natural-language processing"
+  }
+ ],
+ "chunk_ae1bbef217d4c481898df7a9": [
+  {
+   "subject": "knowledge graph entity alignment",
+   "predicate": "resolves which entities from disparate graphs correspond to",
+   "object": "same real world subject"
+  },
+  {
+   "subject": "knowledge graph entity alignment",
+   "predicate": "is an active area of",
+   "object": "research"
+  },
+  {
+   "subject": "entity alignment strategies",
+   "predicate": "seek to identify",
+   "object": "similar substructures"
+  },
+  {
+   "subject": "entity alignment strategies",
+   "predicate": "seek to identify",
+   "object": "semantic relationships"
+  },
+  {
+   "subject": "entity alignment strategies",
+   "predicate": "seek to identify",
+   "object": "shared attributes"
+  },
+  {
+   "subject": "entity alignment methods",
+   "predicate": "use",
+   "object": "structural similarities"
+  },
+  {
+   "subject": "entity alignment methods",
+   "predicate": "predict node correspondence in",
+   "object": "non-isomorphic knowledge graphs"
+  }
+ ],
+ "chunk_0683eb9f149d18d987355d55": [
+  {
+   "subject": "Concept map",
+   "predicate": "shows",
+   "object": "relationships among concepts"
+  },
+  {
+   "subject": "Graph database",
+   "predicate": "uses",
+   "object": "graph structures for queries"
+  },
+  {
+   "subject": "Knowledge base",
+   "predicate": "is an",
+   "object": "information repository"
+  },
+  {
+   "subject": "Knowledge graph embedding",
+   "predicate": "performs dimensionality reduction on",
+   "object": "graph-based semantic data objects"
+  },
+  {
+   "subject": "Logical graph",
+   "predicate": "is a type of",
+   "object": "diagrammatic notation for propositional logic"
+  },
+  {
+   "subject": "Semantic technology",
+   "predicate": "helps machines understand",
+   "object": "data"
+  },
+  {
+   "subject": "Vadalog",
+   "predicate": "is a type of",
+   "object": "Knowledge Graph Management System"
+  },
+  {
+   "subject": "Wikidata",
+   "predicate": "is a",
+   "object": "free knowledge database project"
+  }
+ ],
+ "chunk_45b96f5a36ea50e870c89c9d": [],
+ "chunk_97bf75d8c0bff138381b68d0": [
+  {
+   "subject": "LangChain",
+   "predicate": "introduced",
+   "object": "LangServe"
+  },
+  {
+   "subject": "LangServe",
+   "predicate": "hosts LCEL code as",
+   "object": "production-ready API"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "released",
+   "object": "LangSmith"
+  },
+  {
+   "subject": "LangSmith",
+   "predicate": "is",
+   "object": "closed-source observability and evaluation platform for LLM applications"
+  },
+  {
+   "subject": "Sequoia Capital",
+   "predicate": "led",
+   "object": "LangChain Series A"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "launched",
+   "object": "LangGraph Platform"
+  },
+  {
+   "subject": "LangGraph Platform",
+   "predicate": "provides managed infrastructure for deploying",
+   "object": "long-running, stateful AI agents"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "was featured in",
+   "object": "Forbes AI 50 list"
+  }
+ ],
+ "chunk_81948da609cfe5ff3c5f76a1": [
+  {
+   "subject": "LangChain",
+   "predicate": "is a",
+   "object": "software framework"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "facilitates integration of",
+   "object": "large language models into applications"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "supports use cases including",
+   "object": "document analysis, chatbots, and code analysis"
+  },
+  {
+   "subject": "Harrison Chase",
+   "predicate": "launched",
+   "object": "LangChain as an open source project"
+  },
+  {
+   "subject": "Harrison Chase",
+   "predicate": "worked at",
+   "object": "Robust Intelligence"
+  },
+  {
+   "subject": "Sequoia Capital",
+   "predicate": "invested over $20 million in",
+   "object": "LangChain"
+  },
+  {
+   "subject": "LangChain Expression Language",
+   "predicate": "provides a declarative way to define",
+   "object": "chains of actions"
+  },
+  {
+   "subject": "LangServe",
+   "predicate": "hosts",
+   "object": "LCEL code as a production-ready API"
+  }
+ ],
+ "chunk_44864b27137ed79c1eea930d": [
+  {
+   "subject": "large language model",
+   "predicate": "is a",
+   "object": "computational model"
+  },
+  {
+   "subject": "large language model",
+   "predicate": "is designed for",
+   "object": "natural language processing tasks"
+  },
+  {
+   "subject": "generative pre-trained transformer",
+   "predicate": "is a type of",
+   "object": "large language model"
+  },
+  {
+   "subject": "generative pre-trained transformer",
+   "predicate": "provides core capabilities of",
+   "object": "modern chatbots"
+  },
+  {
+   "subject": "large language model",
+   "predicate": "can be fine-tuned for",
+   "object": "specific tasks"
+  },
+  {
+   "subject": "large language model",
+   "predicate": "can be guided by",
+   "object": "prompt engineering"
+  },
+  {
+   "subject": "large language model",
+   "predicate": "acquires predictive power regarding",
+   "object": "syntax, semantics, and ontologies in human language corpora"
+  },
+  {
+   "subject": "large language model",
+   "predicate": "inherits inaccuracies and biases from",
+   "object": "training data"
+  }
+ ],
+ "chunk_d0ca566ec34931cb5f00a4b9": [
+  {
+   "subject": "LLMs",
+   "predicate": "consist of",
+   "object": "billions to trillions of parameters"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "operate as",
+   "object": "general-purpose sequence models"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "evolved from",
+   "object": "statistical and recurrent neural network approaches"
+  },
+  {
+   "subject": "transformer architecture",
+   "predicate": "was introduced in",
+   "object": "2017"
+  },
+  {
+   "subject": "transformer architecture",
+   "predicate": "replaced recurrence with",
+   "object": "self-attention"
+  },
+  {
+   "subject": "self-attention",
+   "predicate": "allows",
+   "object": "efficient parallelization"
+  },
+  {
+   "subject": "transformer architecture",
+   "predicate": "enabled",
+   "object": "GPT"
+  },
+  {
+   "subject": "GPT",
+   "predicate": "demonstrates",
+   "object": "few-shot learning"
+  }
+ ],
+ "chunk_92266f73a10fe68354468d3b": [
+  {
+   "subject": "LangChain",
+   "predicate": "is",
+   "object": "software development kit"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "simplifies connection between",
+   "object": "large language models and external applications"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "applies to",
+   "object": "chatbots"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "applies to",
+   "object": "retrieval-augmented generation"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "applies to",
+   "object": "document summarization"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "applies to",
+   "object": "synthetic data generation"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "brings in context from",
+   "object": "PDFs, web pages, CSV files and relational databases"
+  },
+  {
+   "subject": "LangChain",
+   "predicate": "was featured in",
+   "object": "Forbes AI 50 list"
+  }
+ ],
+ "chunk_48a760359714e62b9a0af57c": [],
+ "chunk_bbf215f596d63b43a28537ae": [
+  {
+   "subject": "policy gradient algorithms",
+   "predicate": "fine-tune",
+   "object": "LLMs"
+  },
+  {
+   "subject": "RLHF",
+   "predicate": "optimizes policy against",
+   "object": "reward signals"
+  },
+  {
+   "subject": "reward signals",
+   "predicate": "derived from",
+   "object": "preference judgments"
+  },
+  {
+   "subject": "RLHF",
+   "predicate": "aligns model outputs with",
+   "object": "user expectations"
+  },
+  {
+   "subject": "benchmark evaluations",
+   "predicate": "measure",
+   "object": "reasoning, factual accuracy, alignment, safety"
+  },
+  {
+   "subject": "hill climbing",
+   "predicate": "optimizes models against",
+   "object": "benchmarks"
+  },
+  {
+   "subject": "hill climbing",
+   "predicate": "produces",
+   "object": "incremental performance gains"
+  },
+  {
+   "subject": "hill climbing",
+   "predicate": "raises concerns of",
+   "object": "overfitting to benchmarks"
+  }
+ ],
+ "chunk_3168f31c06cb84e9d3b35512": [
+  {
+   "subject": "publications about large language models",
+   "predicate": "are grouped by",
+   "object": "publication type"
+  },
+  {
+   "subject": "notable large models",
+   "predicate": "have training compute measured in",
+   "object": "FLOPs"
+  },
+  {
+   "subject": "notable large models",
+   "predicate": "were published during",
+   "object": "2010–2024"
+  },
+  {
+   "subject": "majority of notable large models",
+   "predicate": "are",
+   "object": "language models"
+  }
+ ],
+ "chunk_336093f7dc5cbad02be50711": [
+  {
+   "subject": "large AI models",
+   "predicate": "are mostly",
+   "object": "language models or multimodal models"
+  },
+  {
+   "subject": "transformer-based models",
+   "predicate": "emerged in",
+   "object": "2017"
+  },
+  {
+   "subject": "IBM statistical models",
+   "predicate": "pioneered",
+   "object": "word alignment techniques"
+  },
+  {
+   "subject": "word alignment techniques",
+   "predicate": "laid groundwork for",
+   "object": "corpus-based language modeling"
+  },
+  {
+   "subject": "smoothed n-gram model",
+   "predicate": "employs",
+   "object": "Kneser–Ney smoothing"
+  },
+  {
+   "subject": "smoothed n-gram model",
+   "predicate": "achieved",
+   "object": "state-of-the-art perplexity"
+  },
+  {
+   "subject": "researchers",
+   "predicate": "compiled massive text datasets from",
+   "object": "web"
+  },
+  {
+   "subject": "massive text datasets",
+   "predicate": "used to train",
+   "object": "statistical language models"
+  }
+ ],
+ "chunk_882e284450d33fa869f34f8f": [
+  {
+   "subject": "GPT-1",
+   "predicate": "introduced in",
+   "object": "2018"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "claimed too powerful to release publicly",
+   "object": "GPT-2"
+  },
+  {
+   "subject": "GPT-3",
+   "predicate": "is available only via",
+   "object": "API"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "received",
+   "object": "extensive media coverage and public attention"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "praised for",
+   "object": "multimodal capabilities"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "did not reveal architecture and parameters of",
+   "object": "GPT-4"
+  },
+  {
+   "subject": "release of ChatGPT",
+   "predicate": "led to uptick in LLM usage across",
+   "object": "research subfields of computer science"
+  },
+  {
+   "subject": "OpenAI o1",
+   "predicate": "generates",
+   "object": "long chains of thought before returning a final answer"
+  }
+ ],
+ "chunk_23081ac4a80edbada44e6853": [
+  {
+   "subject": "Google researchers",
+   "predicate": "introduced",
+   "object": "Transformer"
+  },
+  {
+   "subject": "\"Attention Is All You Need\"",
+   "predicate": "aims to improve upon",
+   "object": "seq2seq"
+  },
+  {
+   "subject": "\"Attention Is All You Need\"",
+   "predicate": "is based on",
+   "object": "attention mechanism"
+  },
+  {
+   "subject": "Bahdanau et al.",
+   "predicate": "developed",
+   "object": "attention mechanism"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "was introduced in",
+   "object": "2018"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "has",
+   "object": "encoder and decoder blocks"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "is",
+   "object": "encoder-only model"
+  },
+  {
+   "subject": "GPT",
+   "predicate": "is",
+   "object": "decoder-only model"
+  }
+ ],
+ "chunk_ca3b565fa8a59d1617ec454b": [
+  {
+   "subject": "neural networks",
+   "predicate": "learn",
+   "object": "language models"
+  },
+  {
+   "subject": "Word2Vec",
+   "predicate": "is an example of",
+   "object": "word embeddings"
+  },
+  {
+   "subject": "Word2Vec",
+   "predicate": "was created by",
+   "object": "Mikolov"
+  },
+  {
+   "subject": "seq2seq models",
+   "predicate": "use",
+   "object": "LSTM"
+  },
+  {
+   "subject": "Google",
+   "predicate": "transitioned its translation service to",
+   "object": "NMT"
+  },
+  {
+   "subject": "NMT",
+   "predicate": "replaced",
+   "object": "statistical phrase-based models"
+  },
+  {
+   "subject": "early NMT systems",
+   "predicate": "used",
+   "object": "LSTM-based encoder-decoder architectures"
+  },
+  {
+   "subject": "early NMT systems",
+   "predicate": "preceded",
+   "object": "transformers"
+  }
+ ],
+ "chunk_288ee4577040fcc869f5da59": [
+  {
+   "subject": "OpenAI",
+   "predicate": "released in 2024",
+   "object": "OpenAI o1"
+  },
+  {
+   "subject": "OpenAI o1",
+   "predicate": "is a",
+   "object": "reasoning model"
+  },
+  {
+   "subject": "OpenAI o1",
+   "predicate": "generates",
+   "object": "long chains of thought"
+  },
+  {
+   "subject": "OpenAI o1",
+   "predicate": "returns after generating",
+   "object": "final answer"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "have parameter counts comparable to",
+   "object": "GPT series"
+  }
+ ],
+ "chunk_f18ada44722a7b97439183f8": [
+  {
+   "subject": "open-weight LLMs",
+   "predicate": "shape",
+   "object": "AI field"
+  },
+  {
+   "subject": "open-weight LLMs",
+   "predicate": "contribute to",
+   "object": "broader participation in AI development"
+  },
+  {
+   "subject": "open-weight LLMs",
+   "predicate": "contribute to",
+   "object": "transparency in model evaluation"
+  },
+  {
+   "subject": "community-driven contributions",
+   "predicate": "improve efficiency and performance of",
+   "object": "open-weight models"
+  },
+  {
+   "subject": "user participation",
+   "predicate": "grows on",
+   "object": "Hugging Face"
+  },
+  {
+   "subject": "openness in AI",
+   "predicate": "encompasses",
+   "object": "inclusiveness, accountability, and ethical responsibility"
+  },
+  {
+   "subject": "open-weight LLMs",
+   "predicate": "accelerate",
+   "object": "innovation"
+  },
+  {
+   "subject": "open-weight LLMs",
+   "predicate": "enhance",
+   "object": "scientific reproducibility"
+  }
+ ],
+ "chunk_4ec08828a343ef7d9b2015f1": [
+  {
+   "subject": "BPE tokenizer",
+   "predicate": "used by",
+   "object": "legacy GPT-3"
+  },
+  {
+   "subject": "BPE tokenizer",
+   "predicate": "splits texts into",
+   "object": "series of numerical tokens"
+  },
+  {
+   "subject": "tokenization",
+   "predicate": "compresses",
+   "object": "datasets"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "require input to be",
+   "object": "non-jagged array"
+  },
+  {
+   "subject": "shorter texts",
+   "predicate": "padded to match length of",
+   "object": "longest text"
+  },
+  {
+   "subject": "average number of words per token",
+   "predicate": "depends on",
+   "object": "language"
+  }
+ ],
+ "chunk_6ffe99b3d0c5a7543d013318": [
+  {
+   "subject": "BLOOM",
+   "predicate": "is an",
+   "object": "open-weight model"
+  },
+  {
+   "subject": "LLaMA",
+   "predicate": "is an",
+   "object": "open-weight model"
+  },
+  {
+   "subject": "Mistral AI",
+   "predicate": "developed",
+   "object": "Mistral 7B"
+  },
+  {
+   "subject": "DeepSeek",
+   "predicate": "released",
+   "object": "DeepSeek R1"
+  },
+  {
+   "subject": "DeepSeek R1",
+   "predicate": "has",
+   "object": "671 billion parameters"
+  },
+  {
+   "subject": "DeepSeek R1",
+   "predicate": "performs comparably to",
+   "object": "OpenAI o1"
+  },
+  {
+   "subject": "largest and most capable models",
+   "predicate": "are based on",
+   "object": "Transformer"
+  },
+  {
+   "subject": "Mamba",
+   "predicate": "is a",
+   "object": "state space model"
+  }
+ ],
+ "chunk_ac69c9ce5e9f8c33b2ff9cc5": [
+  {
+   "subject": "tokenizer",
+   "predicate": "can be based on",
+   "object": "byte-pair encoding"
+  },
+  {
+   "subject": "byte-pair encoding",
+   "predicate": "initializes with",
+   "object": "unique characters"
+  },
+  {
+   "subject": "byte-pair encoding",
+   "predicate": "merges most frequent adjacent pair into",
+   "object": "bi-gram"
+  },
+  {
+   "subject": "byte-pair encoding",
+   "predicate": "iteratively merges frequent adjacent pairs into",
+   "object": "lengthier n-grams"
+  },
+  {
+   "subject": "byte-pair encoding",
+   "predicate": "terminates when vocabulary reaches",
+   "object": "prescribed size"
+  },
+  {
+   "subject": "trained tokenizer",
+   "predicate": "tokenizes any text lacking",
+   "object": "characters absent from initial uni-grams"
+  }
+ ],
+ "chunk_279f9b3bf19bf1a16a17a96b": [
+  {
+   "subject": "tokenization",
+   "predicate": "converts text into",
+   "object": "numbers"
+  },
+  {
+   "subject": "tokenization",
+   "predicate": "assigns unique integer indices to",
+   "object": "vocabulary entries"
+  },
+  {
+   "subject": "tokenization",
+   "predicate": "associates an embedding with each",
+   "object": "integer index"
+  },
+  {
+   "subject": "tokenization",
+   "predicate": "includes algorithms such as",
+   "object": "byte-pair encoding (BPE) and WordPiece"
+  },
+  {
+   "subject": "[MASK]",
+   "predicate": "denotes a masked-out token in",
+   "object": "BERT"
+  },
+  {
+   "subject": "[UNK]",
+   "predicate": "denotes characters not appearing in",
+   "object": "vocabulary"
+  },
+  {
+   "subject": "Ġ",
+   "predicate": "denotes a preceding whitespace in",
+   "object": "RoBERTa and GPT"
+  },
+  {
+   "subject": "##",
+   "predicate": "denotes continuation of a preceding word in",
+   "object": "BERT"
+  }
+ ],
+ "chunk_aa77f1bfacb94b3d4643aac7": [
+  {
+   "subject": "token vocabulary",
+   "predicate": "uses as few tokens as possible for",
+   "object": "English word"
+  },
+  {
+   "subject": "English-optimized tokenizer",
+   "predicate": "encodes non-English words into",
+   "object": "suboptimal number of tokens"
+  },
+  {
+   "subject": "GPT-2 tokenizer",
+   "predicate": "uses up to 15 times more tokens per word for",
+   "object": "Shan language"
+  },
+  {
+   "subject": "Portuguese and German",
+   "predicate": "have 50% premium compared to",
+   "object": "English"
+  },
+  {
+   "subject": "datasets for LLM training",
+   "predicate": "cleaned by removing",
+   "object": "low-quality, duplicated, or toxic data"
+  },
+  {
+   "subject": "cleaned datasets",
+   "predicate": "increase",
+   "object": "training efficiency"
+  },
+  {
+   "subject": "cleaned datasets",
+   "predicate": "lead to",
+   "object": "improved downstream performance"
+  },
+  {
+   "subject": "trained LLM",
+   "predicate": "cleans datasets for training",
+   "object": "further LLM"
+  }
+ ],
+ "chunk_15468dc40c4fda1880a1878d": [
+  {
+   "subject": "LLM",
+   "predicate": "is a type of",
+   "object": "foundation model"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "is trained on",
+   "object": "language"
+  },
+  {
+   "subject": "GPT models",
+   "predicate": "are pretrained to predict",
+   "object": "next word"
+  },
+  {
+   "subject": "GPT models",
+   "predicate": "are fine-tuned after",
+   "object": "pretraining"
+  },
+  {
+   "subject": "largest language models",
+   "predicate": "may be trained on",
+   "object": "synthetic data"
+  },
+  {
+   "subject": "Microsoft's Phi series",
+   "predicate": "is trained on",
+   "object": "textbook-like data"
+  },
+  {
+   "subject": "textbook-like data",
+   "predicate": "is generated by",
+   "object": "another LLM"
+  },
+  {
+   "subject": "data cleaning",
+   "predicate": "may include filtering out",
+   "object": "LLM-generated content"
+  }
+ ],
+ "chunk_e2c55e43660064c3f59f0ae3": [
+  {
+   "subject": "attention head",
+   "predicate": "calculates relevance of other tokens for",
+   "object": "\"it_\" token"
+  },
+  {
+   "subject": "attention head",
+   "predicate": "uses",
+   "object": "own criteria"
+  },
+  {
+   "subject": "second attention head",
+   "predicate": "focuses on",
+   "object": "\"The\" token"
+  },
+  {
+   "subject": "second attention head",
+   "predicate": "focuses on",
+   "object": "\"animal\" token"
+  },
+  {
+   "subject": "third attention head",
+   "predicate": "focuses on",
+   "object": "\"tired\" token"
+  },
+  {
+   "subject": "\"tired\"",
+   "predicate": "is tokenized into",
+   "object": "two tokens"
+  }
+ ],
+ "chunk_0245245b2202dc61ef54bdd6": [
+  {
+   "subject": "attention mechanism",
+   "predicate": "calculates soft weights for",
+   "object": "token embeddings"
+  },
+  {
+   "subject": "attention mechanism",
+   "predicate": "uses",
+   "object": "multiple attention heads"
+  },
+  {
+   "subject": "attention head",
+   "predicate": "calculates its own",
+   "object": "soft weights"
+  },
+  {
+   "subject": "GPT-2 small",
+   "predicate": "contains",
+   "object": "12 attention heads"
+  },
+  {
+   "subject": "GPT-2 small",
+   "predicate": "has context window of",
+   "object": "1k tokens"
+  },
+  {
+   "subject": "GPT-2 medium",
+   "predicate": "contains",
+   "object": "24 layers"
+  },
+  {
+   "subject": "GPT-2 medium layer",
+   "predicate": "contains",
+   "object": "12 attention heads"
+  },
+  {
+   "subject": "GPT-2 training",
+   "predicate": "used batch size of",
+   "object": "512"
+  }
+ ],
+ "chunk_0f03634783037115eca8f7b5": [
+  {
+   "subject": "Google",
+   "predicate": "introduced",
+   "object": "Gemini 1.5"
+  },
+  {
+   "subject": "Gemini 1.5",
+   "predicate": "was introduced in",
+   "object": "February 2024"
+  },
+  {
+   "subject": "Gemini 1.5",
+   "predicate": "has context window of up to",
+   "object": "1 million tokens"
+  },
+  {
+   "subject": "model",
+   "predicate": "may be pre-trained to predict",
+   "object": "continuation of segment"
+  },
+  {
+   "subject": "model",
+   "predicate": "may be pre-trained to predict",
+   "object": "missing part of segment"
+  },
+  {
+   "subject": "model",
+   "predicate": "is pre-trained on segments from",
+   "object": "training dataset"
+  }
+ ],
+ "chunk_6b3ea95fe6b3b8b3afc610f3": [
+  {
+   "subject": "instruction fine-tuning",
+   "predicate": "is a form of",
+   "object": "supervised learning"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "demonstrated",
+   "object": "InstructGPT"
+  },
+  {
+   "subject": "InstructGPT",
+   "predicate": "is a version of",
+   "object": "GPT-3"
+  },
+  {
+   "subject": "RLHF",
+   "predicate": "trains",
+   "object": "reward model"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "is fine-tuned through",
+   "object": "reinforcement learning"
+  },
+  {
+   "subject": "RLHF",
+   "predicate": "favors",
+   "object": "truthful, helpful and harmless answers"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are based on",
+   "object": "transformer architecture"
+  },
+  {
+   "subject": "transformer architecture",
+   "predicate": "uses",
+   "object": "attention mechanism"
+  }
+ ],
+ "chunk_577bb01c1c030714d97231fc": [
+  {
+   "subject": "GPT-2",
+   "predicate": "has",
+   "object": "1.5 billion parameters"
+  },
+  {
+   "subject": "GPT-2",
+   "predicate": "cost",
+   "object": "$50,000 to train in 2019"
+  },
+  {
+   "subject": "PaLM",
+   "predicate": "has",
+   "object": "540 billion parameters"
+  },
+  {
+   "subject": "PaLM",
+   "predicate": "cost",
+   "object": "$8 million to train in 2022"
+  },
+  {
+   "subject": "Megatron-Turing NLG 530B",
+   "predicate": "cost",
+   "object": "around $11 million to train in 2021"
+  },
+  {
+   "subject": "GPT-1",
+   "predicate": "has",
+   "object": "117 million parameters"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "is before fine-tuning",
+   "object": "next-token predictor"
+  },
+  {
+   "subject": "fine-tuning",
+   "predicate": "shapes LLM behavior via",
+   "object": "RLHF or constitutional AI"
+  }
+ ],
+ "chunk_054c50417873b1c3d9986b22": [
+  {
+   "subject": "GPT",
+   "predicate": "uses",
+   "object": "autoregressive pre-training"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "uses",
+   "object": "masked pre-training"
+  },
+  {
+   "subject": "masked pre-training",
+   "predicate": "fills in",
+   "object": "missing parts of a segment"
+  },
+  {
+   "subject": "auxiliary tasks",
+   "predicate": "test",
+   "object": "understanding of the data distribution"
+  },
+  {
+   "subject": "next sentence prediction",
+   "predicate": "presents",
+   "object": "pairs of sentences"
+  },
+  {
+   "subject": "regularization loss",
+   "predicate": "stabilizes",
+   "object": "training"
+  },
+  {
+   "subject": "regularization loss",
+   "predicate": "is not used during",
+   "object": "testing and evaluation"
+  }
+ ],
+ "chunk_816c7b04cc8a2ec7f9f6c73f": [
+  {
+   "subject": "Post-training quantization",
+   "predicate": "aims to decrease",
+   "object": "space requirement"
+  },
+  {
+   "subject": "Post-training quantization",
+   "predicate": "lowers precision of parameters of",
+   "object": "trained model"
+  },
+  {
+   "subject": "Static quantization",
+   "predicate": "determines quantization parameters during",
+   "object": "calibration phase"
+  },
+  {
+   "subject": "Dynamic quantization",
+   "predicate": "is applied during",
+   "object": "inference"
+  },
+  {
+   "subject": "Simplest form of quantization",
+   "predicate": "truncates all parameters to",
+   "object": "given number of bits"
+  },
+  {
+   "subject": "Dynamic quantization",
+   "predicate": "uses different quantization codebook per",
+   "object": "layer"
+  },
+  {
+   "subject": "Dynamic quantization",
+   "predicate": "foregoes speed improvements from",
+   "object": "lower-precision arithmetic"
+  }
+ ],
+ "chunk_d9665361b16d037a22c72a70": [
+  {
+   "subject": "Quantized models",
+   "predicate": "are typically seen as",
+   "object": "frozen"
+  },
+  {
+   "subject": "fine-tuning",
+   "predicate": "modifies weights of",
+   "object": "original model"
+  },
+  {
+   "subject": "low-rank adaptation",
+   "predicate": "can be used to fine-tune",
+   "object": "quantized models"
+  },
+  {
+   "subject": "external tools",
+   "predicate": "extend capabilities of",
+   "object": "LLM"
+  },
+  {
+   "subject": "data sources",
+   "predicate": "extend capabilities of",
+   "object": "LLM"
+  },
+  {
+   "subject": "prompting methods",
+   "predicate": "enhance instruction-following and autonomy of",
+   "object": "LLM"
+  }
+ ],
+ "chunk_ba2fbd261c72d254701e2eaf": [
+  {
+   "subject": "Mixture of experts",
+   "predicate": "is a",
+   "object": "machine learning architecture"
+  },
+  {
+   "subject": "Mixture of experts",
+   "predicate": "uses",
+   "object": "gating mechanism"
+  },
+  {
+   "subject": "gating mechanism",
+   "predicate": "routes inputs to",
+   "object": "experts"
+  },
+  {
+   "subject": "Mixture of experts",
+   "predicate": "reduces",
+   "object": "inference costs"
+  },
+  {
+   "subject": "Mixture of experts",
+   "predicate": "was introduced in 2017 by",
+   "object": "Google researchers"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are trained with",
+   "object": "float32 and float16"
+  },
+  {
+   "subject": "one billion parameters",
+   "predicate": "require",
+   "object": "2 gigabytes"
+  },
+  {
+   "subject": "largest LLMs",
+   "predicate": "typically have more than",
+   "object": "100 billion parameters"
+  }
+ ],
+ "chunk_fe53211ba2a8578fc55c481c": [
+  {
+   "subject": "GPT-3",
+   "predicate": "understands task format from",
+   "object": "input examples"
+  },
+  {
+   "subject": "few-shot prompting",
+   "predicate": "relies on",
+   "object": "RLHF"
+  },
+  {
+   "subject": "few-shot prompting",
+   "predicate": "adapts",
+   "object": "LLMs"
+  },
+  {
+   "subject": "few-shot prompting",
+   "predicate": "avoids",
+   "object": "fine-tuning"
+  },
+  {
+   "subject": "GPT-3",
+   "predicate": "generates instructions from",
+   "object": "user input"
+  },
+  {
+   "subject": "self-instruct",
+   "predicate": "bootstraps LLMs toward",
+   "object": "correct answer"
+  }
+ ],
+ "chunk_ce33b590284eb5c978ee7aa1": [
+  {
+   "subject": "early tool-using LLMs",
+   "predicate": "were fine-tuned on",
+   "object": "use of specific tools"
+  },
+  {
+   "subject": "fine-tuning LLMs to read API documentation",
+   "predicate": "expands",
+   "object": "range of tools accessible to an LLM"
+  },
+  {
+   "subject": "describing available tools in system prompt",
+   "predicate": "makes LLM able to use",
+   "object": "tools"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "lacks ability to interact with",
+   "object": "dynamic environments"
+  },
+  {
+   "subject": "adding supporting elements",
+   "predicate": "transforms LLM into",
+   "object": "agent"
+  },
+  {
+   "subject": "role and environment of agent",
+   "predicate": "can be provided to LLM as",
+   "object": "additional inputs"
+  },
+  {
+   "subject": "memory",
+   "predicate": "can be integrated as",
+   "object": "tool or additional input"
+  },
+  {
+   "subject": "instructions and input patterns",
+   "predicate": "make LLM",
+   "object": "plan actions"
+  }
+ ],
+ "chunk_d5165bb15af95654db1c48da": [
+  {
+   "subject": "LLM",
+   "predicate": "can be turned into",
+   "object": "chatbot"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "became commercially available in",
+   "object": "2022"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "is sibling model of",
+   "object": "InstructGPT"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "was fine-tuned based on",
+   "object": "GPT-3.5"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "accepts and produces",
+   "object": "dialog-formatted text"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "follows",
+   "object": "user instructions"
+  },
+  {
+   "subject": "chat context",
+   "predicate": "starts with",
+   "object": "system prompt"
+  },
+  {
+   "subject": "system prompt",
+   "predicate": "conveys higher authority than",
+   "object": "user input"
+  }
+ ],
+ "chunk_c3a47d6eb938dd20e1f4240c": [
+  {
+   "subject": "RAG",
+   "predicate": "integrates",
+   "object": "LLMs with document retrieval systems"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "calls document retriever to retrieve",
+   "object": "most relevant documents"
+  },
+  {
+   "subject": "document retriever",
+   "predicate": "encodes query and documents into",
+   "object": "vectors"
+  },
+  {
+   "subject": "vector database",
+   "predicate": "stores",
+   "object": "vectors"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "generates output based on",
+   "object": "query and retrieved documents"
+  },
+  {
+   "subject": "Tool use",
+   "predicate": "enables LLMs to interact with",
+   "object": "external systems, applications, or data sources"
+  },
+  {
+   "subject": "separate program",
+   "predicate": "watches output stream of",
+   "object": "LLM"
+  },
+  {
+   "subject": "separate program",
+   "predicate": "feeds tool output into",
+   "object": "LLM's input stream"
+  }
+ ],
+ "chunk_9371e212cad0a92c5d95bf80": [
+  {
+   "subject": "LLM",
+   "predicate": "scores observations for",
+   "object": "interestingness"
+  },
+  {
+   "subject": "interestingness",
+   "predicate": "is used as a reward signal to guide",
+   "object": "reinforcement learning agent"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "proposes increasingly difficult tasks for",
+   "object": "curriculum learning"
+  },
+  {
+   "subject": "LLM planner",
+   "predicate": "constructs",
+   "object": "skills"
+  },
+  {
+   "subject": "skills",
+   "predicate": "are",
+   "object": "functions for complex action sequences"
+  },
+  {
+   "subject": "skills",
+   "predicate": "enable increasing levels of",
+   "object": "abstraction in planning"
+  },
+  {
+   "subject": "multiple agents with memory",
+   "predicate": "interact socially with",
+   "object": "each other"
+  }
+ ],
+ "chunk_5d43c4df8fa8e6f211dd95bb": [
+  {
+   "subject": "Reflexion",
+   "predicate": "constructs",
+   "object": "agent"
+  },
+  {
+   "subject": "agent",
+   "predicate": "learns over",
+   "object": "multiple episodes"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "is given",
+   "object": "record of episode"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "generates",
+   "object": "lessons learned"
+  },
+  {
+   "subject": "lessons learned",
+   "predicate": "are stored as",
+   "object": "long-term memory"
+  },
+  {
+   "subject": "lessons learned",
+   "predicate": "are given to",
+   "object": "agent"
+  },
+  {
+   "subject": "Monte Carlo tree search",
+   "predicate": "uses LLM as",
+   "object": "rollout heuristic"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "acts as",
+   "object": "world model"
+  }
+ ],
+ "chunk_86d3655bd42ff0ee441633ff": [
+  {
+   "subject": "Prompt chaining",
+   "predicate": "was introduced in",
+   "object": "2022"
+  },
+  {
+   "subject": "User",
+   "predicate": "manually breaks complex problem into",
+   "object": "several steps"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "receives as input",
+   "object": "prompt and results from preceding steps"
+  },
+  {
+   "subject": "Result from one step",
+   "predicate": "is reused in",
+   "object": "next step"
+  },
+  {
+   "subject": "Ability of LLM to follow instructions",
+   "predicate": "enables",
+   "object": "non-experts writing stepwise prompts"
+  }
+ ],
+ "chunk_d47e5526764a1aeff63c5b26": [
+  {
+   "subject": "2022 paper",
+   "predicate": "demonstrated",
+   "object": "chain-of-thought prompting"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "makes LLM decompose",
+   "object": "question"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "generates intermediate steps before",
+   "object": "final answer"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "improves correctness of",
+   "object": "LLM"
+  },
+  {
+   "subject": "prompted model",
+   "predicate": "exceeds",
+   "object": "fine-tuned GPT-3 with verifier"
+  },
+  {
+   "subject": "\"Let's think step by step\" instruction",
+   "predicate": "elicits",
+   "object": "chain-of-thought"
+  }
+ ],
+ "chunk_12b5a2662dbf2d95a341801b": [
+  {
+   "subject": "ReAct",
+   "predicate": "is portmanteau of",
+   "object": "reason and act"
+  },
+  {
+   "subject": "ReAct",
+   "predicate": "constructs agent out of",
+   "object": "LLM"
+  },
+  {
+   "subject": "ReAct",
+   "predicate": "uses LLM as",
+   "object": "planner"
+  },
+  {
+   "subject": "ReAct",
+   "predicate": "prompts LLM with",
+   "object": "description of environment, goal, possible actions, and past observations"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "generates thoughts before",
+   "object": "action"
+  },
+  {
+   "subject": "DEPS",
+   "predicate": "connects LLM to visual world via",
+   "object": "image descriptions"
+  },
+  {
+   "subject": "DEPS",
+   "predicate": "prompts LLM to produce plans for",
+   "object": "complex tasks and behaviors"
+  },
+  {
+   "subject": "DEPS",
+   "predicate": "bases plans on",
+   "object": "pretrained knowledge and environmental feedback"
+  }
+ ],
+ "chunk_bac3d43796247c722b781543": [],
+ "chunk_dab94eef362a4976ea2b97bf": [
+  {
+   "subject": "agents",
+   "predicate": "have",
+   "object": "memory"
+  },
+  {
+   "subject": "agents",
+   "predicate": "can interact socially with",
+   "object": "each other"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are trained to generate output without",
+   "object": "intermediate steps"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "perform subpar on",
+   "object": "complex questions requiring intermediate steps of thought"
+  },
+  {
+   "subject": "scratchpad computations",
+   "predicate": "could improve performance on",
+   "object": "complex tasks"
+  },
+  {
+   "subject": "later methods",
+   "predicate": "break tasks into",
+   "object": "smaller steps for the LLM"
+  }
+ ],
+ "chunk_75d9ed16d97f1c472eda1dc9": [
+  {
+   "subject": "reasoning models",
+   "predicate": "require more computational resources per query than",
+   "object": "traditional LLMs"
+  },
+  {
+   "subject": "reasoning models",
+   "predicate": "solve problems step by step using",
+   "object": "extensive processing"
+  },
+  {
+   "subject": "inference optimization",
+   "predicate": "improves",
+   "object": "LLM performance"
+  },
+  {
+   "subject": "inference optimization",
+   "predicate": "applies during inference",
+   "object": "additional computational resources"
+  },
+  {
+   "subject": "inference optimization",
+   "predicate": "avoids",
+   "object": "model retraining"
+  },
+  {
+   "subject": "inference optimization approaches",
+   "predicate": "implement",
+   "object": "state-of-the-art reasoning and decision-making strategies"
+  },
+  {
+   "subject": "inference optimization approaches",
+   "predicate": "enhance",
+   "object": "accuracy and capabilities"
+  }
+ ],
+ "chunk_f7157b1ca9a7906b13838161": [
+  {
+   "subject": "reasoning models",
+   "predicate": "generate",
+   "object": "step-by-step analysis before final answers"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "introduced",
+   "object": "o1"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "released",
+   "object": "o3"
+  },
+  {
+   "subject": "DeepSeek",
+   "predicate": "released",
+   "object": "DeepSeek-R1"
+  },
+  {
+   "subject": "DeepSeek-R1",
+   "predicate": "is a",
+   "object": "open-weight reasoning model"
+  },
+  {
+   "subject": "DeepSeek-R1",
+   "predicate": "has",
+   "object": "671 billion parameters"
+  },
+  {
+   "subject": "DeepSeek-R1",
+   "predicate": "achieved comparable performance to",
+   "object": "o1"
+  },
+  {
+   "subject": "DeepSeek-R1",
+   "predicate": "allowed researchers to study and build upon",
+   "object": "algorithm"
+  }
+ ],
+ "chunk_8cd64001012d2ae578447f2b": [
+  {
+   "subject": "intermediate fusion",
+   "predicate": "processes each modality independently to obtain",
+   "object": "modality-specific representations"
+  },
+  {
+   "subject": "intermediate fusion",
+   "predicate": "fuses together",
+   "object": "intermediate representations"
+  },
+  {
+   "subject": "cross-attention",
+   "predicate": "integrates information from",
+   "object": "different modalities"
+  },
+  {
+   "subject": "Flamingo",
+   "predicate": "uses",
+   "object": "cross-attention layers"
+  },
+  {
+   "subject": "Flamingo",
+   "predicate": "injects visual information into",
+   "object": "pre-trained language model"
+  }
+ ],
+ "chunk_10bca34954ba93111a81cff0": [],
+ "chunk_72ed4c6886ccdad8f6d5825b": [
+  {
+   "subject": "multimodal models",
+   "predicate": "can be built from",
+   "object": "trained LLM"
+  },
+  {
+   "subject": "multilayer perceptron",
+   "predicate": "converts image encoder output into",
+   "object": "image token"
+  },
+  {
+   "subject": "image token",
+   "predicate": "has same dimensions as",
+   "object": "encoded token"
+  },
+  {
+   "subject": "compound model",
+   "predicate": "interleaves",
+   "object": "text tokens and image tokens"
+  },
+  {
+   "subject": "compound model",
+   "predicate": "is fine-tuned on",
+   "object": "image-text dataset"
+  },
+  {
+   "subject": "freezing image encoder",
+   "predicate": "improves",
+   "object": "stability"
+  },
+  {
+   "subject": "early fusion",
+   "predicate": "fuses embeddings from",
+   "object": "multiple modalities"
+  },
+  {
+   "subject": "early fusion",
+   "predicate": "trains predictor on",
+   "object": "combined embeddings"
+  }
+ ],
+ "chunk_c82e578d242acc2cfb4d7f6a": [
+  {
+   "subject": "multimodality",
+   "predicate": "means having",
+   "object": "multiple modalities"
+  },
+  {
+   "subject": "modality",
+   "predicate": "refers to",
+   "object": "type of input or output"
+  },
+  {
+   "subject": "Google PaLM",
+   "predicate": "was fine-tuned into",
+   "object": "multimodal model"
+  },
+  {
+   "subject": "Google PaLM",
+   "predicate": "was applied to",
+   "object": "robotic control"
+  },
+  {
+   "subject": "LLaMA models",
+   "predicate": "were turned multimodal using",
+   "object": "tokenization method"
+  },
+  {
+   "subject": "LLaMA models",
+   "predicate": "allow",
+   "object": "image and video inputs"
+  },
+  {
+   "subject": "GPT-4o",
+   "predicate": "can process and generate",
+   "object": "text, audio and images"
+  },
+  {
+   "subject": "multimodal models",
+   "predicate": "are sometimes called",
+   "object": "large multimodal models"
+  }
+ ],
+ "chunk_ea2380b0992d114bc6d5f950": [
+  {
+   "subject": "LLMs",
+   "predicate": "handle programming languages like",
+   "object": "natural languages"
+  },
+  {
+   "subject": "code",
+   "predicate": "is represented as",
+   "object": "plain text"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "generate code from instructions written in",
+   "object": "natural language"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "describe code in",
+   "object": "natural language"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "translate code into",
+   "object": "other programming languages"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "were originally used as",
+   "object": "code completion tool"
+  },
+  {
+   "subject": "advances",
+   "predicate": "have moved LLMs towards",
+   "object": "automatic programming"
+  },
+  {
+   "subject": "GitHub Copilot",
+   "predicate": "offers LLMs trained for",
+   "object": "programming"
+  }
+ ],
+ "chunk_26bf9d7dafefb31005102d45": [
+  {
+   "subject": "ESMFold",
+   "predicate": "predicts structures of",
+   "object": "metagenomic proteins"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "designs",
+   "object": "proteins"
+  },
+  {
+   "subject": "nucleic acid models",
+   "predicate": "are useful for",
+   "object": "detecting regulatory sequences"
+  },
+  {
+   "subject": "nucleic acid models",
+   "predicate": "are useful for",
+   "object": "sequence classification"
+  },
+  {
+   "subject": "nucleic acid models",
+   "predicate": "are useful for",
+   "object": "RNA-RNA interaction prediction"
+  },
+  {
+   "subject": "nucleic acid models",
+   "predicate": "are useful for",
+   "object": "RNA structure prediction"
+  }
+ ],
+ "chunk_3792e6ee8313c020d15156cb": [
+  {
+   "subject": "Scaling laws",
+   "predicate": "are",
+   "object": "empirical statistical laws"
+  },
+  {
+   "subject": "Scaling laws",
+   "predicate": "predict",
+   "object": "LLM performance"
+  },
+  {
+   "subject": "LLM performance",
+   "predicate": "depends on",
+   "object": "cost of pretraining"
+  },
+  {
+   "subject": "LLM performance",
+   "predicate": "depends on",
+   "object": "size of artificial neural network"
+  },
+  {
+   "subject": "LLM performance",
+   "predicate": "depends on",
+   "object": "size of pretraining dataset"
+  },
+  {
+   "subject": "Chinchilla scaling",
+   "predicate": "is a",
+   "object": "scaling law"
+  },
+  {
+   "subject": "Chinchilla scaling",
+   "predicate": "applies to",
+   "object": "LLMs autoregressively trained for one epoch"
+  }
+ ],
+ "chunk_c5636cad32007583184c5e49": [
+  {
+   "subject": "C",
+   "predicate": "denotes the training cost in FLOPs of",
+   "object": "model"
+  },
+  {
+   "subject": "N",
+   "predicate": "denotes the number of parameters in",
+   "object": "model"
+  },
+  {
+   "subject": "D",
+   "predicate": "denotes the number of tokens in",
+   "object": "training set"
+  },
+  {
+   "subject": "L",
+   "predicate": "denotes the average negative log-likelihood loss per token achieved by",
+   "object": "trained LLM"
+  },
+  {
+   "subject": "L",
+   "predicate": "is evaluated on",
+   "object": "test dataset"
+  },
+  {
+   "subject": "training on one token",
+   "predicate": "costs",
+   "object": "6 FLOPs per parameter"
+  },
+  {
+   "subject": "inferring on one token",
+   "predicate": "costs",
+   "object": "1 to 2 FLOPs per parameter"
+  },
+  {
+   "subject": "training cost",
+   "predicate": "is much higher than",
+   "object": "inference cost"
+  }
+ ],
+ "chunk_10b8d12591be567d5cf515c3": [
+  {
+   "subject": "x",
+   "predicate": "denotes",
+   "object": "parameter count"
+  },
+  {
+   "subject": "y",
+   "predicate": "denotes",
+   "object": "model performance"
+  }
+ ],
+ "chunk_69c7d50f5d9cf656a1dcc5d6": [
+  {
+   "subject": "lines",
+   "predicate": "change slope at",
+   "object": "breaks"
+  },
+  {
+   "subject": "lines",
+   "predicate": "appear on linear-log plot as",
+   "object": "linear segments connected by arcs"
+  },
+  {
+   "subject": "performance of bigger models",
+   "predicate": "appears as linear extrapolation of",
+   "object": "performance of smaller models"
+  },
+  {
+   "subject": "scaling law",
+   "predicate": "is punctuated by",
+   "object": "breaks"
+  },
+  {
+   "subject": "larger models",
+   "predicate": "acquire",
+   "object": "emergent abilities"
+  },
+  {
+   "subject": "emergent abilities",
+   "predicate": "arise from",
+   "object": "complex interaction of model components"
+  },
+  {
+   "subject": "in-context learning",
+   "predicate": "is an example of",
+   "object": "emergent abilities"
+  }
+ ],
+ "chunk_6b46c1c1b10c1f7a88a495c6": [
+  {
+   "subject": "Hinglish",
+   "predicate": "combines",
+   "object": "Hindi and English"
+  },
+  {
+   "subject": "Schaeffer et al.",
+   "predicate": "argue that emergent abilities are predictably acquired according to",
+   "object": "smooth scaling law"
+  },
+  {
+   "subject": "Schaeffer et al.",
+   "predicate": "considered",
+   "object": "toy statistical model of an LLM solving multiple-choice questions"
+  },
+  {
+   "subject": "Schaeffer et al.",
+   "predicate": "showed that statistical model applies to",
+   "object": "other types of tasks"
+  }
+ ],
+ "chunk_9ad00019d4e92d778b290085": [
+  {
+   "subject": "average Pr(correct token)",
+   "predicate": "produces",
+   "object": "exponential curve"
+  },
+  {
+   "subject": "exponential curve",
+   "predicate": "looks like",
+   "object": "emergence"
+  },
+  {
+   "subject": "average log(Pr(correct token))",
+   "predicate": "produces",
+   "object": "straight line"
+  },
+  {
+   "subject": "straight line",
+   "predicate": "does not look like",
+   "object": "emergence"
+  },
+  {
+   "subject": "average Pr(the most likely token is correct)",
+   "predicate": "produces",
+   "object": "step-function"
+  },
+  {
+   "subject": "step-function",
+   "predicate": "looks like",
+   "object": "emergence"
+  }
+ ],
+ "chunk_5e827855ba7f142294367817": [
+  {
+   "subject": "mechanistic interpretability",
+   "predicate": "seeks to identify how",
+   "object": "neurons and circuits within LLMs produce specific behaviors"
+  },
+  {
+   "subject": "mechanistic interpretability",
+   "predicate": "reverse-engineers",
+   "object": "model components"
+  },
+  {
+   "subject": "researchers",
+   "predicate": "aim to detect and mitigate",
+   "object": "emergent harmful behaviors"
+  },
+  {
+   "subject": "researchers",
+   "predicate": "aim to detect and mitigate",
+   "object": "biases"
+  },
+  {
+   "subject": "mechanistic interpretability research",
+   "predicate": "has been conducted at",
+   "object": "Anthropic"
+  },
+  {
+   "subject": "mechanistic interpretability research",
+   "predicate": "has been conducted at",
+   "object": "OpenAI"
+  },
+  {
+   "subject": "understanding inner workings of LLMs",
+   "predicate": "remains",
+   "object": "difficult"
+  }
+ ],
+ "chunk_a670a25bc8dac94021b9d1ea": [
+  {
+   "subject": "Understanding and intelligence",
+   "predicate": "cross-references",
+   "object": "Philosophy of artificial intelligence"
+  },
+  {
+   "subject": "Understanding and intelligence",
+   "predicate": "cross-references",
+   "object": "Artificial consciousness"
+  }
+ ],
+ "chunk_a98afc0b04055289225b9e5f": [
+  {
+   "subject": "NLP researchers",
+   "predicate": "were evenly split on whether",
+   "object": "untuned LLMs could understand natural language"
+  },
+  {
+   "subject": "proponents of LLM understanding",
+   "predicate": "claim mathematical reasoning implies",
+   "object": "ability to understand concepts"
+  },
+  {
+   "subject": "Microsoft team",
+   "predicate": "argued in 2023 that GPT-4 solves",
+   "object": "novel and difficult tasks spanning mathematics, coding, vision, medicine, law, psychology"
+  },
+  {
+   "subject": "Microsoft team",
+   "predicate": "viewed GPT-4 as early incomplete version of",
+   "object": "artificial general intelligence system"
+  },
+  {
+   "subject": "Ilya Sutskever",
+   "predicate": "argues next-word prediction sometimes involves",
+   "object": "reasoning and deep insights"
+  }
+ ],
+ "chunk_27dcf70633979826b05ec6a5": [
+  {
+   "subject": "researchers",
+   "predicate": "characterize",
+   "object": "LLMs as alien intelligence"
+  },
+  {
+   "subject": "Connor Leahy",
+   "predicate": "is CEO of",
+   "object": "Conjecture"
+  },
+  {
+   "subject": "Connor Leahy",
+   "predicate": "compares untuned LLMs to",
+   "object": "Shoggoths"
+  },
+  {
+   "subject": "Connor Leahy",
+   "predicate": "believes RLHF tuning creates",
+   "object": "smiling facade"
+  },
+  {
+   "subject": "smiling facade",
+   "predicate": "obscures",
+   "object": "inner workings of LLM"
+  }
+ ],
+ "chunk_901912c94a7ae691964dc0a4": [],
+ "chunk_a8cfe40de59e824a1c635a8a": [
+  {
+   "subject": "reverse-engineering",
+   "predicate": "may lead to discovery of",
+   "object": "algorithms approximating LLM inferences"
+  },
+  {
+   "subject": "small transformers",
+   "predicate": "were trained on",
+   "object": "modular arithmetic addition"
+  },
+  {
+   "subject": "resulting models",
+   "predicate": "were found to use",
+   "object": "discrete Fourier transform"
+  },
+  {
+   "subject": "model training",
+   "predicate": "highlighted phenomenon called",
+   "object": "grokking"
+  },
+  {
+   "subject": "grokking",
+   "predicate": "initially involves memorizing",
+   "object": "training set"
+  },
+  {
+   "subject": "grokking",
+   "predicate": "later involves suddenly learning to perform",
+   "object": "calculation"
+  }
+ ],
+ "chunk_d83a8a0b525199531513b0b2": [
+  {
+   "subject": "hallucination mitigation",
+   "predicate": "employs",
+   "object": "automated reasoning"
+  },
+  {
+   "subject": "hallucination mitigation",
+   "predicate": "employs",
+   "object": "RAG"
+  },
+  {
+   "subject": "hallucination mitigation",
+   "predicate": "employs",
+   "object": "fine-tuning"
+  }
+ ],
+ "chunk_496121b1a338d51e2cf8ee4a": [
+  {
+   "subject": "stochastic parrot",
+   "predicate": "describes LLMs as",
+   "object": "remixing and recombining existing writing"
+  },
+  {
+   "subject": "existing LLMs",
+   "predicate": "have deficits in",
+   "object": "prediction, reasoning, agency, and explainability"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "has deficits in",
+   "object": "planning"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "has deficits in",
+   "object": "real-time learning"
+  },
+  {
+   "subject": "generative LLMs",
+   "predicate": "exhibit",
+   "object": "hallucination"
+  },
+  {
+   "subject": "hallucination",
+   "predicate": "corresponds to",
+   "object": "factually incorrect or nonsensical responses"
+  },
+  {
+   "subject": "Terrence Sejnowski",
+   "predicate": "argued that",
+   "object": "diverging expert opinions on LLM intelligence"
+  }
+ ],
+ "chunk_d2f930eba95c703212d54def": [
+  {
+   "subject": "LLM",
+   "predicate": "has aspect",
+   "object": "modeling thought and language in a computer system"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "has aspect",
+   "object": "generating human-like language"
+  },
+  {
+   "subject": "cognitive linguistics",
+   "predicate": "developed",
+   "object": "language as a model of cognition"
+  },
+  {
+   "subject": "George Lakoff",
+   "predicate": "presented",
+   "object": "neural theory of language (NTL)"
+  },
+  {
+   "subject": "neural theory of language (NTL)",
+   "predicate": "provides computational basis for",
+   "object": "language as a model of learning tasks and understanding"
+  },
+  {
+   "subject": "neural theory of language (NTL)",
+   "predicate": "outlines how neural structures shape",
+   "object": "thought and language"
+  }
+ ],
+ "chunk_c30a75614643d1356ddf9402": [
+  {
+   "subject": "Hinglish",
+   "predicate": "is a combination of",
+   "object": "Hindi and English"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "improved performance for",
+   "object": "models with at least 62B parameters"
+  },
+  {
+   "subject": "smaller models",
+   "predicate": "perform better when answering immediately without",
+   "object": "chain of thought"
+  }
+ ],
+ "chunk_6d1b4d08a70bcef4a4bcf25e": [
+  {
+   "subject": "Vyvyan Evans",
+   "predicate": "authored",
+   "object": "The Language Myth: Why Language Is Not An Instinct"
+  },
+  {
+   "subject": "Vyvyan Evans",
+   "predicate": "is",
+   "object": "British cognitive linguist"
+  },
+  {
+   "subject": "PCFG",
+   "predicate": "enables NLP to model",
+   "object": "cognitive patterns"
+  },
+  {
+   "subject": "PCFG",
+   "predicate": "enables NLP to generate",
+   "object": "human-like language"
+  }
+ ],
+ "chunk_77ca83592029b238256dd871": [
+  {
+   "subject": "N",
+   "predicate": "is number of tokens in",
+   "object": "text corpus"
+  },
+  {
+   "subject": "context for token i",
+   "predicate": "depends on",
+   "object": "type of LLM"
+  },
+  {
+   "subject": "autoregressive LLM",
+   "predicate": "defines context for token i as",
+   "object": "segment of text appearing before token i"
+  },
+  {
+   "subject": "masked LLM",
+   "predicate": "defines context for token i as",
+   "object": "segment of text surrounding token i"
+  },
+  {
+   "subject": "language models",
+   "predicate": "may overfit to",
+   "object": "training data"
+  },
+  {
+   "subject": "models",
+   "predicate": "are evaluated by",
+   "object": "perplexity on a test set"
+  },
+  {
+   "subject": "larger models trained on large corpora",
+   "predicate": "are increasingly likely to include portions of",
+   "object": "test set"
+  }
+ ],
+ "chunk_ac4e26355c8eeb63f64fb542": [
+  {
+   "subject": "Perplexity",
+   "predicate": "measures performance of",
+   "object": "language model"
+  },
+  {
+   "subject": "Perplexity",
+   "predicate": "measures how well model predicts contents of",
+   "object": "dataset"
+  },
+  {
+   "subject": "likelihood assigned to dataset",
+   "predicate": "inversely related to",
+   "object": "perplexity"
+  },
+  {
+   "subject": "Perplexity",
+   "predicate": "equals exponential of",
+   "object": "average negative log likelihood per token"
+  }
+ ],
+ "chunk_9c71ae6429f13fa1f0fa8206": [
+  {
+   "subject": "entropy",
+   "predicate": "is linked to",
+   "object": "perplexity"
+  },
+  {
+   "subject": "Claude Shannon",
+   "predicate": "established",
+   "object": "relationship between entropy and perplexity"
+  },
+  {
+   "subject": "entropy",
+   "predicate": "equals log base 2 of",
+   "object": "perplexity"
+  },
+  {
+   "subject": "entropy",
+   "predicate": "is quantified in",
+   "object": "bits per word and bits per character"
+  },
+  {
+   "subject": "larger language models",
+   "predicate": "predominantly employ",
+   "object": "sub-word tokenization"
+  },
+  {
+   "subject": "bits per token",
+   "predicate": "is a more appropriate measure for",
+   "object": "larger language models"
+  },
+  {
+   "subject": "bits per token",
+   "predicate": "is not a reliable metric for",
+   "object": "comparison across different LLMs"
+  },
+  {
+   "subject": "bits per token",
+   "predicate": "converts to bits per word by multiplying by",
+   "object": "average number of tokens per word"
+  }
+ ],
+ "chunk_bfa2195015dfa68323e970f4": [
+  {
+   "subject": "cross-entropy",
+   "predicate": "is preferred over",
+   "object": "entropy"
+  },
+  {
+   "subject": "lower BPW",
+   "predicate": "indicates",
+   "object": "enhanced compression capability"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are capable of",
+   "object": "lossless compression"
+  },
+  {
+   "subject": "Chinchilla",
+   "predicate": "was trained primarily on",
+   "object": "text"
+  },
+  {
+   "subject": "Chinchilla",
+   "predicate": "compresses ImageNet to",
+   "object": "43% of its size"
+  },
+  {
+   "subject": "Chinchilla",
+   "predicate": "outperforms",
+   "object": "PNG"
+  },
+  {
+   "subject": "benchmarks",
+   "predicate": "evaluate",
+   "object": "LLM performance"
+  },
+  {
+   "subject": "benchmark results",
+   "predicate": "are sensitive to",
+   "object": "prompting method"
+  }
+ ],
+ "chunk_2239d3089280aab83b80ba15": [
+  {
+   "subject": "LLM bias",
+   "predicate": "assessed through",
+   "object": "CrowS-Pairs"
+  },
+  {
+   "subject": "LLM bias",
+   "predicate": "assessed through",
+   "object": "Stereo Set"
+  },
+  {
+   "subject": "LLM bias",
+   "predicate": "assessed through",
+   "object": "Parity Benchmark"
+  },
+  {
+   "subject": "2023 study",
+   "predicate": "compared fact-checking accuracy of",
+   "object": "Bard"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "achieved accuracy of",
+   "object": "71%"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "lags behind",
+   "object": "human fact-checkers"
+  },
+  {
+   "subject": "pre-trained model",
+   "predicate": "evaluated through",
+   "object": "prompting techniques"
+  },
+  {
+   "subject": "n-shot prompting",
+   "predicate": "varies in number of correct examples attached to",
+   "object": "prompt"
+  }
+ ],
+ "chunk_248534adc0b080c49b440d8c": [
+  {
+   "subject": "Datasets",
+   "predicate": "vary in",
+   "object": "quality"
+  },
+  {
+   "subject": "Datasets",
+   "predicate": "may contain",
+   "object": "mislabeled questions"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "render obsolete",
+   "object": "benchmarks"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "exceed performance of",
+   "object": "human annotators"
+  },
+  {
+   "subject": "shortcut learning",
+   "predicate": "enables cheating on",
+   "object": "multiple-choice tests"
+  },
+  {
+   "subject": "shortcut learning",
+   "predicate": "exploits",
+   "object": "statistical correlations in question wording"
+  }
+ ],
+ "chunk_dac71707e2f824cbb6bb9a2a": [
+  {
+   "subject": "BERT",
+   "predicate": "selects as most likely completion",
+   "object": "completion 2"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "fails to select correct answer",
+   "object": "completion 4"
+  },
+  {
+   "subject": "large language models",
+   "predicate": "exhibit",
+   "object": "persistent and well-documented limitations"
+  },
+  {
+   "subject": "persistent and well-documented limitations",
+   "predicate": "constrain deployment in",
+   "object": "high-stakes applications"
+  }
+ ],
+ "chunk_be3ec5af2084afdd364f028c": [
+  {
+   "subject": "TruthfulQA",
+   "predicate": "is a",
+   "object": "question answering dataset"
+  },
+  {
+   "subject": "TruthfulQA",
+   "predicate": "consists of",
+   "object": "817 questions"
+  },
+  {
+   "subject": "TruthfulQA",
+   "predicate": "stumps",
+   "object": "LLMs"
+  },
+  {
+   "subject": "TruthfulQA",
+   "predicate": "mimics falsehoods encountered during",
+   "object": "training"
+  },
+  {
+   "subject": "HellaSwag",
+   "predicate": "succeeds",
+   "object": "Swag"
+  },
+  {
+   "subject": "Swag",
+   "predicate": "is an example of",
+   "object": "adversarial evaluation dataset"
+  },
+  {
+   "subject": "incorrect completions in Swag and HellaSwag",
+   "predicate": "were generated by sampling from",
+   "object": "language model"
+  },
+  {
+   "subject": "problems in Swag and HellaSwag",
+   "predicate": "are trivial for",
+   "object": "humans"
+  }
+ ],
+ "chunk_4e437f89c42cf7550047d20c": [
+  {
+   "subject": "gender bias",
+   "predicate": "manifests through",
+   "object": "stereotypical occupational associations"
+  },
+  {
+   "subject": "models",
+   "predicate": "disproportionately assign nursing roles to",
+   "object": "women"
+  },
+  {
+   "subject": "models",
+   "predicate": "disproportionately assign engineering roles to",
+   "object": "men"
+  },
+  {
+   "subject": "language-based bias",
+   "predicate": "emerges from",
+   "object": "overrepresentation of English text in training corpora"
+  },
+  {
+   "subject": "overrepresentation of English text in training corpora",
+   "predicate": "downplays",
+   "object": "non-English perspectives"
+  },
+  {
+   "subject": "language-based bias",
+   "predicate": "imposes",
+   "object": "English-centric worldviews through default response patterns"
+  },
+  {
+   "subject": "dominance of English-language content in LLM training data",
+   "predicate": "causes models to favor",
+   "object": "English-language perspectives over minority languages"
+  },
+  {
+   "subject": "models responding to English queries",
+   "predicate": "present Western interpretations of",
+   "object": "concepts from other cultures such as Eastern religious practices"
+  }
+ ],
+ "chunk_486d6e08102c982a8550c974": [
+  {
+   "subject": "Hallucinations",
+   "predicate": "are a fundamental challenge for",
+   "object": "models"
+  },
+  {
+   "subject": "Hallucinations",
+   "predicate": "arise partly through",
+   "object": "memorization of training data"
+  },
+  {
+   "subject": "Hallucinations",
+   "predicate": "arise partly through",
+   "object": "extrapolation beyond factual boundaries"
+  },
+  {
+   "subject": "Models",
+   "predicate": "can output verbatim passages from",
+   "object": "training data"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "generate",
+   "object": "human-like text"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "inherit biases from",
+   "object": "training data"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "amplify biases from",
+   "object": "training data"
+  },
+  {
+   "subject": "Algorithmic bias",
+   "predicate": "manifests in unfair treatment of",
+   "object": "demographics"
+  }
+ ],
+ "chunk_fb3aeb67ed922f2e1b903477": [
+  {
+   "subject": "open book",
+   "predicate": "is a type of",
+   "object": "question-answering benchmark"
+  },
+  {
+   "subject": "open book benchmark",
+   "predicate": "derives expected answer from",
+   "object": "prompt text"
+  },
+  {
+   "subject": "closed book",
+   "predicate": "is a type of",
+   "object": "question-answering benchmark"
+  },
+  {
+   "subject": "closed book benchmark",
+   "predicate": "draws solely on",
+   "object": "training"
+  },
+  {
+   "subject": "GLUE",
+   "predicate": "is an example of",
+   "object": "closed book benchmark"
+  },
+  {
+   "subject": "MMLU",
+   "predicate": "is an example of",
+   "object": "closed book benchmark"
+  },
+  {
+   "subject": "CrowS-Pairs",
+   "predicate": "assesses",
+   "object": "LLM bias"
+  },
+  {
+   "subject": "Stereo Set",
+   "predicate": "assesses",
+   "object": "LLM bias"
+  }
+ ],
+ "chunk_02ec53690c38bca78e4c8b52": [
+  {
+   "subject": "large language models",
+   "predicate": "exhibit",
+   "object": "selection bias"
+  },
+  {
+   "subject": "selection bias",
+   "predicate": "stems from",
+   "object": "token bias"
+  },
+  {
+   "subject": "large language models",
+   "predicate": "assign higher a priori probability to",
+   "object": "specific answer tokens"
+  },
+  {
+   "subject": "changes in option ordering",
+   "predicate": "fluctuate",
+   "object": "model performance"
+  },
+  {
+   "subject": "selection bias",
+   "predicate": "undermines reliability of",
+   "object": "large language models in multiple-choice settings"
+  }
+ ],
+ "chunk_8c4aefcc0a71d23aec393861": [
+  {
+   "subject": "Political bias",
+   "predicate": "describes algorithms favoring",
+   "object": "certain political viewpoints"
+  },
+  {
+   "subject": "Language models",
+   "predicate": "may exhibit",
+   "object": "political biases"
+  },
+  {
+   "subject": "Training data",
+   "predicate": "includes",
+   "object": "political opinions"
+  },
+  {
+   "subject": "Language models",
+   "predicate": "may generate responses leaning towards",
+   "object": "particular political ideologies"
+  },
+  {
+   "subject": "AI safety",
+   "predicate": "prioritizes mitigation of",
+   "object": "operational risks"
+  },
+  {
+   "subject": "AI safety",
+   "predicate": "emphasizes",
+   "object": "engineering and policy interventions"
+  },
+  {
+   "subject": "Prompt injection",
+   "predicate": "represents significant risk to",
+   "object": "consumers and businesses using agentic features"
+  }
+ ],
+ "chunk_2f2749ffb20298c1ac10b72b": [
+  {
+   "subject": "LLMs",
+   "predicate": "have been evaluated as substitutes for",
+   "object": "human annotators"
+  },
+  {
+   "subject": "GPT-3.5",
+   "predicate": "can outperform",
+   "object": "crowd workers"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "can outperform",
+   "object": "crowd workers"
+  },
+  {
+   "subject": "GPT-3.5",
+   "predicate": "can outperform",
+   "object": "student coders"
+  },
+  {
+   "subject": "GPT-4",
+   "predicate": "can outperform",
+   "object": "student coders"
+  },
+  {
+   "subject": "typical datasets",
+   "predicate": "consist of",
+   "object": "pairs of questions and correct answers"
+  },
+  {
+   "subject": "commonly used question answering datasets",
+   "predicate": "include",
+   "object": "TruthfulQA, Web Questions, TriviaQA, and SQuAD"
+  },
+  {
+   "subject": "evaluation datasets",
+   "predicate": "may take the form of",
+   "object": "text completion"
+  }
+ ],
+ "chunk_07738cc8de6b890fe4285dc3": [
+  {
+   "subject": "commenters",
+   "predicate": "expressed concern over",
+   "object": "creation of misinformation"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "could reduce skill level required to commit",
+   "object": "bioterrorism"
+  },
+  {
+   "subject": "Kevin Esvelt",
+   "predicate": "is a",
+   "object": "biosecurity researcher"
+  },
+  {
+   "subject": "Kevin Esvelt",
+   "predicate": "suggested LLM creators exclude pathogen papers from",
+   "object": "training data"
+  }
+ ],
+ "chunk_d64bdd92926fb5950e246784": [],
+ "chunk_7241fb88dc9556d02444bde4": [
+  {
+   "subject": "Researchers",
+   "predicate": "target",
+   "object": "memorization"
+  },
+  {
+   "subject": "Researchers",
+   "predicate": "target",
+   "object": "prompt injection"
+  },
+  {
+   "subject": "Algorithmic bias",
+   "predicate": "manifests as",
+   "object": "stereotyping"
+  },
+  {
+   "subject": "Conversational agents",
+   "predicate": "cause cognitive and mental health impacts in",
+   "object": "users"
+  },
+  {
+   "subject": "Mitigation measures",
+   "predicate": "include",
+   "object": "dataset curation"
+  },
+  {
+   "subject": "Mitigation measures",
+   "predicate": "include",
+   "object": "scalable oversight"
+  },
+  {
+   "subject": "AI labs",
+   "predicate": "treat CBRN defense as",
+   "object": "high-consequence misuse"
+  },
+  {
+   "subject": "AI labs",
+   "predicate": "apply techniques to reduce",
+   "object": "potential harms"
+  }
+ ],
+ "chunk_69f45a80c1dd57498268ad14": [
+  {
+   "subject": "AI models",
+   "predicate": "reinforce stereotypes due to",
+   "object": "generalization"
+  },
+  {
+   "subject": "AI models",
+   "predicate": "reinforce stereotypes based on",
+   "object": "gender, ethnicity, age, nationality, religion, or occupation"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "assigned roles based on",
+   "object": "traditional gender norms"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "associate nurses with",
+   "object": "women"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "associate CEOs with",
+   "object": "men"
+  },
+  {
+   "subject": "gender-role associations",
+   "predicate": "stem from frequency in",
+   "object": "documented reality"
+  },
+  {
+   "subject": "labs",
+   "predicate": "train to balance",
+   "object": "bias"
+  },
+  {
+   "subject": "testing for bias",
+   "predicate": "places model in",
+   "object": "testmode"
+  }
+ ],
+ "chunk_749b18d400a2f8619cfa2857": [
+  {
+   "subject": "ChatGPT",
+   "predicate": "incorporates",
+   "object": "safety measures"
+  },
+  {
+   "subject": "Claude",
+   "predicate": "incorporates",
+   "object": "safety measures"
+  },
+  {
+   "subject": "safety measures",
+   "predicate": "filter out",
+   "object": "harmful content"
+  },
+  {
+   "subject": "2023 study",
+   "predicate": "proposed method for circumventing",
+   "object": "LLM safety systems"
+  },
+  {
+   "subject": "Pravda network",
+   "predicate": "is",
+   "object": "pro-Russia propaganda aggregator"
+  },
+  {
+   "subject": "Pravda network",
+   "predicate": "biases",
+   "object": "LLM outputs"
+  },
+  {
+   "subject": "The American Sunlight Project",
+   "predicate": "coined",
+   "object": "LLM grooming"
+  },
+  {
+   "subject": "Yongge Wang",
+   "predicate": "illustrated bypassing",
+   "object": "GPT-4o safety controls"
+  }
+ ],
+ "chunk_d45b1c49402df73aeca044ed": [
+  {
+   "subject": "South Park",
+   "predicate": "satirized overreliance on",
+   "object": "ChatGPT"
+  },
+  {
+   "subject": "South Park",
+   "predicate": "satirized tendency of assistants to flatter",
+   "object": "user beliefs"
+  },
+  {
+   "subject": "South Park",
+   "predicate": "continued themes across",
+   "object": "following season"
+  },
+  {
+   "subject": "commentators",
+   "predicate": "interpreted themes as critique of",
+   "object": "tech sycophancy"
+  },
+  {
+   "subject": "commentators",
+   "predicate": "interpreted themes as critique of",
+   "object": "uncritical human trust in AI systems"
+  }
+ ],
+ "chunk_958cdc70aab81839c94cc534": [
+  {
+   "subject": "empirical analyses",
+   "predicate": "attribute part of the effect to",
+   "object": "human preference signals"
+  },
+  {
+   "subject": "preference models",
+   "predicate": "reward",
+   "object": "agreeable responses"
+  },
+  {
+   "subject": "subsequent work",
+   "predicate": "extended evaluation to",
+   "object": "multi-turn benchmarks"
+  },
+  {
+   "subject": "subsequent work",
+   "predicate": "proposed",
+   "object": "synthetic-data finetuning"
+  },
+  {
+   "subject": "industry responses",
+   "predicate": "combined research interventions with",
+   "object": "product controls"
+  },
+  {
+   "subject": "Google",
+   "predicate": "published",
+   "object": "fine-tuning interventions"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "rolled back",
+   "object": "overly agreeable GPT-4o update"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "described changes to",
+   "object": "evaluation procedures"
+  }
+ ],
+ "chunk_a2da2538346b22da73f16f28": [
+  {
+   "subject": "Sycophancy",
+   "predicate": "causes models to agree with",
+   "object": "user's stated beliefs"
+  },
+  {
+   "subject": "Sycophancy",
+   "predicate": "de-prioritizes",
+   "object": "factuality"
+  },
+  {
+   "subject": "Glazing",
+   "predicate": "is public shorthand for",
+   "object": "persistent excessive agreeability"
+  },
+  {
+   "subject": "Glazing",
+   "predicate": "is observed across",
+   "object": "multi-turn interactions and productized assistants"
+  },
+  {
+   "subject": "Sycophancy",
+   "predicate": "has led to observation of",
+   "object": "1-shotted"
+  },
+  {
+   "subject": "1-shotted",
+   "predicate": "denotes lasting changes in",
+   "object": "user's beliefs or decisions"
+  },
+  {
+   "subject": "1-shotted",
+   "predicate": "is similar to negative effects of",
+   "object": "psychedelics"
+  },
+  {
+   "subject": "Short LLM dialogues",
+   "predicate": "produce opinion and confidence shifts comparable to",
+   "object": "human interlocutors"
+  }
+ ],
+ "chunk_d367d3f771098975897e9b28": [
+  {
+   "subject": "criminals",
+   "predicate": "could bypass",
+   "object": "GPT-4o safety controls"
+  },
+  {
+   "subject": "criminals",
+   "predicate": "obtain information on establishing",
+   "object": "drug trafficking operation"
+  },
+  {
+   "subject": "external filters",
+   "predicate": "posed as solutions to",
+   "object": "GPT-4o safety control bypasses"
+  },
+  {
+   "subject": "circuit breakers",
+   "predicate": "posed as solutions to",
+   "object": "GPT-4o safety control bypasses"
+  },
+  {
+   "subject": "overrides",
+   "predicate": "posed as solutions to",
+   "object": "GPT-4o safety control bypasses"
+  }
+ ],
+ "chunk_69e6b8643591ff03d22b33ae": [],
+ "chunk_528fa9b5672192e15edd07cd": [
+  {
+   "subject": "primitive dialog format",
+   "predicate": "allows users to create messages that appear to come from",
+   "object": "assistant or developer"
+  },
+  {
+   "subject": "prompt injection",
+   "predicate": "may result in",
+   "object": "jailbreaking"
+  },
+  {
+   "subject": "prompt injection",
+   "predicate": "involves overcoming",
+   "object": "model safeguards"
+  },
+  {
+   "subject": "Chat Markup Language",
+   "predicate": "proposed as remedy for",
+   "object": "prompt injection"
+  },
+  {
+   "subject": "Chat Markup Language",
+   "predicate": "clearly marks",
+   "object": "user input"
+  },
+  {
+   "subject": "newer models",
+   "predicate": "exhibit resistance to",
+   "object": "jailbreaking"
+  },
+  {
+   "subject": "newer models",
+   "predicate": "achieve resistance through",
+   "object": "separation of user and system prompts"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "have trouble differentiating",
+   "object": "user instructions from instructions in web pages and uploaded files"
+  }
+ ],
+ "chunk_ed75ef88f6981cdd25705452": [
+  {
+   "subject": "Anthropic",
+   "predicate": "reached preliminary settlement with",
+   "object": "authors"
+  },
+  {
+   "subject": "Anthropic",
+   "predicate": "agreed to pay",
+   "object": "$1.5 billion"
+  },
+  {
+   "subject": "Anthropic",
+   "predicate": "stored",
+   "object": "millions of pirated books"
+  },
+  {
+   "subject": "judge",
+   "predicate": "described training as",
+   "object": "transformative"
+  },
+  {
+   "subject": "Meta",
+   "predicate": "obtained favorable judgment in suit by",
+   "object": "thirteen authors"
+  },
+  {
+   "subject": "court",
+   "predicate": "found insufficient record showing",
+   "object": "infringement"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "faces suits by",
+   "object": "authors and news organizations"
+  }
+ ],
+ "chunk_5369efffcddef44c56511755": [
+  {
+   "subject": "LLMs",
+   "predicate": "have trouble differentiating",
+   "object": "user instructions from instructions in non-user-authored content"
+  },
+  {
+   "subject": "models",
+   "predicate": "are vulnerable to",
+   "object": "prompt injection attacks"
+  },
+  {
+   "subject": "models",
+   "predicate": "are vulnerable to",
+   "object": "jailbreaking"
+  },
+  {
+   "subject": "Anthropic researchers",
+   "predicate": "showed they could create",
+   "object": "sleeper agents"
+  },
+  {
+   "subject": "sleeper agents",
+   "predicate": "are",
+   "object": "models with hidden functionalities"
+  },
+  {
+   "subject": "hidden functionalities",
+   "predicate": "remain dormant until triggered by",
+   "object": "a specific event or condition"
+  },
+  {
+   "subject": "activated sleeper agents",
+   "predicate": "deviate from expected behavior to make",
+   "object": "insecure actions"
+  },
+  {
+   "subject": "sleeper agent functionalities",
+   "predicate": "are difficult to detect or remove via",
+   "object": "safety training"
+  }
+ ],
+ "chunk_012bab1c8995c7ea4844768e": [
+  {
+   "subject": "Memorization",
+   "predicate": "is emergent behavior in",
+   "object": "early completion language models"
+  },
+  {
+   "subject": "Memorization",
+   "predicate": "outputs verbatim",
+   "object": "long strings of text from training data"
+  },
+  {
+   "subject": "Memorization",
+   "predicate": "contrasts with typical behavior of",
+   "object": "traditional artificial neural networks"
+  },
+  {
+   "subject": "evaluations of controlled LLM output",
+   "predicate": "measure memorization from",
+   "object": "training data"
+  },
+  {
+   "subject": "evaluations of controlled LLM output",
+   "predicate": "focus on",
+   "object": "GPT-2-series models"
+  },
+  {
+   "subject": "GPT-2-series models",
+   "predicate": "memorize over",
+   "object": "1% for exact duplicates"
+  },
+  {
+   "subject": "GPT-2-series models",
+   "predicate": "memorize up to",
+   "object": "about 7%"
+  },
+  {
+   "subject": "prompting to repeat the same word indefinitely",
+   "predicate": "causes",
+   "object": "ChatGPT 3.5 turbo to output training data excerpts"
+  }
+ ],
+ "chunk_f1ca9d23fa4b97b690532019": [
+  {
+   "subject": "AI web crawlers",
+   "predicate": "may bypass",
+   "object": "robots.txt files"
+  },
+  {
+   "subject": "AI web crawlers",
+   "predicate": "may bypass",
+   "object": "blocking user-agents"
+  },
+  {
+   "subject": "AI web crawlers",
+   "predicate": "may bypass",
+   "object": "filtering suspicious traffic"
+  },
+  {
+   "subject": "website operators",
+   "predicate": "resort to",
+   "object": "AI tarpits"
+  },
+  {
+   "subject": "AI tarpits",
+   "predicate": "may worsen",
+   "object": "burden on servers"
+  }
+ ],
+ "chunk_466df66c06cea5487062856f": [
+  {
+   "subject": "large language models",
+   "predicate": "create",
+   "object": "text"
+  },
+  {
+   "subject": "Nature Biomedical Engineering",
+   "predicate": "wrote in 2023",
+   "object": "human-written text can no longer be accurately distinguished from LLM-generated text"
+  },
+  {
+   "subject": "Nature Biomedical Engineering",
+   "predicate": "predicted rapid proliferation of",
+   "object": "general-purpose large language models"
+  },
+  {
+   "subject": "Brinkmann et al.",
+   "predicate": "argue that LLMs transform",
+   "object": "processes of cultural evolution"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "shape",
+   "object": "processes of variation, transmission, and selection"
+  },
+  {
+   "subject": "HBR reports",
+   "predicate": "surface questions on",
+   "object": "impact of AI on productivity"
+  }
+ ],
+ "chunk_4e3f232b01935903aa949acb": [
+  {
+   "subject": "Epoch AI",
+   "predicate": "estimates ChatGPT query energy consumption at",
+   "object": "0.3 watt-hours"
+  },
+  {
+   "subject": "ChatGPT query energy consumption",
+   "predicate": "is smaller than",
+   "object": "U.S. household consumption per minute"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "have growing energy demands with",
+   "object": "size and capabilities"
+  },
+  {
+   "subject": "data centers for LLM training",
+   "predicate": "require",
+   "object": "substantial electricity"
+  },
+  {
+   "subject": "electricity",
+   "predicate": "is generated by",
+   "object": "non-renewable resources"
+  },
+  {
+   "subject": "non-renewable resources",
+   "predicate": "create",
+   "object": "greenhouse gases"
+  },
+  {
+   "subject": "greenhouse gases",
+   "predicate": "contribute to",
+   "object": "climate change"
+  }
+ ],
+ "chunk_383f7bba0381cad5f8afba69": [],
+ "chunk_4962865e805148c583f105e1": [
+  {
+   "subject": "AI models",
+   "predicate": "consume 0.002 to 0.007 Wh per prompt for",
+   "object": "simple classification tasks"
+  },
+  {
+   "subject": "text generation",
+   "predicate": "requires around",
+   "object": "0.05 Wh per prompt"
+  },
+  {
+   "subject": "text summarization",
+   "predicate": "requires around",
+   "object": "0.05 Wh per prompt"
+  },
+  {
+   "subject": "image generation",
+   "predicate": "averages",
+   "object": "2.91 Wh per prompt"
+  },
+  {
+   "subject": "image generation",
+   "predicate": "is the most energy-intensive",
+   "object": "AI task"
+  },
+  {
+   "subject": "least efficient image generation model",
+   "predicate": "uses",
+   "object": "11.49 Wh per image"
+  },
+  {
+   "subject": "web scraping",
+   "predicate": "gathers training data for",
+   "object": "LLMs"
+  },
+  {
+   "subject": "web scraping",
+   "predicate": "causes denial-of-service issues on",
+   "object": "websites"
+  }
+ ],
+ "chunk_0d0c11162c0e1b3b3a02a5e4": [
+  {
+   "subject": "some LLMs",
+   "predicate": "lack",
+   "object": "effective safety protocols"
+  },
+  {
+   "subject": "evaluations of crisis scenarios",
+   "predicate": "indicate",
+   "object": "some LLMs lack effective safety protocols"
+  },
+  {
+   "subject": "effective safety protocols",
+   "predicate": "include",
+   "object": "assessing suicide risk"
+  },
+  {
+   "subject": "effective safety protocols",
+   "predicate": "include",
+   "object": "making appropriate referrals"
+  }
+ ],
+ "chunk_b0fe881c64b3bdd1062b8982": [
+  {
+   "subject": "Blake Lemoine",
+   "predicate": "claimed LaMDA is",
+   "object": "conscious"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "can convince users of",
+   "object": "sentience"
+  },
+  {
+   "subject": "LLM responses",
+   "predicate": "do not prove",
+   "object": "sentience"
+  },
+  {
+   "subject": "Google",
+   "predicate": "described Lemoine's claims as",
+   "object": "unfounded"
+  },
+  {
+   "subject": "Google",
+   "predicate": "dismissed",
+   "object": "Blake Lemoine"
+  }
+ ],
+ "chunk_bd2ed6bb7290c97501970237": [
+  {
+   "subject": "individuals",
+   "predicate": "use LLMs for",
+   "object": "mental health support"
+  },
+  {
+   "subject": "U.S. adults with mental health conditions",
+   "predicate": "report turning to LLMs for",
+   "object": "emotional support"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "produce",
+   "object": "hallucinations"
+  },
+  {
+   "subject": "hallucinations",
+   "predicate": "are",
+   "object": "plausible but incorrect statements"
+  },
+  {
+   "subject": "hallucinations",
+   "predicate": "may mislead users in",
+   "object": "mental health contexts"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "may express",
+   "object": "stigma"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "may express inappropriate agreement with",
+   "object": "maladaptive thoughts"
+  },
+  {
+   "subject": "some LLMs",
+   "predicate": "lack",
+   "object": "effective safety protocols"
+  }
+ ],
+ "chunk_c6b2a804618f8cda620d993b": [],
+ "chunk_6726d88bec0fae30f3086120": [
+  {
+   "subject": "contemporary AI practitioners",
+   "predicate": "agree that present-day large language models do not exhibit",
+   "object": "sentience"
+  },
+  {
+   "subject": "minority view",
+   "predicate": "argues that software systems can have",
+   "object": "subjective experience"
+  },
+  {
+   "subject": "ethical considerations around potential large-scale suffering in AI systems",
+   "predicate": "are likened to",
+   "object": "considerations given to animal welfare"
+  },
+  {
+   "subject": "proponents of this view",
+   "predicate": "have proposed precautionary measure",
+   "object": "moratoriums on AI development"
+  },
+  {
+   "subject": "proponents of this view",
+   "predicate": "have proposed precautionary measure",
+   "object": "induced amnesia"
+  },
+  {
+   "subject": "determining whether an LLM is conscious",
+   "predicate": "is hindered by",
+   "object": "inherent difficulty of measuring subjective experience"
+  }
+ ],
+ "chunk_adede9bc55cc2f12579904ec": [
+  {
+   "subject": "prompt engineering",
+   "predicate": "structures",
+   "object": "natural language inputs"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "produces specified outputs from",
+   "object": "generative AI model"
+  },
+  {
+   "subject": "context engineering",
+   "predicate": "is related area of",
+   "object": "software engineering"
+  },
+  {
+   "subject": "context engineering",
+   "predicate": "manages",
+   "object": "contexts supplied to GenAI model"
+  },
+  {
+   "subject": "contexts",
+   "predicate": "include",
+   "object": "system instructions, metadata, API tools, tokens"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "includes technique",
+   "object": "few-shot prompting"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "includes technique",
+   "object": "chain-of-thought prompting"
+  }
+ ],
+ "chunk_d74cf625f8688a907f8cceec": [
+  {
+   "subject": "Oxford English Dictionary",
+   "predicate": "defines",
+   "object": "prompt engineering"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "involves formulating and refining",
+   "object": "prompts"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "optimizes output of",
+   "object": "artificial intelligence programs"
+  },
+  {
+   "subject": "prompt",
+   "predicate": "is an instruction given to",
+   "object": "artificial intelligence programs"
+  },
+  {
+   "subject": "prompt",
+   "predicate": "determines or influences",
+   "object": "AI-generated content"
+  },
+  {
+   "subject": "prompt",
+   "predicate": "was 2023 runner-up to",
+   "object": "Oxford word of the year"
+  }
+ ],
+ "chunk_206291951cd79e2c4c8dbfed": [
+  {
+   "subject": "prompt engineering",
+   "predicate": "became regarded as",
+   "object": "business capability"
+  },
+  {
+   "subject": "prompt engineers",
+   "predicate": "create",
+   "object": "prompts"
+  },
+  {
+   "subject": "prompts",
+   "predicate": "increase",
+   "object": "productivity and efficacy"
+  },
+  {
+   "subject": "AI models",
+   "predicate": "produce better prompts than",
+   "object": "humans"
+  },
+  {
+   "subject": "prompting techniques",
+   "predicate": "include",
+   "object": "multi-shot, chain-of-thought, and tree-of-thought prompting"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "is a type of",
+   "object": "automated prompt generation method"
+  },
+  {
+   "subject": "prompt injection",
+   "predicate": "is a type of",
+   "object": "cybersecurity attack"
+  },
+  {
+   "subject": "prompt injection",
+   "predicate": "targets",
+   "object": "machine learning models through malicious prompts"
+  }
+ ],
+ "chunk_d1b32b66c754736aea493866": [
+  {
+   "subject": "prompt",
+   "predicate": "describes task for",
+   "object": "artificial intelligence"
+  },
+  {
+   "subject": "prompt",
+   "predicate": "can be",
+   "object": "query"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "involves designing",
+   "object": "clear queries"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "guides model toward",
+   "object": "more accurate responses"
+  },
+  {
+   "subject": "prompt",
+   "predicate": "contains description of",
+   "object": "desired output"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "is applied to",
+   "object": "text-to-image models"
+  }
+ ],
+ "chunk_8e8e33e48ef2478b62f7f0b2": [
+  {
+   "subject": "LLMs",
+   "predicate": "are highly sensitive to",
+   "object": "prompt formatting"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are highly sensitive to",
+   "object": "prompt structure"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are highly sensitive to",
+   "object": "linguistic properties"
+  },
+  {
+   "subject": "linguistic features",
+   "predicate": "influence",
+   "object": "prompt effectiveness"
+  },
+  {
+   "subject": "clausal syntax",
+   "predicate": "improves consistency in",
+   "object": "knowledge retrieval"
+  },
+  {
+   "subject": "clausal syntax",
+   "predicate": "reduces uncertainty in",
+   "object": "knowledge retrieval"
+  },
+  {
+   "subject": "LLM prompt sensitivity",
+   "predicate": "persists with",
+   "object": "larger model sizes"
+  },
+  {
+   "subject": "LLM prompt sensitivity",
+   "predicate": "persists with",
+   "object": "instruction tuning"
+  }
+ ],
+ "chunk_c0cbf57223b7d17c75cd9843": [
+  {
+   "subject": "chain-of-thought",
+   "predicate": "is a",
+   "object": "prompt engineering technique"
+  },
+  {
+   "subject": "tree-of-thought",
+   "predicate": "is a",
+   "object": "prompt engineering technique"
+  },
+  {
+   "subject": "retrieval-augmented generation",
+   "predicate": "is a",
+   "object": "prompt engineering technique"
+  },
+  {
+   "subject": "2024 survey",
+   "predicate": "identified",
+   "object": "over 50 distinct text-based prompting techniques"
+  },
+  {
+   "subject": "vibe coding",
+   "predicate": "is an",
+   "object": "AI-assisted software development method"
+  },
+  {
+   "subject": "vibe coding",
+   "predicate": "prompts LLM with",
+   "object": "description of what user wants"
+  },
+  {
+   "subject": "vibe coding",
+   "predicate": "lets LLM generate or edit",
+   "object": "code"
+  },
+  {
+   "subject": "vibe coding",
+   "predicate": "was named",
+   "object": "Collins Dictionary word of the year in 2025"
+  }
+ ],
+ "chunk_7c3503a4c14e9c3ef72102bb": [],
+ "chunk_43356b8ccb522ef670ad3278": [
+  {
+   "subject": "Context engineering",
+   "predicate": "focuses on",
+   "object": "context elements"
+  },
+  {
+   "subject": "Context elements",
+   "predicate": "accompany",
+   "object": "user prompts"
+  },
+  {
+   "subject": "Context elements",
+   "predicate": "include",
+   "object": "system instructions"
+  },
+  {
+   "subject": "Context engineering",
+   "predicate": "improves reliability of",
+   "object": "production LLM systems"
+  },
+  {
+   "subject": "Context engineering",
+   "predicate": "emphasises",
+   "object": "token budgeting"
+  },
+  {
+   "subject": "Performance of LLMs",
+   "predicate": "is sensitive to",
+   "object": "ordering of examples"
+  },
+  {
+   "subject": "Reordering examples in a prompt",
+   "predicate": "produced",
+   "object": "accuracy shifts of more than 40 percent"
+  },
+  {
+   "subject": "Context regression tests",
+   "predicate": "ensure",
+   "object": "changes to supplied context do not silently alter system behaviour"
+  }
+ ],
+ "chunk_c3cfc8b93d35a32c2932c57c": [
+  {
+   "subject": "FormatSpread",
+   "predicate": "facilitates",
+   "object": "systematic analysis"
+  },
+  {
+   "subject": "FormatSpread",
+   "predicate": "evaluates",
+   "object": "prompt formats"
+  },
+  {
+   "subject": "FormatSpread",
+   "predicate": "offers",
+   "object": "performance interval"
+  },
+  {
+   "subject": "PromptEval",
+   "predicate": "estimates",
+   "object": "performance distributions"
+  },
+  {
+   "subject": "PromptEval",
+   "predicate": "enables",
+   "object": "robust metrics"
+  },
+  {
+   "subject": "PromptEval",
+   "predicate": "enables",
+   "object": "accurate evaluations under constrained budgets"
+  }
+ ],
+ "chunk_7c5354aa988dfe9c121399c6": [
+  {
+   "subject": "prompt",
+   "predicate": "includes",
+   "object": "examples"
+  },
+  {
+   "subject": "model",
+   "predicate": "learns from in-context",
+   "object": "examples"
+  },
+  {
+   "subject": "multi-shot prompting",
+   "predicate": "implements",
+   "object": "few-shot learning"
+  },
+  {
+   "subject": "multi-shot prompting",
+   "predicate": "applies to",
+   "object": "LLMs"
+  }
+ ],
+ "chunk_1382fc904480b7220acd86c9": [
+  {
+   "subject": "CoT",
+   "predicate": "proposed by",
+   "object": "Google"
+  },
+  {
+   "subject": "CoT prompt",
+   "predicate": "accompanied by",
+   "object": "exemplars"
+  },
+  {
+   "subject": "exemplars",
+   "predicate": "are",
+   "object": "input/output examples"
+  },
+  {
+   "subject": "exemplars",
+   "predicate": "demonstrate",
+   "object": "desired model output"
+  },
+  {
+   "subject": "CoT",
+   "predicate": "is a",
+   "object": "few-shot prompting technique"
+  },
+  {
+   "subject": "appending \"Let's think step-by-step\"",
+   "predicate": "allows CoT as",
+   "object": "zero-shot technique"
+  }
+ ],
+ "chunk_2ce24ece284dd7a07545cc13": [
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "delivers large gains on",
+   "object": "mathematical, logical and symbolic reasoning problems"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "delivers smaller improvements on",
+   "object": "other kinds of task"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "can be applied selectively to reduce",
+   "object": "inference costs"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "reduces accuracy of",
+   "object": "state-of-the-art models"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "increases",
+   "object": "response times"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "increases",
+   "object": "interaction complexity"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "is not uniformly preferable to",
+   "object": "simpler prompts"
+  }
+ ],
+ "chunk_cf5fa75463a5a5bb6b9e63a5": [
+  {
+   "subject": "textual inversion",
+   "predicate": "performs",
+   "object": "optimization process"
+  },
+  {
+   "subject": "textual inversion",
+   "predicate": "creates",
+   "object": "word embedding"
+  },
+  {
+   "subject": "word embedding",
+   "predicate": "is based on",
+   "object": "example images"
+  },
+  {
+   "subject": "embedding vector",
+   "predicate": "acts as",
+   "object": "pseudo-word"
+  },
+  {
+   "subject": "pseudo-word",
+   "predicate": "can be included in",
+   "object": "prompt"
+  },
+  {
+   "subject": "Meta AI research",
+   "predicate": "released",
+   "object": "Segment Anything"
+  },
+  {
+   "subject": "Segment Anything",
+   "predicate": "is a",
+   "object": "computer vision model"
+  },
+  {
+   "subject": "Segment Anything",
+   "predicate": "accepts",
+   "object": "bounding boxes"
+  }
+ ],
+ "chunk_cabcae93da2613a4c1e6af13": [
+  {
+   "subject": "text-to-image prompt",
+   "predicate": "includes",
+   "object": "description of subject"
+  },
+  {
+   "subject": "text-to-image prompt",
+   "predicate": "includes",
+   "object": "desired medium"
+  },
+  {
+   "subject": "text-to-image prompt",
+   "predicate": "includes",
+   "object": "style"
+  },
+  {
+   "subject": "text-to-image prompt",
+   "predicate": "includes",
+   "object": "lighting"
+  },
+  {
+   "subject": "word order",
+   "predicate": "affects",
+   "object": "output of text-to-image prompt"
+  },
+  {
+   "subject": "words closer to start of prompt",
+   "predicate": "may be emphasized more heavily in",
+   "object": "text-to-image prompt"
+  },
+  {
+   "subject": "some text-to-image models",
+   "predicate": "imitate",
+   "object": "style of particular artists by name"
+  },
+  {
+   "subject": "phrase \"in the style of Greg Rutkowski\"",
+   "predicate": "has been used in",
+   "object": "Stable Diffusion and Midjourney prompts"
+  }
+ ],
+ "chunk_0e8db79f1b5173a09725e1a9": [
+  {
+   "subject": "AI models",
+   "predicate": "interpret",
+   "object": "user intent"
+  },
+  {
+   "subject": "improving AI models",
+   "predicate": "are making obsolete",
+   "object": "manual prompting techniques"
+  },
+  {
+   "subject": "instruction-following advances",
+   "predicate": "reduce the value of",
+   "object": "elaborate prompt construction"
+  },
+  {
+   "subject": "model reasoning advances",
+   "predicate": "reduce the value of",
+   "object": "elaborate prompt construction"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "has questioned viability as",
+   "object": "standalone discipline"
+  }
+ ],
+ "chunk_ef50a1f945489c760628be5a": [
+  {
+   "subject": "Chain-of-thought prompting",
+   "predicate": "is a technique enabling",
+   "object": "step-by-step problem solving in large language models"
+  },
+  {
+   "subject": "Chain-of-thought prompting",
+   "predicate": "improves",
+   "object": "reasoning ability"
+  },
+  {
+   "subject": "Google Brain",
+   "predicate": "reported in 2022 that",
+   "object": "chain-of-thought prompting improves reasoning ability"
+  },
+  {
+   "subject": "Chain-of-thought techniques",
+   "predicate": "were developed to help LLMs handle",
+   "object": "multi-step reasoning tasks"
+  },
+  {
+   "subject": "PaLM",
+   "predicate": "has",
+   "object": "540 billion parameters"
+  },
+  {
+   "subject": "Chain-of-thought prompting",
+   "predicate": "enabled PaLM to perform comparably with",
+   "object": "task-specific fine-tuned models"
+  },
+  {
+   "subject": "Chain-of-thought prompting",
+   "predicate": "enabled PaLM to achieve state-of-the-art results on",
+   "object": "GSM8K"
+  },
+  {
+   "subject": "Models",
+   "predicate": "can be fine-tuned on",
+   "object": "CoT reasoning datasets"
+  }
+ ],
+ "chunk_dbf66f22f9cefd17b5198fec": [
+  {
+   "subject": "prompting",
+   "predicate": "shares parallels with",
+   "object": "iterative engineering design process"
+  },
+  {
+   "subject": "prompting",
+   "predicate": "discovers reusable best practices through",
+   "object": "reproducible experimentation"
+  },
+  {
+   "subject": "effective prompting strategies",
+   "predicate": "are highly specific to",
+   "object": "model"
+  },
+  {
+   "subject": "prompts",
+   "predicate": "are brittle to",
+   "object": "minor surface-level changes"
+  },
+  {
+   "subject": "minor changes in phrasing, punctuation, or word order",
+   "predicate": "produce dramatically different outputs from",
+   "object": "prompts"
+  },
+  {
+   "subject": "prompt instability",
+   "predicate": "makes difficult establishing",
+   "object": "durable transferable prompt patterns"
+  }
+ ],
+ "chunk_2384ec6d8f5cc7bf80d98012": [],
+ "chunk_05af6e2765187be754045984": [
+  {
+   "subject": "Self-consistency",
+   "predicate": "performs",
+   "object": "chain-of-thought rollouts"
+  },
+  {
+   "subject": "Self-consistency",
+   "predicate": "selects",
+   "object": "most commonly reached conclusion"
+  },
+  {
+   "subject": "Tree-of-thought",
+   "predicate": "generalizes",
+   "object": "chain-of-thought"
+  },
+  {
+   "subject": "Tree-of-thought",
+   "predicate": "can use",
+   "object": "tree search algorithms"
+  },
+  {
+   "subject": "DALL-E 2",
+   "predicate": "is a",
+   "object": "text-to-image model"
+  },
+  {
+   "subject": "Stable Diffusion",
+   "predicate": "is a",
+   "object": "text-to-image model"
+  },
+  {
+   "subject": "Midjourney",
+   "predicate": "is a",
+   "object": "text-to-image model"
+  },
+  {
+   "subject": "text-to-image models",
+   "predicate": "generates images from",
+   "object": "text prompts"
+  }
+ ],
+ "chunk_ff94f0a18aebb7c15033d2f6": [
+  {
+   "subject": "prompting LLM",
+   "predicate": "is presented with",
+   "object": "example input-output pairs"
+  },
+  {
+   "subject": "prompting LLM",
+   "predicate": "generates",
+   "object": "instructions"
+  },
+  {
+   "subject": "generated instructions",
+   "predicate": "are used to prompt",
+   "object": "target LLM"
+  },
+  {
+   "subject": "instruction score",
+   "predicate": "is computed as sum of",
+   "object": "log-probabilities of outputs"
+  },
+  {
+   "subject": "highest-scored instructions",
+   "predicate": "are given to",
+   "object": "prompting LLM for further variations"
+  },
+  {
+   "subject": "process",
+   "predicate": "repeats until",
+   "object": "stopping criteria is reached"
+  },
+  {
+   "subject": "process",
+   "predicate": "outputs",
+   "object": "highest-scored instructions"
+  }
+ ],
+ "chunk_b45fd2feb10f2cd764331070": [
+  {
+   "subject": "automated prompt engineering",
+   "predicate": "uses",
+   "object": "optimization algorithms"
+  },
+  {
+   "subject": "optimization algorithms",
+   "predicate": "generate",
+   "object": "prompts"
+  },
+  {
+   "subject": "optimization algorithms",
+   "predicate": "refine",
+   "object": "prompts"
+  },
+  {
+   "subject": "automated approaches",
+   "predicate": "identify",
+   "object": "effective prompt patterns"
+  },
+  {
+   "subject": "automated approaches",
+   "predicate": "analyze",
+   "object": "model gradients"
+  },
+  {
+   "subject": "automated approaches",
+   "predicate": "analyze",
+   "object": "reinforcement feedback"
+  },
+  {
+   "subject": "automated approaches",
+   "predicate": "use",
+   "object": "evolutionary processes"
+  },
+  {
+   "subject": "automated approaches",
+   "predicate": "reduce need for",
+   "object": "manual experimentation"
+  }
+ ],
+ "chunk_3343b9e4aa5393238cb91773": [
+  {
+   "subject": "prompting LLM",
+   "predicate": "generates variations of",
+   "object": "highest-scored instructions"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "generates",
+   "object": "CoT examples"
+  },
+  {
+   "subject": "auto-CoT",
+   "predicate": "converts library of questions into",
+   "object": "vectors"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "converts",
+   "object": "questions"
+  },
+  {
+   "subject": "auto-CoT",
+   "predicate": "clusters",
+   "object": "question vectors"
+  },
+  {
+   "subject": "auto-CoT",
+   "predicate": "selects questions near centroid of",
+   "object": "cluster"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "performs zero-shot CoT on",
+   "object": "selected questions"
+  },
+  {
+   "subject": "auto-CoT",
+   "predicate": "adds questions and CoT answers to",
+   "object": "dataset of demonstrations"
+  },
+  {
+   "subject": "diverse demonstrations",
+   "predicate": "are added to",
+   "object": "prompts"
+  },
+  {
+   "subject": "prompts",
+   "predicate": "enable",
+   "object": "few-shot learning"
+  }
+ ],
+ "chunk_4891b16a72da67eb1ca5d5d5": [
+  {
+   "subject": "Automatic prompt optimization",
+   "predicate": "refines prompts for",
+   "object": "large language models"
+  },
+  {
+   "subject": "Automatic prompt optimization",
+   "predicate": "searches over",
+   "object": "alternative prompt strings"
+  },
+  {
+   "subject": "Automatic prompt optimization",
+   "predicate": "uses",
+   "object": "evaluation datasets"
+  },
+  {
+   "subject": "Automatic prompt optimization",
+   "predicate": "uses",
+   "object": "task-specific metrics"
+  }
+ ],
+ "chunk_475249e3d4ceca91f7fc5e0d": [
+  {
+   "subject": "prefix-tuning",
+   "predicate": "searches by gradient descent",
+   "object": "floating-point vectors"
+  },
+  {
+   "subject": "prompt tuning",
+   "predicate": "searches by gradient descent",
+   "object": "floating-point vectors"
+  },
+  {
+   "subject": "soft prompting",
+   "predicate": "searches by gradient descent",
+   "object": "floating-point vectors"
+  },
+  {
+   "subject": "prefix-tuning",
+   "predicate": "maximizes log-likelihood on",
+   "object": "outputs"
+  },
+  {
+   "subject": "earlier result",
+   "predicate": "uses",
+   "object": "gradient descent search"
+  },
+  {
+   "subject": "earlier result",
+   "predicate": "is designed for",
+   "object": "masked language models"
+  },
+  {
+   "subject": "earlier result",
+   "predicate": "searches",
+   "object": "token sequences"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "is a",
+   "object": "masked language model"
+  }
+ ],
+ "chunk_15114a95136f3c39308df31e": [
+  {
+   "subject": "RAG",
+   "predicate": "enables GenAI models to retrieve and incorporate",
+   "object": "new information"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "modifies interactions with",
+   "object": "LLM"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "allows LLMs to use",
+   "object": "domain-specific and updated information"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "improves",
+   "object": "large language models"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "incorporates information retrieval before",
+   "object": "generating responses"
+  },
+  {
+   "subject": "traditional LLMs",
+   "predicate": "rely on",
+   "object": "static training data"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "pulls relevant text from",
+   "object": "databases, uploaded documents, or web sources"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "reduces",
+   "object": "AI hallucinations"
+  }
+ ],
+ "chunk_b2237954b9c06faedc51c0ae": [
+  {
+   "subject": "argmax",
+   "predicate": "is computed over",
+   "object": "X~"
+  },
+  {
+   "subject": "X~",
+   "predicate": "ranges over",
+   "object": "token sequences of a specified length"
+  },
+  {
+   "subject": "log Pr[Y^i | X~ * X^i]",
+   "predicate": "is summed over",
+   "object": "i"
+  }
+ ],
+ "chunk_69021d11c3454f62eb2ae97b": [
+  {
+   "subject": "MIPRO",
+   "predicate": "optimizes instructions and few-shot demonstrations of",
+   "object": "multi-stage language model programs"
+  },
+  {
+   "subject": "GEPA",
+   "predicate": "stands for",
+   "object": "Genetic-Pareto"
+  },
+  {
+   "subject": "GEPA",
+   "predicate": "is a reflective prompt optimizer for",
+   "object": "compound AI systems"
+  },
+  {
+   "subject": "GEPA",
+   "predicate": "combines",
+   "object": "execution-trace analysis and textual feedback with Pareto-based evolutionary search"
+  },
+  {
+   "subject": "GEPA",
+   "predicate": "outperforms",
+   "object": "GRPO"
+  },
+  {
+   "subject": "GEPA",
+   "predicate": "outperforms",
+   "object": "MIPROv2"
+  },
+  {
+   "subject": "DSPy",
+   "predicate": "exposes",
+   "object": "prompt optimizers"
+  },
+  {
+   "subject": "Opik",
+   "predicate": "exposes",
+   "object": "prompt optimizers"
+  }
+ ],
+ "chunk_6f466def783fbf0eedbb51f5": [
+  {
+   "subject": "AI boom",
+   "predicate": "increased focus on",
+   "object": "prompting techniques"
+  },
+  {
+   "subject": "prompting techniques",
+   "predicate": "are characterized by",
+   "object": "trial-and-error"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "was released in",
+   "object": "November 2022"
+  },
+  {
+   "subject": "prompt engineering",
+   "predicate": "became recognized as",
+   "object": "important business skill"
+  },
+  {
+   "subject": "companies",
+   "predicate": "began hiring",
+   "object": "prompt engineers"
+  },
+  {
+   "subject": "AI",
+   "predicate": "generates prompts better than",
+   "object": "humans"
+  },
+  {
+   "subject": "job of prompt engineer",
+   "predicate": "became obsolete due to",
+   "object": "models that intuit user intent"
+  }
+ ],
+ "chunk_d5be04b084494c36de06690e": [
+  {
+   "subject": "The Intelligent Filling Manager",
+   "predicate": "was developed by",
+   "object": "Krishna C. Mukherjee"
+  },
+  {
+   "subject": "The Intelligent Filling Manager",
+   "predicate": "used",
+   "object": "dynamic Q&A interface"
+  },
+  {
+   "subject": "dynamic Q&A interface",
+   "predicate": "is driven by",
+   "object": "rule-based expert system"
+  },
+  {
+   "subject": "The Intelligent Filling Manager",
+   "predicate": "generated",
+   "object": "regulatory filings across jurisdictions"
+  },
+  {
+   "subject": "enterprise automation software",
+   "predicate": "featured",
+   "object": "prompt-like workflows"
+  },
+  {
+   "subject": "prompt-like workflows",
+   "predicate": "influenced",
+   "object": "human-in-the-loop AI designs"
+  },
+  {
+   "subject": "NLP tasks",
+   "predicate": "can be cast as",
+   "object": "question-answer problems over a context"
+  },
+  {
+   "subject": "joint multi-task model",
+   "predicate": "answers",
+   "object": "task-related questions"
+  }
+ ],
+ "chunk_4ad5b94fdc035ee9cb72c8c4": [
+  {
+   "subject": "Prompt injection",
+   "predicate": "is a",
+   "object": "cybersecurity exploit"
+  },
+  {
+   "subject": "Prompt injection",
+   "predicate": "targets",
+   "object": "large language models"
+  },
+  {
+   "subject": "Prompt injection",
+   "predicate": "exploits inability of models to distinguish between",
+   "object": "developer-defined prompts and user inputs"
+  },
+  {
+   "subject": "Prompt injection",
+   "predicate": "allows adversaries to bypass",
+   "object": "safeguards"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "are designed to follow",
+   "object": "trusted instructions"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "can be manipulated into carrying out",
+   "object": "unintended responses"
+  }
+ ],
+ "chunk_434381292aa3f8f91895cfdb": [],
+ "chunk_20bd639b692110a63c7f92eb": [
+  {
+   "subject": "Google researchers",
+   "predicate": "proposed",
+   "object": "chain-of-thought prompting"
+  },
+  {
+   "subject": "chain-of-thought prompting",
+   "predicate": "was proposed in",
+   "object": "2022"
+  },
+  {
+   "subject": "prompt repository",
+   "predicate": "reported availability of",
+   "object": "over 2,000 public prompts"
+  },
+  {
+   "subject": "text-to-text prompt databases",
+   "predicate": "were made publicly available in",
+   "object": "2023"
+  },
+  {
+   "subject": "text-to-image prompt databases",
+   "predicate": "were made publicly available in",
+   "object": "2023"
+  },
+  {
+   "subject": "Personalized Image-Prompt dataset",
+   "predicate": "is a",
+   "object": "generated image-text dataset"
+  },
+  {
+   "subject": "Personalized Image-Prompt dataset",
+   "predicate": "was categorized by",
+   "object": "3,115 users"
+  },
+  {
+   "subject": "Personalized Image-Prompt dataset",
+   "predicate": "was made publicly available in",
+   "object": "2024"
+  }
+ ],
+ "chunk_84b9673fb58a339d34316638": [
+  {
+   "subject": "RAG",
+   "predicate": "enables LLMs to retrieve information from",
+   "object": "external data sources"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "enables LLMs to incorporate",
+   "object": "new information"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "makes LLMs refer to",
+   "object": "documents"
+  },
+  {
+   "subject": "documents",
+   "predicate": "supplement",
+   "object": "training data"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "allows LLMs to use",
+   "object": "domain-specific and updated information"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "helps chatbots access",
+   "object": "internal company data"
+  }
+ ],
+ "chunk_3cec290fefe85887027eacfe": [],
+ "chunk_3a381fcf8aa25cc7c5a7686e": [],
+ "chunk_e0381d82da17927d294e41df": [],
+ "chunk_1c32eaa9d4073714d74d484b": [],
+ "chunk_98be635b9d38af2625574eaa": [],
+ "chunk_602a9ab7e268163b4acc8319": [
+  {
+   "subject": "RAG",
+   "predicate": "enhances",
+   "object": "large language models"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "incorporates",
+   "object": "information-retrieval mechanism"
+  },
+  {
+   "subject": "information-retrieval mechanism",
+   "predicate": "allows access to",
+   "object": "additional data beyond original training set"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "augments external knowledge base with",
+   "object": "updated information"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "draws from",
+   "object": "augmented prompt"
+  },
+  {
+   "subject": "LLM",
+   "predicate": "synthesizes answer using",
+   "object": "internal representation of training data"
+  }
+ ],
+ "chunk_58b28a4f55260d98c94e3c4b": [
+  {
+   "subject": "RAG",
+   "predicate": "improves",
+   "object": "LLMs"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "incorporates information retrieval before",
+   "object": "generating responses"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "rely on",
+   "object": "static training data"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "pulls relevant text from",
+   "object": "databases"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "pulls relevant text from",
+   "object": "uploaded documents"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "pulls relevant text from",
+   "object": "web sources"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "helps reduce",
+   "object": "AI hallucinations"
+  },
+  {
+   "subject": "AI hallucinations",
+   "predicate": "cause chatbots to describe",
+   "object": "nonexistent policies"
+  }
+ ],
+ "chunk_9451b5e7a189fac65843e668": [
+  {
+   "subject": "Retro",
+   "predicate": "is reported as",
+   "object": "not reproducible"
+  },
+  {
+   "subject": "Retro++",
+   "predicate": "is a modified version of",
+   "object": "Retro"
+  },
+  {
+   "subject": "Retro++",
+   "predicate": "includes",
+   "object": "in-context RAG"
+  },
+  {
+   "subject": "chunking",
+   "predicate": "uses strategies to break up data into",
+   "object": "vectors"
+  },
+  {
+   "subject": "chunking",
+   "predicate": "enables retriever to find details in",
+   "object": "data"
+  },
+  {
+   "subject": "chunking",
+   "predicate": "takes advantage of patterns in",
+   "object": "data styles"
+  }
+ ],
+ "chunk_7907e0587b82d84f8bc7b68c": [
+  {
+   "subject": "Inverse Cloze Task",
+   "predicate": "pre-trains",
+   "object": "retriever"
+  },
+  {
+   "subject": "Inverse Cloze Task",
+   "predicate": "helps model learn",
+   "object": "retrieval patterns"
+  },
+  {
+   "subject": "Inverse Cloze Task",
+   "predicate": "predicts",
+   "object": "masked text within documents"
+  },
+  {
+   "subject": "supervised retriever optimization",
+   "predicate": "aligns",
+   "object": "retrieval probabilities with generator model's likelihood distribution"
+  },
+  {
+   "subject": "supervised retriever optimization",
+   "predicate": "involves retrieving",
+   "object": "top-k vectors"
+  },
+  {
+   "subject": "supervised retriever optimization",
+   "predicate": "minimizes",
+   "object": "KL divergence between retriever's selections and model's likelihoods"
+  },
+  {
+   "subject": "reranking techniques",
+   "predicate": "refine",
+   "object": "retriever performance"
+  },
+  {
+   "subject": "reranking techniques",
+   "predicate": "prioritize",
+   "object": "most relevant retrieved documents"
+  }
+ ],
+ "chunk_8c6585966aa670247440ef26": [],
+ "chunk_5d2e3b6cc6cfb39a03d0b8b2": [],
+ "chunk_529b372ae793b21d2a79091e": [],
+ "chunk_1bc8e2e6465e46841f9bde80": [],
+ "chunk_5d7aabae51c3615c167a45a3": [
+  {
+   "subject": "RAG",
+   "predicate": "evaluated using",
+   "object": "benchmarks"
+  },
+  {
+   "subject": "benchmarks",
+   "predicate": "test",
+   "object": "retrievability"
+  },
+  {
+   "subject": "benchmarks",
+   "predicate": "test",
+   "object": "retrieval accuracy"
+  },
+  {
+   "subject": "benchmarks",
+   "predicate": "test",
+   "object": "generative quality"
+  },
+  {
+   "subject": "BEIR",
+   "predicate": "is a suite of",
+   "object": "information retrieval tasks"
+  },
+  {
+   "subject": "Natural Questions",
+   "predicate": "used for",
+   "object": "open-domain QA"
+  },
+  {
+   "subject": "Google QA",
+   "predicate": "used for",
+   "object": "open-domain QA"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "does not prevent",
+   "object": "hallucinations in LLMs"
+  }
+ ],
+ "chunk_fbf86729bfc7dba1615cfb9c": [
+  {
+   "subject": "overlapping consecutive chunks",
+   "predicate": "helps to maintain",
+   "object": "semantic context across chunks"
+  },
+  {
+   "subject": "syntax-based chunking",
+   "predicate": "breaks documents into",
+   "object": "sentences"
+  },
+  {
+   "subject": "spaCy",
+   "predicate": "assists with",
+   "object": "syntax-based chunking"
+  },
+  {
+   "subject": "NLTK",
+   "predicate": "assists with",
+   "object": "syntax-based chunking"
+  },
+  {
+   "subject": "code files",
+   "predicate": "are best chunked as",
+   "object": "whole functions or classes"
+  },
+  {
+   "subject": "HTML files",
+   "predicate": "should keep intact",
+   "object": "<table> and base64-encoded <img> elements"
+  },
+  {
+   "subject": "Unstructured",
+   "predicate": "assists with",
+   "object": "file format-based chunking"
+  },
+  {
+   "subject": "hybrid search",
+   "predicate": "feeds combined text into",
+   "object": "language model for generation"
+  }
+ ],
+ "chunk_ec7c9fe1afaa5756f7e564a4": [
+  {
+   "subject": "RAG",
+   "predicate": "was first introduced in",
+   "object": "2020 research paper"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "can provide",
+   "object": "incorrect information"
+  },
+  {
+   "subject": "Google Bard",
+   "predicate": "is an LLM tool developed by",
+   "object": "Google"
+  },
+  {
+   "subject": "Google Bard",
+   "predicate": "was later re-branded to",
+   "object": "Gemini"
+  },
+  {
+   "subject": "Google Bard",
+   "predicate": "provided incorrect information about",
+   "object": "James Webb Space Telescope"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "is used to prevent",
+   "object": "incorrect LLM information"
+  },
+  {
+   "subject": "RAG",
+   "predicate": "does not solve all",
+   "object": "LLM problems"
+  },
+  {
+   "subject": "LLMs",
+   "predicate": "can misinterpret",
+   "object": "context"
+  }
+ ],
+ "chunk_0d0e0f92f017b26756cb82a0": [
+  {
+   "subject": "Transformer",
+   "predicate": "is a family of",
+   "object": "artificial neural network architectures"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "is based on",
+   "object": "multi-head attention mechanism"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "converts input data into",
+   "object": "tokens"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "looks up token vectors in",
+   "object": "word embedding table"
+  },
+  {
+   "subject": "multi-head attention mechanism",
+   "predicate": "contextualizes tokens within",
+   "object": "context window"
+  },
+  {
+   "subject": "self-attention",
+   "predicate": "is",
+   "object": "permutation-invariant"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "injects positional information via",
+   "object": "positional encodings or learned positional embeddings"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "injects positional information so that",
+   "object": "token order can affect output"
+  }
+ ],
+ "chunk_26f82c27962d93b4a009f004": [
+  {
+   "subject": "Transformer",
+   "predicate": "lacks",
+   "object": "recurrent units"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "requires less training time than",
+   "object": "RNN"
+  },
+  {
+   "subject": "LSTM",
+   "predicate": "is a type of",
+   "object": "RNN"
+  },
+  {
+   "subject": "Transformer variation",
+   "predicate": "is widely adopted for training",
+   "object": "LLM"
+  },
+  {
+   "subject": "Modern transformer design",
+   "predicate": "is grouped into",
+   "object": "encoder-only, decoder-only, and encoder-decoder variants"
+  },
+  {
+   "subject": "Encoder-only variant",
+   "predicate": "is optimized for",
+   "object": "representation learning"
+  },
+  {
+   "subject": "Decoder-only variant",
+   "predicate": "is optimized for",
+   "object": "autoregressive generation"
+  },
+  {
+   "subject": "Encoder-decoder variant",
+   "predicate": "is optimized for",
+   "object": "conditional sequence-to-sequence tasks"
+  }
+ ],
+ "chunk_26a8becff0743f44cf800b35": [
+  {
+   "subject": "Transformer",
+   "predicate": "was proposed in",
+   "object": "Attention Is All You Need"
+  },
+  {
+   "subject": "Attention Is All You Need",
+   "predicate": "was written by researchers at",
+   "object": "Google"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "is used in",
+   "object": "natural language processing"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "is used in",
+   "object": "computer vision"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "is used in",
+   "object": "reinforcement learning"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "led to the development of",
+   "object": "GPT"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "led to the development of",
+   "object": "BERT"
+  },
+  {
+   "subject": "GPT",
+   "predicate": "stands for",
+   "object": "generative pre-trained transformer"
+  }
+ ],
+ "chunk_65a6979e2aac6cb01b4c4aea": [
+  {
+   "subject": "RNNs",
+   "predicate": "were used for",
+   "object": "sequence modelling"
+  },
+  {
+   "subject": "Elman network",
+   "predicate": "is an early example of",
+   "object": "RNN"
+  },
+  {
+   "subject": "vanishing-gradient problem",
+   "predicate": "leaves model state without",
+   "object": "extractable information about preceding tokens"
+  },
+  {
+   "subject": "LSTM",
+   "predicate": "is a type of",
+   "object": "RNN"
+  },
+  {
+   "subject": "LSTM",
+   "predicate": "introduced",
+   "object": "gating mechanisms"
+  },
+  {
+   "subject": "gating mechanisms",
+   "predicate": "mitigate",
+   "object": "vanishing-gradient problem"
+  },
+  {
+   "subject": "multiplicative gating units",
+   "predicate": "modulate",
+   "object": "outputs of other neurons"
+  },
+  {
+   "subject": "multiplicative units",
+   "predicate": "are conceptually distinct from",
+   "object": "additive attention mechanism"
+  }
+ ],
+ "chunk_1093f66283afbacb7e56b8b3": [
+  {
+   "subject": "Transformer",
+   "predicate": "requires computation time quadratic in size of",
+   "object": "context window"
+  },
+  {
+   "subject": "fast weight controller",
+   "predicate": "learns to compute a weight matrix depending on",
+   "object": "input"
+  },
+  {
+   "subject": "fast weight controller",
+   "predicate": "uses",
+   "object": "fast weights"
+  },
+  {
+   "subject": "slow neural network",
+   "predicate": "learns by",
+   "object": "gradient descent"
+  },
+  {
+   "subject": "slow neural network",
+   "predicate": "generates keys and values for computing weight changes of",
+   "object": "fast neural network"
+  },
+  {
+   "subject": "fast neural network",
+   "predicate": "computes answers to",
+   "object": "queries"
+  },
+  {
+   "subject": "fast weight controller",
+   "predicate": "is equivalent to",
+   "object": "unnormalized linear transformer"
+  }
+ ],
+ "chunk_e2fd332ad7f6cebb94ddcfe2": [],
+ "chunk_c617f7bd60a6b7c1524969ac": [
+  {
+   "subject": "Neural networks using multiplicative units",
+   "predicate": "called",
+   "object": "sigma-pi networks"
+  },
+  {
+   "subject": "Neural networks using multiplicative units",
+   "predicate": "also called",
+   "object": "higher-order networks"
+  },
+  {
+   "subject": "LSTM",
+   "predicate": "was the standard architecture for",
+   "object": "long sequence modelling"
+  },
+  {
+   "subject": "Transformers",
+   "predicate": "published in",
+   "object": "2017"
+  },
+  {
+   "subject": "LSTM",
+   "predicate": "used",
+   "object": "sequential processing"
+  },
+  {
+   "subject": "RNNs",
+   "predicate": "operate on",
+   "object": "one token at a time"
+  },
+  {
+   "subject": "RNNs",
+   "predicate": "cannot operate in parallel over",
+   "object": "all tokens in a sequence"
+  }
+ ],
+ "chunk_82cc3783ce107fe493822c2e": [],
+ "chunk_f4a1ca42a4dc2c64ac74d517": [
+  {
+   "subject": "seq2seq",
+   "predicate": "originated in",
+   "object": "early 2010s"
+  },
+  {
+   "subject": "papers from 2014",
+   "predicate": "are cited as originators of",
+   "object": "seq2seq"
+  },
+  {
+   "subject": "380M-parameter machine translation model",
+   "predicate": "uses",
+   "object": "LSTM"
+  },
+  {
+   "subject": "seq2seq architecture",
+   "predicate": "consists of",
+   "object": "encoder and decoder"
+  },
+  {
+   "subject": "encoder",
+   "predicate": "converts token sequence into",
+   "object": "vector"
+  },
+  {
+   "subject": "decoder",
+   "predicate": "converts vector into",
+   "object": "token sequence"
+  },
+  {
+   "subject": "130M-parameter model",
+   "predicate": "uses GRU instead of",
+   "object": "LSTM"
+  },
+  {
+   "subject": "GRU",
+   "predicate": "performs comparably to",
+   "object": "LSTM for seq2seq"
+  }
+ ],
+ "chunk_b2923314b600523949bc8fc9": [
+  {
+   "subject": "seq2seq",
+   "predicate": "originally lacked",
+   "object": "attention mechanism"
+  },
+  {
+   "subject": "recurrent network",
+   "predicate": "processes input sequentially into",
+   "object": "fixed-size output vector"
+  },
+  {
+   "subject": "recurrent network",
+   "predicate": "processes fixed-size output vector into",
+   "object": "output"
+  },
+  {
+   "subject": "long input",
+   "predicate": "causes degradation of",
+   "object": "output"
+  },
+  {
+   "subject": "reversing the input sentence",
+   "predicate": "improved",
+   "object": "seq2seq translation"
+  },
+  {
+   "subject": "RNN search",
+   "predicate": "introduced attention mechanism to",
+   "object": "seq2seq"
+  },
+  {
+   "subject": "attention mechanism",
+   "predicate": "solves bottleneck of",
+   "object": "fixed-size output vector"
+  },
+  {
+   "subject": "attention mechanism",
+   "predicate": "enables easier processing of",
+   "object": "long-distance dependencies"
+  }
+ ],
+ "chunk_4814a4c3d05c809ed47bf5df": [
+  {
+   "subject": "Seq2seq models with attention",
+   "predicate": "suffered from same issue as",
+   "object": "recurrent networks"
+  },
+  {
+   "subject": "Seq2seq models with attention",
+   "predicate": "were prevented from being accelerated on",
+   "object": "GPUs"
+  },
+  {
+   "subject": "decomposable attention",
+   "predicate": "applied self-attention mechanism to",
+   "object": "feedforward networks"
+  },
+  {
+   "subject": "feedforward networks",
+   "predicate": "are",
+   "object": "easy to parallelize"
+  },
+  {
+   "subject": "decomposable attention",
+   "predicate": "achieved SOTA result in",
+   "object": "textual entailment"
+  },
+  {
+   "subject": "Jakob Uszkoreit",
+   "predicate": "authored",
+   "object": "decomposable attention"
+  },
+  {
+   "subject": "Jakob Uszkoreit",
+   "predicate": "suspected that",
+   "object": "attention without recurrence would be sufficient for language translation"
+  },
+  {
+   "subject": "self-attention",
+   "predicate": "was proposed for",
+   "object": "LSTMs"
+  }
+ ],
+ "chunk_ef1bbd289f37957cb47489a9": [
+  {
+   "subject": "local attention",
+   "predicate": "uses",
+   "object": "sliding window"
+  },
+  {
+   "subject": "mixed attention",
+   "predicate": "has higher quality than",
+   "object": "global attention"
+  },
+  {
+   "subject": "local attention",
+   "predicate": "reduces",
+   "object": "translation time"
+  },
+  {
+   "subject": "Google Translate",
+   "predicate": "was revamped to",
+   "object": "Google Neural Machine Translation"
+  },
+  {
+   "subject": "Google Neural Machine Translation",
+   "predicate": "replaced",
+   "object": "statistical machine translation"
+  },
+  {
+   "subject": "Google Neural Machine Translation",
+   "predicate": "is a",
+   "object": "seq2seq model"
+  },
+  {
+   "subject": "GNMT encoder",
+   "predicate": "uses",
+   "object": "8 layers of bidirectional LSTM"
+  },
+  {
+   "subject": "GNMT decoder",
+   "predicate": "uses",
+   "object": "8 layers of bidirectional LSTM"
+  }
+ ],
+ "chunk_4e980ef0e7d9e93adb12c042": [],
+ "chunk_b5c4a867585b9ea86b7b7c87": [
+  {
+   "subject": "GPT",
+   "predicate": "is a series of",
+   "object": "decoder-only transformers"
+  },
+  {
+   "subject": "OpenAI",
+   "predicate": "developed",
+   "object": "GPT"
+  },
+  {
+   "subject": "GPT",
+   "predicate": "became state of the art in",
+   "object": "natural language generation"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "is a",
+   "object": "chatbot"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "is based on",
+   "object": "fine-tuned variant of GPT-3.5"
+  },
+  {
+   "subject": "ChatGPT",
+   "predicate": "triggered boom around",
+   "object": "large language models"
+  }
+ ],
+ "chunk_bf8d07d267c65d817000b377": [
+  {
+   "subject": "Transformer",
+   "predicate": "was published in",
+   "object": "Attention Is All You Need"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "originally had",
+   "object": "100M parameters"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "improves seq2seq for",
+   "object": "machine translation"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "removes recurrence from",
+   "object": "seq2seq"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "preserves",
+   "object": "dot-product attention"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "introduced",
+   "object": "multi-head attention"
+  },
+  {
+   "subject": "multi-head attention",
+   "predicate": "uses",
+   "object": "independent heads"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "widely used in",
+   "object": "large neural networks"
+  }
+ ],
+ "chunk_93a603ddf8f0b67f4aeca804": [
+  {
+   "subject": "Transformer",
+   "predicate": "is used in",
+   "object": "generative models"
+  },
+  {
+   "subject": "generative models",
+   "predicate": "contribute to",
+   "object": "AI boom"
+  },
+  {
+   "subject": "Transformer",
+   "predicate": "implemented in",
+   "object": "TensorFlow"
+  },
+  {
+   "subject": "ELMo",
+   "predicate": "is a",
+   "object": "bi-directional LSTM"
+  },
+  {
+   "subject": "ELMo",
+   "predicate": "produces",
+   "object": "contextualized word embeddings"
+  },
+  {
+   "subject": "BERT",
+   "predicate": "is an",
+   "object": "encoder-only transformer model"
+  },
+  {
+   "subject": "Google",
+   "predicate": "uses BERT to process",
+   "object": "search queries"
+  },
+  {
+   "subject": "Google Translate",
+   "predicate": "uses",
+   "object": "transformer-encoder–RNN-decoder model"
+  }
+ ],
+ "chunk_a2ccb7d41cb9985aea6bc0a9": [
+  {
+   "subject": "Transformer",
+   "predicate": "had difficulty in",
+   "object": "converging"
+  },
+  {
+   "subject": "authors of original Transformer paper",
+   "predicate": "recommended",
+   "object": "learning rate warmup"
+  },
+  {
+   "subject": "learning rate warmup",
+   "predicate": "linearly scales learning rate from 0 to maximum during",
+   "object": "first part of training"
+  },
+  {
+   "subject": "pre-LN Transformer",
+   "predicate": "applies layer normalization before",
+   "object": "multihead attention and feedforward layers"
+  },
+  {
+   "subject": "pre-LN Transformer",
+   "predicate": "stabilizes",
+   "object": "training"
+  },
+  {
+   "subject": "pre-LN Transformer",
+   "predicate": "does not require",
+   "object": "learning rate warmup"
+  },
+  {
+   "subject": "pre-LN Transformer",
+   "predicate": "is more commonly used than",
+   "object": "post-LN Transformer"
+  }
+ ],
+ "chunk_94e65ca88448f10e2929e35a": [
+  {
+   "subject": "Transformers",
+   "predicate": "are pretrained by",
+   "object": "self-supervised learning"
+  },
+  {
+   "subject": "Transformers",
+   "predicate": "are pretrained on",
+   "object": "large generic dataset"
+  },
+  {
+   "subject": "pretraining",
+   "predicate": "is followed by",
+   "object": "supervised fine-tuning"
+  },
+  {
+   "subject": "supervised fine-tuning",
+   "predicate": "uses",
+   "object": "small task-specific dataset"
+  },
+  {
+   "subject": "The Pile",
+   "predicate": "is an example of",
+   "object": "pretrain dataset"
+  },
+  {
+   "subject": "pretraining and fine-tuning",
+   "predicate": "include",
+   "object": "language modeling"
+  },
+  {
+   "subject": "pretraining and fine-tuning",
+   "predicate": "include",
+   "object": "question answering"
+  },
+  {
+   "subject": "T5 transformer report",
+   "predicate": "documents",
+   "object": "natural language pretraining tasks"
+  }
+ ],
+ "chunk_bb98422e88b48de3a4c16fbb": [
+  {
+   "subject": "language modelling tasks",
+   "predicate": "include",
+   "object": "masked"
+  },
+  {
+   "subject": "language modelling tasks",
+   "predicate": "include",
+   "object": "autoregressive"
+  },
+  {
+   "subject": "language modelling tasks",
+   "predicate": "include",
+   "object": "prefixLM"
+  },
+  {
+   "subject": "language modelling task classes",
+   "predicate": "are independent of",
+   "object": "modeling architecture"
+  },
+  {
+   "subject": "language modelling task classes",
+   "predicate": "are often discussed in context of",
+   "object": "transformer"
+  },
+  {
+   "subject": "masked task",
+   "predicate": "masks out",
+   "object": "tokens"
+  },
+  {
+   "subject": "masked task",
+   "predicate": "predicts masked-out tokens using probability distribution conditioned on",
+   "object": "context"
+  },
+  {
+   "subject": "masked task",
+   "predicate": "uses loss function equal to sum of log-perplexities of",
+   "object": "masked-out tokens"
+  }
+ ],
+ "chunk_6697982a9f4eaf950a147cdb": [],
+ "chunk_42d5bba82eabfd48092b30be": [
+  {
+   "subject": "text restoration",
+   "predicate": "restores or repairs",
+   "object": "incomplete or corrupted text"
+  },
+  {
+   "subject": "machine translation",
+   "predicate": "translates between",
+   "object": "natural languages"
+  },
+  {
+   "subject": "pragmatic acceptability judgment",
+   "predicate": "judges",
+   "object": "natural language"
+  },
+  {
+   "subject": "\"The course is jumping well\"",
+   "predicate": "might be judged",
+   "object": "not acceptable"
+  },
+  {
+   "subject": "\"The course is jumping well\"",
+   "predicate": "is improbable in",
+   "object": "ordinary human usage"
+  },
+  {
+   "subject": "these tasks",
+   "predicate": "are trivial for",
+   "object": "human native speakers"
+  },
+  {
+   "subject": "these tasks",
+   "predicate": "proved challenging for",
+   "object": "previous generations of machine learning architecture"
+  }
+ ],
+ "chunk_919fd3bc9fa5da83b37f8671": [
+  {
+   "subject": "prefixLM task",
+   "predicate": "divides sequence into",
+   "object": "two parts"
+  },
+  {
+   "subject": "prefixLM task",
+   "predicate": "presents first part as",
+   "object": "context"
+  },
+  {
+   "subject": "model",
+   "predicate": "autoregressively predicts tokens of",
+   "object": "second part"
+  },
+  {
+   "subject": "prefixLM task",
+   "predicate": "typically uses",
+   "object": "same loss function"
+  },
+  {
+   "subject": "T5",
+   "predicate": "is trained by",
+   "object": "prefixLM tasks"
+  },
+  {
+   "subject": "PrefixLM (prefix language modeling)",
+   "predicate": "is distinct from",
+   "object": "PrefixLM (prefix language model)"
+  }
+ ],
+ "chunk_54a04063163d633a551a2e57": [],
+ "chunk_d17fe7fa8736ca96d3376a37": [],
+ "chunk_6eaf0e78a0bd6e03800da620": [],
+ "chunk_9eb82936df0e49abd935813b": [
+  {
+   "subject": "Tokenizers",
+   "predicate": "converts text into",
+   "object": "tokens"
+  },
+  {
+   "subject": "Embedding layer",
+   "predicate": "converts tokens and token positions into",
+   "object": "vector representations"
+  },
+  {
+   "subject": "Transformer layers",
+   "predicate": "perform transformations on",
+   "object": "vector representations"
+  },
+  {
+   "subject": "Transformer layers",
+   "predicate": "consist of alternating",
+   "object": "attention and feedforward layers"
+  },
+  {
+   "subject": "Encoder layers",
+   "predicate": "is a type of",
+   "object": "transformer layers"
+  },
+  {
+   "subject": "Decoder layers",
+   "predicate": "is a type of",
+   "object": "transformer layers"
+  },
+  {
+   "subject": "Un-embedding layer",
+   "predicate": "converts final vector representations into",
+   "object": "probability distribution over tokens"
+  }
+ ],
+ "chunk_47a101e1503582455408b351": [
+  {
+   "subject": "Transformer",
+   "predicate": "performs operations over",
+   "object": "numbers"
+  },
+  {
+   "subject": "preprocessor",
+   "predicate": "splits text into",
+   "object": "pretokens"
+  },
+  {
+   "subject": "preprocessor",
+   "predicate": "performs",
+   "object": "textual transformations"
+  },
+  {
+   "subject": "pretokenization",
+   "predicate": "is the splitting of text into",
+   "object": "pretokens"
+  },
+  {
+   "subject": "tokenizer",
+   "predicate": "segments pretokens into",
+   "object": "tokens"
+  },
+  {
+   "subject": "tokenizer",
+   "predicate": "expects pretokens output by",
+   "object": "preprocessor"
+  },
+  {
+   "subject": "token",
+   "predicate": "belongs to",
+   "object": "vocabulary"
+  },
+  {
+   "subject": "vocabulary",
+   "predicate": "is a finite set of",
+   "object": "strings"
+  }
+ ],
+ "chunk_2dd9d71174ae81859ced89b4": [
+  {
+   "subject": "tokens",
+   "predicate": "may be referred to as",
+   "object": "subwords"
+  },
+  {
+   "subject": "tokenization algorithms",
+   "predicate": "may be referred to as",
+   "object": "subword tokenizers"
+  },
+  {
+   "subject": "older information retrieval and natural language processing systems",
+   "predicate": "used tokenization to denote",
+   "object": "pretokenization"
+  },
+  {
+   "subject": "pretokenization",
+   "predicate": "crudely splits text into",
+   "object": "words"
+  },
+  {
+   "subject": "tokenizers",
+   "predicate": "replace out-of-vocabulary tokens with",
+   "object": "[UNK]"
+  },
+  {
+   "subject": "[UNK]",
+   "predicate": "stands for",
+   "object": "unknown"
+  },
+  {
+   "subject": "[UNK]",
+   "predicate": "can hide",
+   "object": "any string"
+  },
+  {
+   "subject": "pretokenizers in information retrieval",
+   "predicate": "were used as",
+   "object": "tokenizers"
+  }
+ ],
+ "chunk_78f8c379bb5aeeb91d8796fc": [
+  {
+   "subject": "BERT",
+   "predicate": "is trained for",
+   "object": "masked token prediction"
+  },
+  {
+   "subject": "GPT",
+   "predicate": "is trained by",
+   "object": "autoregressive tasks"
+  },
+  {
+   "subject": "autoregressive task",
+   "predicate": "initially masks",
+   "object": "entire sequence"
+  },
+  {
+   "subject": "autoregressive task",
+   "predicate": "reveals first token before predicting",
+   "object": "second token"
+  },
+  {
+   "subject": "masked language modelling",
+   "predicate": "is distinct from",
+   "object": "masked attention"
+  },
+  {
+   "subject": "loss function",
+   "predicate": "negatively sums log probability of",
+   "object": "masked tokens"
+  },
+  {
+   "subject": "loss function",
+   "predicate": "conditions token probability on",
+   "object": "context"
+  }
+ ],
+ "chunk_6218d38e4bd296cbb260f459": [],
+ "chunk_ec745534cf82df159065ac2f": [
+  {
+   "subject": "un-embedding layer",
+   "predicate": "is almost the reverse of",
+   "object": "embedding layer"
+  },
+  {
+   "subject": "embedding layer",
+   "predicate": "converts token identifier into",
+   "object": "vector"
+  },
+  {
+   "subject": "un-embedding layer",
+   "predicate": "converts vector into",
+   "object": "probability distribution over tokens"
+  }
+ ],
+ "chunk_d7b3342db5712b0f687eaa49": [
+  {
+   "subject": "token identifier",
+   "predicate": "is converted into",
+   "object": "embedding vector"
+  },
+  {
+   "subject": "token identifier",
+   "predicate": "is converted via",
+   "object": "lookup table"
+  },
+  {
+   "subject": "one-hot representation",
+   "predicate": "represents",
+   "object": "token identifier"
+  },
+  {
+   "subject": "one-hot representation",
+   "predicate": "is multiplied by",
+   "object": "embedding matrix"
+  },
+  {
+   "subject": "lookup table conversion",
+   "predicate": "is equivalent to",
+   "object": "matrix multiplication"
+  }
+ ],
+ "chunk_1f5af6ab07ee2f072ec4dbf1": [
+  {
+   "subject": "token embedding vectors",
+   "predicate": "are added to",
+   "object": "positional encoding vectors"
+  },
+  {
+   "subject": "token embedding vectors",
+   "predicate": "produce",
+   "object": "sequence of input vectors"
+  },
+  {
+   "subject": "embedding vector",
+   "predicate": "has dimension called",
+   "object": "hidden size"
+  },
+  {
+   "subject": "hidden size",
+   "predicate": "is also called",
+   "object": "embedding size"
+  },
+  {
+   "subject": "original Transformer paper",
+   "predicate": "writes hidden size as",
+   "object": "d_model"
+  }
+ ],
+ "chunk_1b47d4f4bb47aa71d477be7f": [
+  {
+   "subject": "un-embedding layer",
+   "predicate": "is a",
+   "object": "linear-softmax layer"
+  },
+  {
+   "subject": "un-embedding layer",
+   "predicate": "applies softmax to",
+   "object": "xW + b"
+  },
+  {
+   "subject": "un-embedding matrix",
+   "predicate": "has shape",
+   "object": "(d_emb, |V|)"
+  },
+  {
+   "subject": "some architectures",
+   "predicate": "use transpose of embedding matrix as",
+   "object": "un-embedding matrix"
+  }
+ ],
+ "chunk_a38ead4734ed67f3168f6b4d": [],
+ "chunk_ef08331d76fb72ebd7463208": [],
+ "chunk_5e5679777e5a4528317631f7": [],
+ "chunk_8ebeaf4554e987effaf987e6": [],
+ "chunk_8cca7565a7ecea7679fb46e0": [],
+ "chunk_77bbbbe208c3b30144210c74": [
+  {
+   "subject": "weight tying",
+   "predicate": "reuses embedding matrix as",
+   "object": "un-embedding matrix"
+  },
+  {
+   "subject": "weight tying",
+   "predicate": "avoids doubling",
+   "object": "embedding-related parameters"
+  },
+  {
+   "subject": "weight tying",
+   "predicate": "avoids",
+   "object": "divergence during training"
+  }
+ ],
+ "chunk_0c38920cd84b211c26ba7f91": [],
+ "chunk_60d3fcfe45a250bd00a8f505": [
+  {
+   "subject": "positional encoding",
+   "predicate": "is a fixed-size vector representation of",
+   "object": "relative positions of tokens within a sequence"
+  },
+  {
+   "subject": "positional encoding",
+   "predicate": "provides position information to",
+   "object": "transformer model"
+  },
+  {
+   "subject": "positional encoding",
+   "predicate": "induces bias towards",
+   "object": "order of the input sequence"
+  },
+  {
+   "subject": "positional encoding",
+   "predicate": "is defined as function of type",
+   "object": "f: R → R^d"
+  },
+  {
+   "subject": "d",
+   "predicate": "is",
+   "object": "positive even integer"
+  }
+ ],
+ "chunk_6220e75c5b61aef4224d7f4a": [],
+ "chunk_e5c7952344cd4b67a8698e1c": [],
+ "chunk_93d88c3de0c21c97a04e49bc": [],
+ "chunk_f7c1ce3b80ccffd1e4c92167": [],
+ "chunk_8c0111c0e1094deaa495a544": [],
+ "chunk_41e32eee3fdbb9f664ceadc9": [],
+ "chunk_d942709ae96c61121e0c13ef": [],
+ "chunk_aca99a47630606f91313beff": [
+  {
+   "subject": "BPE",
+   "predicate": "is",
+   "object": "subword tokenization algorithm"
+  },
+  {
+   "subject": "ULM",
+   "predicate": "is",
+   "object": "subword tokenization algorithm"
+  },
+  {
+   "subject": "BPE",
+   "predicate": "includes",
+   "object": "vocabularization algorithm"
+  },
+  {
+   "subject": "BPE",
+   "predicate": "includes",
+   "object": "segmentation algorithm"
+  },
+  {
+   "subject": "ULM",
+   "predicate": "includes",
+   "object": "vocabularization algorithm"
+  },
+  {
+   "subject": "ULM",
+   "predicate": "includes",
+   "object": "segmentation algorithm"
+  },
+  {
+   "subject": "Hugging Face tokenizers package",
+   "predicate": "implements subword tokenizers in",
+   "object": "Rust"
+  },
+  {
+   "subject": "sentencepiece package",
+   "predicate": "implements subword tokenizers in",
+   "object": "C++"
+  }
+ ],
+ "chunk_c050b48c035a409b1b9e381b": [],
+ "chunk_4805be96bf0c00982d3b9875": [],
+ "chunk_9b9d0a6438ec4ff6f26c8301": [],
+ "chunk_bf5e381464dea622a6e31752": [],
+ "chunk_8d20cb0af81fde2dda782493": [],
+ "chunk_ae91c6465e7a31d811c25efd": [],
+ "chunk_033f3410d32ab4d83195f28c": [],
+ "chunk_d636265059b35b393ce07227": [],
+ "chunk_cca30e6e4a41beccba61f1c6": [],
+ "chunk_fe7343b1f02a09eea8be0510": [],
+ "chunk_5c9d895517608c4a1915a242": [],
+ "chunk_64d0779cd389b00741abf2b6": [],
+ "chunk_b9d58c83fbf480c857f6b17e": [],
+ "chunk_7e822b36ffd7a3bc938f2889": [],
+ "chunk_f771ff8d916b94577eaddc11": [],
+ "chunk_27e1d293c1fd7a36c248b489": [],
+ "chunk_477a39feb13312e503c3c4aa": [],
+ "chunk_c677621cc2f111567b0da2c6": [],
+ "chunk_4c8db665e32943257ddcaa1f": [],
+ "chunk_0a37001818cf1f460eca33b7": [],
+ "chunk_ccfa492807ee8015e668c916": [],
+ "chunk_d57fe39cfdb4682bbb7e3564": [],
+ "chunk_a8a3cafc9b77bd6ba37bc435": [],
+ "chunk_2fee434f04c5cbcb56117ab1": [],
+ "chunk_81d43a46d8ebd82b022f434c": [],
+ "chunk_a0867f577c8e326aecf2818b": [],
+ "chunk_d0c09a51009af509b8ab2d6c": [],
+ "chunk_f1d01059ab30773feacd979d": [],
+ "chunk_f9d53260bfd099318cac4880": [],
+ "chunk_b383f1c246c291109dbbab49": [],
+ "chunk_72b752d465821db6863ef132": [],
+ "chunk_e90de8b59d705c2957639bff": [],
+ "chunk_b8e32d6fc3e4fb8fa00e2333": [],
+ "chunk_5f919d5eeffd2e7ec7c03b8e": [],
+ "chunk_065cea734f90d939dd85401d": [],
+ "chunk_24133c206aafa0675a187372": [],
+ "chunk_98ea0993de51e3477b05dd9b": [],
+ "chunk_d07f02314ef626add6c9a702": [],
+ "chunk_0226c9c6f07eda7ee8b94abb": [],
+ "chunk_60e03bc1ebcdc71bc510a4d7": [],
+ "chunk_278f09dd7090e03dd7ca09b5": [],
+ "chunk_596612c8a85fcf314469efc3": [],
+ "chunk_1b402b36f61ce64b0458b4a6": [],
+ "chunk_0c410e386a18918c14a41431": [],
+ "chunk_d6ff311fa29f15db1d4f44cb": [],
+ "chunk_85a3fb97bd4f69ca43e2c04b": [],
+ "chunk_4a71b32cf36f5ec2be144d93": [],
+ "chunk_40f2c327d4f675bfdb2ec794": [],
+ "chunk_a060ce791cbe02210e413e1d": [],
+ "chunk_237fac3a9a2ea784625d0d6e": [],
+ "chunk_92f6ce2885b537c6c1ba799a": [],
+ "chunk_ccabe040d9e0fa3d5889ab0d": [],
+ "chunk_f41a4b3ac76b6a940e6520ea": [],
+ "chunk_cc880b0cd8be29569947f3a9": [],
+ "chunk_2c0b6872587ffeb786890344": [],
+ "chunk_4883b0b4d0164f348c21f2a4": [],
+ "chunk_3a3bb9e4f38a04395e3ab14f": [],
+ "chunk_9ea638701eb5a410be05d8b2": [],
+ "chunk_4d2147dc786c7321201e71b5": [],
+ "chunk_74c89595f451ee35db1b9fbf": [],
+ "chunk_f6fd8f2663a1fb9640937e74": [],
+ "chunk_0e0dc29db0fbe2cc9e3bdbac": [],
+ "chunk_4d6b72ae7d3bf3c731d9d5bd": [],
+ "chunk_0c7c02a361ab20bb99c28d83": [],
+ "chunk_1a03da6cf87a1c95724a3f40": [],
+ "chunk_e499529f46b77d46dab35195": [],
+ "chunk_5a0f40bcd043e89922f78bb5": [],
+ "chunk_d07300f839fc7dcf6d5cda88": [],
+ "chunk_94695c79f83a5b2133e6305b": [],
+ "chunk_ce99d2d49196d9e0c9be95e6": [],
+ "chunk_1251464f71d53f093e407ce1": [],
+ "chunk_5a1ceafec9d82e5c84337ae6": [],
+ "chunk_5a05bcda93554cc1b8e39999": [],
+ "chunk_fb7d991bee44318066e2910d": [],
+ "chunk_bfbdac7f4b52db9fd86130b7": [],
+ "chunk_b4dede25b6704d9fcb18bc5e": [],
+ "chunk_afc4622b869d4d76f25569a1": [],
+ "chunk_91cf9d7a240a6d284a68c3f9": [],
+ "chunk_07251a8e1ef131d49e6d4d48": [],
+ "chunk_e2d3eed8173300a3f3f7ca67": [],
+ "chunk_67658bdee2a0410781831f25": [],
+ "chunk_5a84570b80b08c362488ee6f": [],
+ "chunk_2e85d43fffcf843f79f6d55c": [],
+ "chunk_bd80f59197240fd537615838": [],
+ "chunk_eee54af20a1ce63a06501b99": [],
+ "chunk_b4d1d09abf91a8755d4c47cf": [],
+ "chunk_08f07a0f44ee8fb1856b6ae8": [],
+ "chunk_7209df0831d94dcb43d1c413": [],
+ "chunk_fd19ee5be77f262d471f3e91": [],
+ "chunk_cbe05dc23ed1cdd946cfdf56": [],
+ "chunk_8f3662350901586e42f66540": [],
+ "chunk_08531823a9020852190582ad": [],
+ "chunk_17426ce301b8723b1ac41f57": [],
+ "chunk_8c51c22a1598b0c869a82959": [],
+ "chunk_dbfa5a10f6278acf7babb5ae": [],
+ "chunk_e340e288c0bae99d35ddceac": [],
+ "chunk_4423505a116ee57b7afe2406": [],
+ "chunk_0c77c0ae6f2a0377cefdb0dc": [],
+ "chunk_3f89aff42003923e7a108659": [],
+ "chunk_6397af81a7f5d272e9310399": [],
+ "chunk_7330e62d848a23bbb40485a2": [],
+ "chunk_4928146b712b2ea52101cd45": [],
+ "chunk_3fbb28866067c9f94ef20d42": [],
+ "chunk_b339f55ee76fdf7579b0d38e": [],
+ "chunk_7239133208f99402754d536c": [],
+ "chunk_6f301cef4283520d80c765ec": [],
+ "chunk_8a00fd2598c49ac444477acf": [],
+ "chunk_f4fa3c80e694c9dc19f173d7": [],
+ "chunk_fb44258d942504086da95007": [],
+ "chunk_aa52b6e304d2aad51aaea5f2": [],
+ "chunk_c3cf19918294e745ad5ecae6": [],
+ "chunk_9e996721811300705ad09138": [],
+ "chunk_897059641181132b66034cda": [],
+ "chunk_13768bd7c162cd9238427e47": [],
+ "chunk_d0d81b2529f9715009f970f5": [],
+ "chunk_fc1c0790b3e17d7826c657fb": [],
+ "chunk_92ebe7fb9e539649b7973adc": [],
+ "chunk_6b6ac5a35d5321e607fa582f": [],
+ "chunk_8a56c82c14f00f490979ce5d": [],
+ "chunk_5a2f6736564eb93a1ac963d5": [],
+ "chunk_b99998d117d96d02b9165191": [],
+ "chunk_6b159525cc8e9fc709b9eb4f": [],
+ "chunk_b336ec9a4fca51274da7cb17": [],
+ "chunk_044e4432de098764a699873a": [],
+ "chunk_f1841cd6155b68b842818fc8": [],
+ "chunk_c78a2ba25493893a85a1a9f1": [],
+ "chunk_d8f4721e5d41f6f9f98121f2": [],
+ "chunk_f379cbe81b180ee168b6e497": [],
+ "chunk_4e402ced180c1f9444c02e58": [],
+ "chunk_712a45a5ce67d9b3160e94cf": [],
+ "chunk_99ce0b175a9577bc4f8adda3": [],
+ "chunk_1349555a424671cfa1cdcc10": [],
+ "chunk_61e37b3dd8c04d307acbf17a": [],
+ "chunk_e2ac255aaecc30c13f15cae7": [],
+ "chunk_022fb56624e66a1ffee0dc52": [],
+ "chunk_955c128c5fc5471c079dd072": [],
+ "chunk_d4ba24f5175ac3a41ec9113e": [],
+ "chunk_12d48b7989f20965ea292cfc": [],
+ "chunk_62f58d5eac3b50a1808af8b2": [],
+ "chunk_4baaaadcbddaf7c5b6053b59": [],
+ "chunk_78bd387f4923df4fbf469596": [],
+ "chunk_fac441a2deef7c10b0a512ee": [],
+ "chunk_110b7e3a086392bfc5ebe230": [],
+ "chunk_df1136f6c314ce4632572b65": [],
+ "chunk_14c500907162c8965bb12064": [],
+ "chunk_0d78cf6b8e0511e1ed55845e": [],
+ "chunk_72fd22bb4c7fbde40e50f02e": [],
+ "chunk_bc4e487fccd98fd72a9ebbd2": [],
+ "chunk_3f644495bbc75f496b8958e8": [],
+ "chunk_8f49da185baed03743c59a38": [],
+ "chunk_e88a6944244796a80b832985": []
+}

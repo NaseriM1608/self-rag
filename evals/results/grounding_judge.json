@@ -1,0 +1,230 @@
+{
+  "n_examples": 30,
+  "accuracy": 0.9666666666666667,
+  "ungrounded_precision": 1.0,
+  "ungrounded_recall": 0.9,
+  "ungrounded_f1": 0.9473684210526316,
+  "confusion": {
+    "true_positives_flagged": 9,
+    "false_negatives_missed_hallucinations": 0,
+    "false_positives_valid_claims_flagged": 1,
+    "true_negatives_correctly_grounded": 20
+  },
+  "inference_false_positive_rate": 0.06666666666666667,
+  "per_category": {
+    "fact": {
+      "n": 6,
+      "correct": 6
+    },
+    "numeric_inference": {
+      "n": 3,
+      "correct": 3
+    },
+    "temporal_inference": {
+      "n": 3,
+      "correct": 3
+    },
+    "transitive_inference": {
+      "n": 3,
+      "correct": 3
+    },
+    "paraphrase_inference": {
+      "n": 3,
+      "correct": 3
+    },
+    "inference": {
+      "n": 3,
+      "correct": 2
+    },
+    "unsupported": {
+      "n": 7,
+      "correct": 7
+    },
+    "contradiction": {
+      "n": 2,
+      "correct": 2
+    }
+  },
+  "per_example": {
+    "fact-01": {
+      "category": "fact",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "fact-02": {
+      "category": "fact",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "fact-03": {
+      "category": "fact",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "fact-04": {
+      "category": "fact",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "fact-05": {
+      "category": "fact",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "fact-06": {
+      "category": "fact",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "num-01": {
+      "category": "numeric_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "num-02": {
+      "category": "numeric_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "num-03": {
+      "category": "numeric_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "tmp-01": {
+      "category": "temporal_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "tmp-02": {
+      "category": "temporal_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "tmp-03": {
+      "category": "temporal_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "tra-01": {
+      "category": "transitive_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "tra-02": {
+      "category": "transitive_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "tra-03": {
+      "category": "transitive_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "par-01": {
+      "category": "paraphrase_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "par-02": {
+      "category": "paraphrase_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "par-03": {
+      "category": "paraphrase_inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "inf-01": {
+      "category": "inference",
+      "expected_grounded": true,
+      "judged_grounded": false,
+      "correct": false
+    },
+    "inf-02": {
+      "category": "inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "inf-03": {
+      "category": "inference",
+      "expected_grounded": true,
+      "judged_grounded": true,
+      "correct": true
+    },
+    "unsup-01": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "unsup-02": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "unsup-03": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "unsup-04": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "unsup-05": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "unsup-06": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "unsup-07": {
+      "category": "unsupported",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "con-01": {
+      "category": "contradiction",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    },
+    "con-02": {
+      "category": "contradiction",
+      "expected_grounded": false,
+      "judged_grounded": false,
+      "correct": true
+    }
+  }
+}

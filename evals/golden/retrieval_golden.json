@@ -1,0 +1,616 @@
+{
+ "description": "Golden retrieval set. Labels map to chunks via 'relevant_snippets' (case-insensitive substring match after whitespace normalization) so labels survive re-indexing. A retrieval hits when any returned chunk contains a snippet.",
+ "match_rule": "snippet in chunk.page_content (normalized)",
+ "questions": [
+  {
+   "id": "llm-01",
+   "question": "What is a large language model?",
+   "relevant_snippets": [
+    "A large language model (LLM) is a computational model trained on a vast amount of data"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A computational model trained on vast amounts of data for natural language processing tasks, especially language generation; the largest are GPTs underlying modern chatbots.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-02",
+   "question": "What architecture do modern LLMs use and when was it introduced?",
+   "relevant_snippets": [
+    "transformer architecture, introduced in 2017, replaced recurrence with self-attention"
+   ],
+   "multi_hop": false,
+   "reference_answer": "The transformer architecture, introduced in 2017, which replaced recurrence with self-attention.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-03",
+   "question": "How does RLHF improve LLM behavior?",
+   "relevant_snippets": [
+    "training a reward model to predict which text humans prefer"
+   ],
+   "multi_hop": false,
+   "reference_answer": "It trains a reward model to predict human preferences, then fine-tunes the LLM via reinforcement learning to satisfy that reward, favoring truthful, helpful, harmless answers.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-04",
+   "question": "Which GPT model first caught widespread public attention and why?",
+   "relevant_snippets": [
+    "GPT-2 in 2019 that caught widespread attention"
+   ],
+   "multi_hop": false,
+   "reference_answer": "GPT-2 in 2019, because OpenAI initially deemed it too powerful to release publicly over malicious-use fears.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-05",
+   "question": "Which open-weight model released in January 2025 performs comparably to OpenAI o1?",
+   "relevant_snippets": [
+    "DeepSeek R1",
+    "671-billion-parameter open-weight model"
+   ],
+   "multi_hop": false,
+   "reference_answer": "DeepSeek R1, a 671-billion-parameter open-weight model released January 2025.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-06",
+   "question": "What is byte-pair encoding used for in LLM training?",
+   "relevant_snippets": [
+    "byte-pair encoding (BPE)"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A tokenization algorithm: starting from characters, it iteratively merges the most frequent adjacent pairs into longer n-grams to build a vocabulary for converting text to tokens.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-07",
+   "question": "What did it cost to train GPT-2 versus PaLM?",
+   "relevant_snippets": [
+    "in 2019 cost $50,000"
+   ],
+   "multi_hop": false,
+   "reference_answer": "GPT-2 cost about $50,000 in 2019; PaLM cost about $8 million in 2022.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-08",
+   "question": "What context window size can Google Gemini 1.5 handle?",
+   "relevant_snippets": [
+    "context window of up to 1 million tokens"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Up to 1 million tokens.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-09",
+   "question": "What is the difference between autoregressive and masked pre-training?",
+   "relevant_snippets": [
+    "autoregressive (i.e. predicting how the segment continues"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Autoregressive models predict how a segment continues (GPT); masked models fill in missing parts of a segment (BERT).",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-10",
+   "question": "What are emergent abilities in LLMs?",
+   "relevant_snippets": [
+    "larger models acquire"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Abilities that appear abruptly at scale via breaks in scaling-law curves, arising from complex component interactions rather than explicit programming.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-11",
+   "question": "Define perplexity for a language model.",
+   "relevant_snippets": [
+    "perplexity is the exponential of the average negative log likelihood per token"
+   ],
+   "multi_hop": false,
+   "reference_answer": "The exponential of average negative log likelihood per token; lower perplexity means better prediction of the corpus.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-12",
+   "question": "How does chain-of-thought prompting work?",
+   "relevant_snippets": [
+    "break the question down autonomously"
+   ],
+   "multi_hop": false,
+   "reference_answer": "The LLM is shown examples that verbally break down the thought process before answering, then mimics them, generating intermediate steps that improve correctness on complex questions.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-13",
+   "question": "What is mechanistic interpretability?",
+   "relevant_snippets": [
+    "Mechanistic interpretability seeks to precisely identify"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Research that reverse-engineers how individual neurons or circuits in LLMs produce behaviors, aiming to detect safety concerns like bias or deception before deployment.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-14",
+   "question": "Why do LLM hallucinations occur?",
+   "relevant_snippets": [
+    "memorization of training data combined with extrapolation beyond factual boundaries"
+   ],
+   "multi_hop": false,
+   "reference_answer": "They arise partly from memorizing training data combined with extrapolation beyond factual boundaries.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "llm-15",
+   "question": "What is prompt injection?",
+   "relevant_snippets": [
+    "messages that appear to come from the assistant or the developer"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Crafting user messages that appear to come from the assistant or developer, potentially overcoming safeguards (jailbreaking).",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-01",
+   "question": "What is retrieval-augmented generation?",
+   "relevant_snippets": [
+    "technique that enables large language models (LLMs) to retrieve and incorporate new information"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A technique enabling LLMs to retrieve and incorporate information from external sources before responding, supplementing training data with domain-specific or updated knowledge.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-02",
+   "question": "When was the term RAG first introduced?",
+   "relevant_snippets": [
+    "first introduced in a 2020 research paper"
+   ],
+   "multi_hop": false,
+   "reference_answer": "In a 2020 research paper.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-03",
+   "question": "What is prompt stuffing in RAG?",
+   "relevant_snippets": [
+    "has been called \"prompt stuffing\""
+   ],
+   "multi_hop": false,
+   "reference_answer": "Adding retrieved context to the user input early in the prompt so the LLM prioritizes supplied data over its training knowledge.",
+   "snippet_source_files": [],
+   "cross_document": false
+  },
+  {
+   "id": "rag-04",
+   "question": "Name three chunking strategies for RAG.",
+   "relevant_snippets": [
+    "Fixed length with overlap",
+    "Syntax-based chunks",
+    "File format-based chunking"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Fixed-length with overlap, syntax-based chunking (e.g., sentences via spaCy/NLTK), and file-format-based chunking respecting natural structures like functions or HTML elements.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-05",
+   "question": "What is hybrid search in the context of RAG?",
+   "relevant_snippets": [
+    "traditional text search, add those results"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Combining vector search results with traditional text search results and feeding both into the LLM, mitigating cases where vector search misses key facts.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-06",
+   "question": "Does RAG eliminate hallucinations?",
+   "relevant_snippets": [
+    "does not prevent hallucinations"
+   ],
+   "multi_hop": false,
+   "reference_answer": "No — the LLM can still hallucinate around the source material in its response.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-07",
+   "question": "What is the Inverse Cloze Task?",
+   "relevant_snippets": [
+    "Inverse Cloze Task (ICT), a technique that helps the model learn retrieval patterns by predicting masked text within documents"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A pre-training technique for retrievers where the model learns retrieval patterns by predicting masked text within documents.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-08",
+   "question": "What is RAG poisoning?",
+   "relevant_snippets": [
+    "retrieve factually correct but misleading sources"
+   ],
+   "multi_hop": false,
+   "reference_answer": "When RAG systems retrieve factually correct but misleading sources, misinterpret context, or merge conflicting sources into misleading responses.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "rag-09",
+   "question": "How did the James Webb Space Telescope error affect Google?",
+   "relevant_snippets": [
+    "incorrect information about the James Webb Space Telescope"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Google Bard gave incorrect JWST information at its demo, contributing to a $100 billion decline in Alphabet's stock value.",
+   "snippet_source_files": [
+    "RAG.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "lc-01",
+   "question": "Who created LangChain and when?",
+   "relevant_snippets": [
+    "launched in October 2022 as an open source project by Harrison Chase"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Harrison Chase launched it as an open-source project in October 2022.",
+   "snippet_source_files": [
+    "LangChain.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "lc-02",
+   "question": "What is LangServe?",
+   "relevant_snippets": [
+    "deployment tool to host LCEL code as a production-ready API"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A deployment tool (October 2023) that hosts LCEL code as a production-ready API.",
+   "snippet_source_files": [
+    "LangChain.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "lc-03",
+   "question": "What is LCEL?",
+   "relevant_snippets": [
+    "provides a declarative way to define chains of actions"
+   ],
+   "multi_hop": false,
+   "reference_answer": "The LangChain Expression Language, introduced Q3 2023 — a declarative way to define chains of actions.",
+   "snippet_source_files": [
+    "LangChain.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "lc-04",
+   "question": "What is LangSmith?",
+   "relevant_snippets": [
+    "observability and evaluation platform for LLM applications"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A closed-source observability and evaluation platform for LLM applications, released February 2024.",
+   "snippet_source_files": [
+    "LangChain.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "mh-01",
+   "question": "Which Chinese company released an open-weight reasoning model rivaling OpenAI o1, and how many parameters does it have?",
+   "relevant_snippets": [
+    "DeepSeek-R1",
+    "comparable performance to OpenAI's o1"
+   ],
+   "multi_hop": false,
+   "reference_answer": "DeepSeek released DeepSeek-R1, a 671-billion-parameter open-weight reasoning model comparable to o1 and cheaper to operate.",
+   "snippet_source_files": [
+    "LLM.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "mh-02",
+   "question": "Which venture firms invested in LangChain?",
+   "relevant_snippets": [
+    "Sequoia Capital"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Sequoia Capital led the Series A (over $20M at a $200M+ valuation), a week after Benchmark's $10M seed.",
+   "snippet_source_files": [
+    "LangChain.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "ua-01",
+   "question": "What is the capital of Australia?",
+   "relevant_snippets": [],
+   "expect_unanswerable": true
+  },
+  {
+   "id": "ua-02",
+   "question": "How do I bake sourdough bread at home?",
+   "relevant_snippets": [],
+   "expect_unanswerable": true
+  },
+  {
+   "id": "ua-03",
+   "question": "What is the current price of Bitcoin?",
+   "relevant_snippets": [],
+   "expect_unanswerable": true
+  },
+  {
+   "id": "tra-01",
+   "question": "Who proposed the transformer architecture and in which paper?",
+   "relevant_snippets": [
+    "the transformer architecture was proposed in the 2017 paper",
+    "Attention Is All You Need"
+   ],
+   "multi_hop": true,
+   "reference_answer": "Researchers at Google, in the 2017 paper \"Attention Is All You Need\".",
+   "snippet_source_files": [
+    "LLM.txt",
+    "Transformer.txt"
+   ],
+   "cross_document": true
+  },
+  {
+   "id": "tra-02",
+   "question": "What architecture dominated long sequence modelling before transformers?",
+   "relevant_snippets": [
+    "architecture for long sequence modelling until the 2017 publication of transformers"
+   ],
+   "multi_hop": false,
+   "reference_answer": "LSTM (recurrent) architectures dominated until transformers were published in 2017.",
+   "snippet_source_files": [
+    "Transformer.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "vecdb-01",
+   "question": "What is a vector database?",
+   "relevant_snippets": [
+    "database that stores and retrieves embeddings of data in vector space"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A database (also called vector store or vector search engine) that stores and retrieves embeddings of data in vector space, enabling efficient similarity search.",
+   "snippet_source_files": [
+    "Vector_database.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "wemb-01",
+   "question": "Which toolkit popularized training word embeddings?",
+   "relevant_snippets": [
+    "word2vec, a word embedding toolkit that can train vector space model"
+   ],
+   "multi_hop": false,
+   "reference_answer": "word2vec, a toolkit for training vector space models of words.",
+   "snippet_source_files": [
+    "Word_embedding.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "bm25-01",
+   "question": "Whose probabilistic framework underlies the BM25 ranking function?",
+   "relevant_snippets": [
+    "Robertson",
+    "Spärck"
+   ],
+   "multi_hop": false,
+   "reference_answer": "The probabilistic retrieval framework developed by Stephen Robertson and Karen Spärck Jones.",
+   "snippet_source_files": [
+    "BM25.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "kg-01",
+   "question": "What is a knowledge graph?",
+   "relevant_snippets": [
+    "knowledge base that uses a graph-structured data model or topology to represent"
+   ],
+   "multi_hop": false,
+   "reference_answer": "A knowledge base that uses a graph-structured data model to integrate data, representing entities and their relationships.",
+   "snippet_source_files": [
+    "Knowledge_graph.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "pe-01",
+   "question": "Which prompting technique helps LLMs handle multi-step reasoning?",
+   "relevant_snippets": [
+    "chain-of-thought techniques were developed to help llms handle multi-step re"
+   ],
+   "multi_hop": false,
+   "reference_answer": "Chain-of-thought (CoT) prompting, developed to help LLMs handle multi-step reasoning.",
+   "snippet_source_files": [
+    "Prompt_engineering.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "mh-03",
+   "question": "Which tokenization algorithms are used when preparing text for large language models?",
+   "relevant_snippets": [
+    "byte-pair encoding (bpe) and wordpiece",
+    "byte pair encoding (bpe) and the unigram language model"
+   ],
+   "multi_hop": true,
+   "reference_answer": "LLMs preprocess text with subword tokenization: byte-pair encoding plus WordPiece; the transformer article additionally pairs BPE with the unigram language model.",
+   "snippet_source_files": [
+    "LLM.txt",
+    "Transformer.txt"
+   ],
+   "cross_document": true
+  },
+  {
+   "id": "mh-04",
+   "question": "In retrieval-augmented generation, where are the document embeddings stored?",
+   "relevant_snippets": [
+    "these embeddings are then stored in a vector database",
+    "stores and retrieves embeddings of data in vector space"
+   ],
+   "multi_hop": true,
+   "reference_answer": "RAG stores converted embeddings in a vector database — a system that stores and retrieves embeddings in vector space for similarity-based retrieval.",
+   "snippet_source_files": [
+    "RAG.txt",
+    "Vector_database.txt"
+   ],
+   "cross_document": true
+  },
+  {
+   "id": "mh-05",
+   "question": "RAG can operate on which structured data representation, and how is that structure defined?",
+   "relevant_snippets": [
+    "for example knowledge graphs",
+    "graph-structured data model or topology to represent"
+   ],
+   "multi_hop": true,
+   "reference_answer": "RAG accepts structured data such as knowledge graphs; a knowledge graph uses a graph-structured data model/topology to represent entities and relationships.",
+   "snippet_source_files": [
+    "Knowledge_graph.txt",
+    "RAG.txt"
+   ],
+   "cross_document": true
+  },
+  {
+   "id": "mh-06",
+   "question": "Chain-of-thought prompting targets multi-step reasoning in models built on which architecture?",
+   "relevant_snippets": [
+    "chain-of-thought techniques were developed to help llms handle multi-step re",
+    "transformer architecture, introduced in 2017"
+   ],
+   "multi_hop": true,
+   "reference_answer": "CoT prompting helps LLMs reason step-by-step; those LLMs are built on the transformer architecture introduced in 2017.",
+   "snippet_source_files": [
+    "LLM.txt",
+    "Prompt_engineering.txt"
+   ],
+   "cross_document": true
+  },
+  {
+   "id": "mh-07",
+   "question": "The architecture behind today's language models was proposed where, and what preceded it for long sequences?",
+   "relevant_snippets": [
+    "proposed in the 2017 paper",
+    "long sequence modelling until the 2017 publication"
+   ],
+   "multi_hop": false,
+   "reference_answer": "The transformer was proposed in the 2017 paper \"Attention Is All You Need\"; before it, LSTM-style recurrent architectures handled long sequence modelling.",
+   "snippet_source_files": [
+    "Transformer.txt"
+   ],
+   "cross_document": false
+  },
+  {
+   "id": "mh-08",
+   "question": "What kind of mathematical objects does a vector search engine store, and which toolkit first made training them for words popular?",
+   "relevant_snippets": [
+    "embeddings of data in vector space",
+    "word2vec, a word embedding toolkit"
+   ],
+   "multi_hop": true,
+   "reference_answer": "Vector databases store and retrieve embeddings (dense vectors); word2vec popularized training such vectors for words.",
+   "snippet_source_files": [
+    "Vector_database.txt",
+    "Word_embedding.txt"
+   ],
+   "cross_document": true
+  },
+  {
+   "id": "ua-new-01",
+   "question": "Which company first commercialized vector databases?",
+   "relevant_snippets": [],
+   "multi_hop": false,
+   "reference_answer": "",
+   "expect_unanswerable": true
+  },
+  {
+   "id": "ua-new-02",
+   "question": "In what year will knowledge graphs completely replace relational databases?",
+   "relevant_snippets": [],
+   "multi_hop": false,
+   "reference_answer": "",
+   "expect_unanswerable": true
+  }
+ ],
+ "_labeling": "multi_hop/cross_document are derived mechanically from which documents/ files contain each relevant_snippet verbatim - a question counts as cross-document only when its evidence spans 2+ distinct files. An earlier hand-authored multi_hop label over-counted 6 questions whose evidence is single-file; those are now false. Regenerate with evals/_relabel_golden.py."
+}
