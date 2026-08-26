@@ -1,11 +1,20 @@
-from langgraph.graph import StateGraph, END
-from nodes import *
+from langgraph.graph import END, StateGraph
+
+from config import settings
+from nodes import (
+    check_grounding,
+    check_usefulness,
+    generate,
+    grade_relevance,
+    make_retrieve_node,
+)
+from retrievers import Retriever, get_retriever
+from state import AgentState
+
+MAX_LLM_CALLS = settings.max_llm_calls
 
 
-MAX_LLM_CALLS = 10
-
-
-def route_after_grading(state):
+def route_after_grading(state: AgentState) -> str:
     if not state["documents"]:
         return END
     if state["llm_calls"] >= MAX_LLM_CALLS:
@@ -13,13 +22,13 @@ def route_after_grading(state):
     return "generate"
 
 
-def route_after_generation(state):
+def route_after_generation(state: AgentState) -> str:
     if state["llm_calls"] >= MAX_LLM_CALLS:
         return END
     return "check_grounding"
 
 
-def route_after_checking_grounding(state):
+def route_after_checking_grounding(state: AgentState) -> str:
     if not state["is_grounded"]:
         if state["llm_calls"] >= MAX_LLM_CALLS:
             return END
@@ -27,14 +36,15 @@ def route_after_checking_grounding(state):
     return "check_usefulness"
 
 
-def build_graph():
-    graph = StateGraph(AgentState) # type: ignore
+def build_graph(retriever: Retriever | None = None):
+    retriever = retriever or get_retriever(settings.default_retriever)
+    graph = StateGraph(AgentState)
 
-    graph.add_node("retrieve", retrieve) # type: ignore
-    graph.add_node("grade_relevance", grade_relevance) # type: ignore
-    graph.add_node("generate", generate) # type: ignore
-    graph.add_node("check_grounding", check_grounding) # type: ignore
-    graph.add_node("check_usefulness", check_usefulness) # type: ignore
+    graph.add_node("retrieve", make_retrieve_node(retriever))
+    graph.add_node("grade_relevance", grade_relevance)
+    graph.add_node("generate", generate)
+    graph.add_node("check_grounding", check_grounding)
+    graph.add_node("check_usefulness", check_usefulness)
 
     graph.set_entry_point("retrieve")
     graph.add_edge("retrieve", "grade_relevance")
