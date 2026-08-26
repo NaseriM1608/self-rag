@@ -209,8 +209,10 @@ offline tests on every push, with a manual/nightly live-eval job.
 ## Limitations
 
 - KG retrievers currently match but do not beat plain hybrid on multi-hop
-  end-to-end questions (see METRICS.md); retrieval-side multi-hop recall is
-  already saturated, so the remaining gap is in answer synthesis.
+  end-to-end questions (see METRICS.md). Diagnosed in
+  [docs/KG_GAP_ANALYSIS.md](docs/KG_GAP_ANALYSIS.md): hybrid already covers
+  every needed source for 5 of 6 multi-hop questions, so the remaining gap is
+  generation-side synthesis — two-hop expansion was evaluated and deferred.
 - Inference detection is imperfect even with stronger models. Plausible but
   unsupported conclusions can sometimes pass the grounding check, and valid
   inferences are sometimes over-flagged.

@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "n_questions": 6,
+    "k": 5,
+    "slot_fill_rate": 1.0,
+    "questions_with_bridged_hits": 1,
+    "questions_with_recovered_golden_source": 1,
+    "questions_where_hybrid_missed_a_golden_source": 1
+  },
+  "questions": [
+    {
+      "id": "tra-01",
+      "question": "Who proposed the transformer architecture and in which paper?",
+      "golden_sources": [
+        "llm",
+        "transformer"
+      ],
+      "hybrid_top5_sources": [
+        "llm",
+        "transformer"
+      ],
+      "graph_expand_top5_sources": [
+        "llm",
+        "transformer"
+      ],
+      "golden_sources_hybrid_missed": [],
+      "bridge_slots_reserved": 2,
+      "bridge_slots_filled": 2,
+      "bridged_sources": [
+        "llm",
+        "transformer"
+      ],
+      "bridged_hits": 0,
+      "bridged_total": 2,
+      "recovered_golden_sources": [],
+      "matched_entities": [
+        "2022 Paper",
+        "Authors Of Original Transformer Paper",
+        "Original Transformer Paper",
+        "Transformer Architecture"
+      ]
+    },
+    {
+      "id": "mh-03",
+      "question": "Which tokenization algorithms are used when preparing text for large language models?",
+      "golden_sources": [
+        "llm",
+        "transformer"
+      ],
+      "hybrid_top5_sources": [
+        "llm",
+        "transformer"
+      ],
+      "graph_expand_top5_sources": [
+        "llm",
+        "prompt_engineering",
+        "transformer"
+      ],
+      "golden_sources_hybrid_missed": [],
+      "bridge_slots_reserved": 2,
+      "bridge_slots_filled": 2,
+      "bridged_sources": [
+        "prompt_engineering"
+      ],
+      "bridged_hits": 0,
+      "bridged_total": 2,
+      "recovered_golden_sources": [],
+      "matched_entities": [
+        "General-Purpose Large Language Models",
+        "Large Language Models",
+        "Larger Language Models",
+        "Largest Language Models"
+      ]
+    },
+    {
+      "id": "mh-04",
+      "question": "In retrieval-augmented generation, where are the document embeddings stored?",
+      "golden_sources": [
+        "rag",
+        "vector_database"
+      ],
+      "hybrid_top5_sources": [
+        "llm",
+        "prompt_engineering",
+        "rag",
+        "vector_database"
+      ],
+      "graph_expand_top5_sources": [
+        "bm25",
+        "langchain",
+        "llm",
+        "rag",
+        "vector_database"
+      ],
+      "golden_sources_hybrid_missed": [],
+      "bridge_slots_reserved": 2,
+      "bridge_slots_filled": 2,
+      "bridged_sources": [
+        "bm25",
+        "langchain"
+      ],
+      "bridged_hits": 0,
+      "bridged_total": 2,
+      "recovered_golden_sources": [],
+      "matched_entities": [
+        "Documents",
+        "Llms With Document Retrieval Systems",
+        "N(Q) Documents",
+        "Retrieval-Augmented Generation"
+      ]
+    },
+    {
+      "id": "mh-05",
+      "question": "RAG can operate on which structured data representation, and how is that structure defined?",
+      "golden_sources": [
+        "knowledge_graph",
+        "rag"
+      ],
+      "hybrid_top5_sources": [
+        "rag"
+      ],
+      "graph_expand_top5_sources": [
+        "knowledge_graph",
+        "rag"
+      ],
+      "golden_sources_hybrid_missed": [
+        "knowledge_graph"
+      ],
+      "bridge_slots_reserved": 2,
+      "bridge_slots_filled": 2,
+      "bridged_sources": [
+        "knowledge_graph"
+      ],
+      "bridged_hits": 1,
+      "bridged_total": 2,
+      "recovered_golden_sources": [
+        "knowledge_graph"
+      ],
+      "matched_entities": [
+        "Graph-Structured Data Model",
+        "Internal Representation Of Training Data",
+        "Unstructured",
+        "Unstructured Text"
+      ]
+    },
+    {
+      "id": "mh-06",
+      "question": "Chain-of-thought prompting targets multi-step reasoning in models built on which architecture?",
+      "golden_sources": [
+        "llm",
+        "prompt_engineering"
+      ],
+      "hybrid_top5_sources": [
+        "llm",
+        "prompt_engineering"
+      ],
+      "graph_expand_top5_sources": [
+        "llm",
+        "prompt_engineering"
+      ],
+      "golden_sources_hybrid_missed": [],
+      "bridge_slots_reserved": 2,
+      "bridge_slots_filled": 2,
+      "bridged_sources": [
+        "prompt_engineering"
+      ],
+      "bridged_hits": 0,
+      "bridged_total": 2,
+      "recovered_golden_sources": [],
+      "matched_entities": [
+        "Chain-Of-Thought Prompting",
+        "Chain-Of-Thought Prompting Improves Reasoning Ability",
+        "Multi-Shot, Chain-Of-Thought, And Tree-Of-Thought Prompting",
+        "Multi-Step Reasoning Tasks"
+      ]
+    },
+    {
+      "id": "mh-08",
+      "question": "What kind of mathematical objects does a vector search engine store, and which toolkit first made training them for words popular?",
+      "golden_sources": [
+        "vector_database",
+        "word_embedding"
+      ],
+      "hybrid_top5_sources": [
+        "langchain",
+        "vector_database",
+        "word_embedding"
+      ],
+      "graph_expand_top5_sources": [
+        "bm25",
+        "transformer",
+        "vector_database",
+        "word_embedding"
+      ],
+      "golden_sources_hybrid_missed": [],
+      "bridge_slots_reserved": 2,
+      "bridge_slots_filled": 2,
+      "bridged_sources": [
+        "bm25",
+        "transformer"
+      ],
+      "bridged_hits": 0,
+      "bridged_total": 2,
+      "recovered_golden_sources": [],
+      "matched_entities": [
+        "First Part Of Training",
+        "Search Engines",
+        "Vector",
+        "Words"
+      ]
+    }
+  ]
+}
