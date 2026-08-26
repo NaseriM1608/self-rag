@@ -3,7 +3,7 @@
 Every graph invocation can be recorded as one JSON line in
 ``evals/results/runs.jsonl`` so reports aggregate real numbers instead of
 descriptions. Token usage is captured through a LangChain callback handler;
-cost uses a price table that must be kept in sync with Groq's pricing page.
+cost uses a price table that must be kept in sync with OpenRouter's listing.
 """
 
 import json
@@ -73,6 +73,9 @@ class RunRecord:
     timestamp_utc: str
     generation: str = ""
     error: str | None = None
+    # Populated when the run's retriever reports bridge behavior (graph-expand);
+    # None for retrievers without diagnostics.
+    retriever_diagnostics: dict[str, Any] | None = None
 
 
 def estimate_cost(model: str, input_tokens: int, output_tokens: int) -> float:
@@ -131,9 +134,25 @@ def track_query(agent: Any, question: str, variant: str = "baseline") -> RunReco
         documents_kept=len(result.get("documents", [])),
         timestamp_utc=datetime.now(timezone.utc).isoformat(timespec="seconds"),
         generation=str(result.get("generation", "")),
+        retriever_diagnostics=retrieval_diagnostics_snapshot(),
     )
     append_record(record)
     return record
+
+
+def retrieval_diagnostics_snapshot() -> dict[str, Any] | None:
+    """Bridge diagnostics from the retrieve step of the run just invoked.
+
+    The retriever (graph-expand) sets a contextvar during search; the set
+    survives the invoke because both run in the same context. Retrieved lazily
+    so metrics.py carries no retrievers import at module load.
+    """
+    try:
+        from retrievers import retrieval_diagnostics
+
+        return retrieval_diagnostics.get()
+    except ImportError:
+        return None
 
 
 def append_record(record: RunRecord) -> None:

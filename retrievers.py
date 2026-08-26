@@ -8,12 +8,20 @@ The runtime default is Neo4j (`settings.default_retriever`);
 """
 
 import re
+from contextvars import ContextVar
 from functools import lru_cache
 from typing import Any, Protocol
 
 from langchain_core.documents import Document
 
 from config import settings
+
+# Bridge behavior of the most recent graph-expand search, if any. Read by
+# metrics.track_query to attribute retrieval behavior to the run record;
+# None for retrievers that don't populate it (and outside a search).
+retrieval_diagnostics: ContextVar[dict[str, Any] | None] = ContextVar(
+    "retrieval_diagnostics", default=None
+)
 
 
 class Retriever(Protocol):
@@ -215,7 +223,38 @@ class GraphExpandRetriever:
         if len(merged) < final_k:
             backfill = chunks[final_k - slots :]
             merged += backfill[: final_k - len(merged)]
-        return merged[:final_k]
+        merged = merged[:final_k]
+
+        # Diagnose the multi-hop gap: are bridge slots actually filled, and
+        # do bridged chunks bring in sources the similarity search missed?
+        retrieval_diagnostics.set(
+            {
+                "variant": self.name,
+                "k": final_k,
+                "bridge_slots_reserved": slots,
+                "bridge_slots_filled": len(bridged),
+                "bridged": [
+                    {
+                        "id": str(d.metadata.get("id")),
+                        "source": str(d.metadata.get("source")),
+                        "entity_matches": d.metadata.get("entity_matches", 0),
+                    }
+                    for d in bridged
+                ],
+                "bridged_new_sources": sorted(
+                    {str(d.metadata.get("source")) for d in bridged} - seen_sources
+                ),
+                "backfilled_slots": max(0, len(merged) - len(kept) - len(bridged)),
+                "matched_entities": sorted(
+                    {
+                        entity
+                        for d in bridged
+                        for entity in d.metadata.get("bridged_entities", [])
+                    }
+                ),
+            }
+        )
+        return merged
 
 
 def get_retriever(name: str | None = None) -> Retriever:
