@@ -1,0 +1,57 @@
+# Self-RAG + Neo4j stack.
+#
+#   docker compose up -d          # neo4j + FastAPI service
+#   docker compose run --rm ingest  # one-shot: sync chunks + build the KG
+#
+# Secrets come from .env in this directory (compose interpolates
+# NEO4J_PASSWORD for the auth line and passes the rest to both services).
+
+services:
+  neo4j:
+    image: neo4j:5
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD in .env}
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+    ports:
+      - "8000:8000"
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    volumes:
+      # bge-m3 weights (~2 GB) survive container rebuilds.
+      - hf-cache:/root/.cache
+
+  ingest:
+    profiles: ["tools"]
+    build: .
+    env_file: .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    volumes:
+      - hf-cache:/root/.cache
+    command: >
+      python -c "from neo4j_store import sync_neo4j_index;
+      print(sync_neo4j_index());
+      import kg; print(kg.build_knowledge_graph())"
+
+volumes:
+  neo4j-data:
+  hf-cache:

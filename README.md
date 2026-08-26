@@ -165,8 +165,18 @@ OPENROUTER_API_KEY=...   # https://openrouter.ai (GROQ_API_KEY also accepted)
 NEO4J_PASSWORD=...       # from your Neo4j instance
 ```
 
-**3. Run Neo4j** (Neo4j Desktop, or `docker run -p7474:7474 -p7687:7687
--e NEO4J_AUTH=neo4j/yourpassword neo4j:5`).
+**3. Run Neo4j** — Neo4j Desktop, plain Docker:
+
+```bash
+docker run -p7474:7474 -p7687:7687 -e NEO4J_AUTH=neo4j/yourpassword neo4j:5
+```
+
+—or the whole stack (app + Neo4j + one-shot ingestion) with compose:
+
+```bash
+docker compose up -d
+docker compose run --rm ingest   # sync chunks + build the knowledge graph
+```
 
 **4. Build the index and knowledge graph**
 

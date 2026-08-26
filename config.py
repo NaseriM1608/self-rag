@@ -16,11 +16,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 load_dotenv()
 
 
-def _default_index_dir() -> Path:
-    """Keep indexes out of cloud-synced folders (OneDrive/Dropbox):
+def _default_data_dir() -> Path:
+    """Per-user data dir, outside cloud-synced folders (OneDrive/Dropbox):
 
-    SQLite-backed stores (ChromaDB today, Neo4j volumes tomorrow) corrupt
-    under file-locking sync engines, so default to a per-user data dir.
+    SQLite-backed stores (ChromaDB today, Neo4j volumes tomorrow) and
+    frequently-rewritten cache files corrupt or churn under file-locking
+    sync engines, so default to the per-user data dir.
     """
     if sys.platform == "win32":
         base = Path(os.getenv("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
@@ -28,7 +29,15 @@ def _default_index_dir() -> Path:
         base = Path.home() / "Library" / "Application Support"
     else:
         base = Path(os.getenv("XDG_DATA_HOME", Path.home() / ".local" / "share"))
-    return base / "self-rag" / "index"
+    return base / "self-rag"
+
+
+def _default_index_dir() -> Path:
+    return _default_data_dir() / "index"
+
+
+def _default_kg_cache_path() -> Path:
+    return _default_data_dir() / "cache" / "kg_extraction_cache.json"
 
 
 class Settings(BaseSettings):
@@ -72,6 +81,11 @@ class Settings(BaseSettings):
     chunk_size: int = 1000
     chunk_overlap: int = 200
     n_results: int = 5
+
+    # --- Knowledge graph ---
+    # LLM triple-extraction cache lives per-user (outside the synced repo),
+    # so rebuilds only pay for chunks that changed.
+    kg_cache_path: Path = Field(default_factory=_default_kg_cache_path)
 
     # --- Neo4j graph store (chunks + vector index today, KG later) ---
     neo4j_uri: str = "bolt://localhost:7687"

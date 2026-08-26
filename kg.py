@@ -18,7 +18,6 @@ import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from functools import lru_cache
-from pathlib import Path
 
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
@@ -29,7 +28,9 @@ from config import settings
 
 logger = logging.getLogger(__name__)
 
-CACHE_PATH = Path("evals/results/kg_extraction_cache.json")
+# Triple-extraction cache — per-user location (settings.kg_cache_path) so
+# the synced repo doesn't churn on every extraction checkpoint.
+CACHE_PATH = settings.kg_cache_path
 MAX_RELATIONS_PER_CHUNK = 8
 EXTRACTION_WORKERS = 4
 
