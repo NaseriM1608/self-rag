@@ -1,12 +1,28 @@
-# Self-RAG with LangGraph
+# Self-RAG with LangGraph + Neo4j
 
-A Self-Reflective Retrieval-Augmented Generation pipeline built with LangGraph, ChromaDB, and Groq. The system retrieves documents, grades their relevance, generates answers, and verifies grounding and usefulness before returning a response — looping back to regenerate when verification fails.
+A Self-Reflective Retrieval-Augmented Generation pipeline built with LangGraph,
+OpenRouter, and Neo4j. The system retrieves documents (hybrid vector + BM25,
+optionally expanded through a knowledge graph), grades their relevance,
+generates cited answers, and verifies grounding and usefulness before
+returning a response — looping back to regenerate when verification fails.
+
+Measured numbers live in [docs/METRICS.md](docs/METRICS.md); every figure
+there is produced by the evaluation harness in `evals/`.
 
 ---
 
 ## What is Self-RAG
 
-Standard RAG always retrieves and always trusts what it generates. Self-RAG adds a layer of self-criticism: the system grades each retrieved document for relevance, checks whether the generated answer is actually supported by the documents, and checks whether the answer addresses the question. If any check fails, the system loops back or exits with a specific failure reason rather than returning a bad answer.
+Standard RAG always retrieves and always trusts what it generates. Self-RAG
+adds a layer of self-criticism: the system grades each retrieved document for
+relevance, checks whether the generated answer is actually supported by the
+documents, and checks whether the answer addresses the question. If any check
+fails, the system loops back or exits with a specific failure reason rather
+than returning a bad answer.
+
+Reflection here is implemented as separate grader nodes with structured-output
+LLM verdicts (relevance / grounding / usefulness) that drive conditional edges
+in the graph — not as literal reflection tokens as in the original paper.
 
 ---
 
@@ -15,11 +31,11 @@ Standard RAG always retrieves and always trusts what it generates. Self-RAG adds
 ```
 START
   |
-retrieve
+retrieve  (Neo4j: vector + fulltext, RRF fusion; optional KG expansion)
   |
 grade_relevance  -->  [no relevant documents]  -->  END
   |
-generate
+generate  (citations required: [1: Source Name]; retry temp escalates)
   |
 check_grounding  -->  [not grounded, retries < MAX]  -->  generate
   |              -->  [not grounded, retries >= MAX]  -->  END
@@ -28,26 +44,69 @@ check_usefulness -->  [not useful]  -->  END
 END (return generation)
 ```
 
-Every grading decision is a conditional edge in the LangGraph graph. The graph never proceeds past a failed check without either looping back or exiting cleanly.
+Every grading decision is a conditional edge in the LangGraph graph. The graph
+never proceeds past a failed check without either looping back or exiting
+cleanly. A `llm_calls` counter in the state enforces a hard budget
+(`MAX_LLM_CALLS`, default 25) so the loop can never run away.
+
+### Retrieval variants (`retrievers.py`)
+
+| Name | What it does |
+|---|---|
+| `dense` | ChromaDB vectors — frozen eval baseline only |
+| `neo4j-dense` | Neo4j native vector index (bge-m3 embeddings) |
+| `fulltext` | Neo4j Lucene fulltext (BM25-style lexical) |
+| `hybrid` | vector + lexical fused with Reciprocal Rank Fusion (default) |
+| `kg` | one-hop knowledge-graph triples as documents |
+| `hybrid+kg` | hybrid chunks plus appended KG triples |
+| `graph-expand` | hybrid, with slots reserved for graph-bridged chunks from unseen sources (targets multi-hop) |
+
+The knowledge graph (`kg.py`) is LLM-extracted from the indexed chunks:
+`(:Entity)-[:RELATES]->(:Entity)` and `(:Chunk)-[:MENTIONS]->(:Entity)`.
+KG-derived context is never trusted blindly — it passes through the same
+relevance/grounding gates as any other retrieved document.
+
+### FastAPI service (`service.py`)
+
+`GET /health` reports readiness; `POST /query` runs the full graph and returns
+the answer plus verification flags and telemetry (LLM calls, tokens, duration,
+cost). Prometheus metrics at `/metrics` when `prometheus-client` is installed.
 
 ---
 
 ## Design Decisions
 
 **Always retrieve**
-The system always retrieves from the vector store rather than deciding whether retrieval is needed. This avoids the risk of the model answering from internal knowledge when document-grounded answers are required.
+The system always retrieves rather than deciding whether retrieval is needed.
+This avoids the risk of the model answering from internal knowledge when
+document-grounded answers are required.
 
-**Two-model setup**
-All nodes use llama-3.3-70b-versatile. For a portfolio project, consistency and grading accuracy matter more than generation speed.
+**Single model, structured verdicts**
+All nodes use one OpenRouter model (`stealth/ox-alpha` by default) with
+`with_structured_output` for grader verdicts. For a portfolio project,
+consistency and grading accuracy matter more than generation speed.
 
 **Strict grounding**
-The grounding check is designed to catch not just hallucinations but also reasonable inferences presented as facts. If the answer contains any claim not directly stated in the retrieved documents, it is marked as ungrounded and regenerated.
+The grounding check is designed to catch not just hallucinations but also
+reasonable inferences presented as facts. If the answer contains any claim not
+directly stated in the retrieved documents, it is marked as ungrounded and
+regenerated. Known trade-off: valid inferences are sometimes over-flagged —
+the harness measures this rate (`evals/run_grounding_judge.py`).
+
+**Retry temperature escalation**
+Regenerating at temperature 0 reproduces the same ungrounded answer forever,
+so each grounding-failure retry raises the temperature
+(`0.0 → +0.35/attempt, cap 0.7`).
 
 **Loop protection**
-A `llm_calls` counter in the state tracks the total number of LLM calls. If the counter exceeds `MAX_LLM_CALLS`, the graph exits regardless of grading results to prevent infinite loops.
+The `llm_calls` counter bounds total chain invocations per run. Grading costs
+one call per candidate document, so the typical happy path already spends ~8.
 
 **Specific exit conditions**
-The system distinguishes between three failure modes: no relevant documents found, answer could not be grounded after maximum retries, and answer did not address the question. Each produces a different message rather than a generic failure.
+The system distinguishes between three failure modes: no relevant documents
+found, answer could not be grounded after maximum retries, and answer did not
+address the question. Each produces a different message rather than a generic
+failure.
 
 ---
 
@@ -55,14 +114,27 @@ The system distinguishes between three failure modes: no relevant documents foun
 
 ```
 self-rag/
-├── state.py         # AgentState TypedDict
-├── retriever.py     # ChromaDB vector store and search
-├── chains.py        # All ChatPromptTemplate definitions
-├── llm.py           # Groq LLM instances
-├── nodes.py         # LangGraph node functions
-├── graph.py         # Graph construction and conditional routing
-├── main.py          # Entry point
-└── documents/       # .txt files to index
+├── main.py            # CLI entry: sync index, answer one question
+├── graph.py           # LangGraph assembly and conditional routing
+├── nodes.py           # Graph node functions (grade/generate/check)
+├── chains.py          # Prompts + structured-output LCEL chains
+├── state.py           # AgentState TypedDict
+├── llm.py             # OpenRouter LLM instances (ChatOpenAI)
+├── config.py          # pydantic-settings configuration
+├── retrievers.py      # Retriever protocol + 7 backends (see table)
+├── retriever.py       # Shared ingestion utils (load/split/embed/chunk ids)
+├── neo4j_store.py     # Neo4j persistence: vector/fulltext index, sync
+├── kg.py              # Knowledge-graph extraction + graph retrieval
+├── metrics.py         # Token/cost telemetry → evals/results/runs.jsonl
+├── service.py         # FastAPI service (/health, /query, /metrics)
+├── evals/             # Eval harness + golden sets + results
+│   ├── run_retrieval.py        # Recall@k / MRR / latency per variant
+│   ├── run_e2e.py              # full-graph runs, LLM-judged 0-2 scores
+│   ├── run_grounding_judge.py  # grounding-checker self-accuracy
+│   └── report.py               # aggregates results → docs/METRICS.md
+├── tests/             # offline unit + service tests; live-marked benchmark
+├── documents/         # .txt corpus to index
+└── docs/METRICS.md    # measured performance
 ```
 
 ---
@@ -70,79 +142,79 @@ self-rag/
 ## Stack
 
 - LangGraph — graph construction and stateful execution
-- ChromaDB — vector store with persistent storage
-- BAAI/bge-m3 — local embeddings via sentence-transformers
-- Groq — LLM inference (llama-3.3-70b-versatile)
-- LangChain — prompt templates and LCEL chains
+- Neo4j 5 — chunk store, native vector index, Lucene fulltext, knowledge graph
+- BAAI/bge-m3 — local embeddings via sentence-transformers (1024-dim)
+- OpenRouter — LLM inference (`stealth/ox-alpha` by default)
+- FastAPI — HTTP service; LangChain/LCEL — prompts and chains
+- pytest / ruff / GitHub Actions — offline tests, lint, CI (live evals on demand)
 
 ---
 
 ## Setup
 
-**1. Clone the repository**
+**1. Install dependencies** (Python 3.10)
 
 ```bash
-git clone https://github.com/your-username/self-rag.git
-cd self-rag
+pip install -r requirements-dev.txt   # runtime + service + evals + tests
 ```
 
-**2. Install dependencies**
+**2. Configure secrets** — copy `.env.example` to `.env` and fill in:
+
+```
+OPENROUTER_API_KEY=...   # https://openrouter.ai (GROQ_API_KEY also accepted)
+NEO4J_PASSWORD=...       # from your Neo4j instance
+```
+
+**3. Run Neo4j** (Neo4j Desktop, or `docker run -p7474:7474 -p7687:7687
+-e NEO4J_AUTH=neo4j/yourpassword neo4j:5`).
+
+**4. Build the index and knowledge graph**
 
 ```bash
-pip install -r requirements.txt
+python main.py                        # syncs chunks + answers a demo question
+python -c "import kg; kg.build_knowledge_graph()"   # one-time KG extraction
 ```
 
-**3. Add your Groq API key**
+Chunk sync is incremental (content-hash ids); KG extraction is cached, so
+rebuilds only process new chunks.
 
-Create a `.env` file in the project root:
-
-```
-GROQ_API_KEY=your_key_here
-```
-
-Get a free API key at console.groq.com.
-
-**4. Add documents**
-
-Place `.txt` files in the `documents/` folder. These will be chunked, embedded, and stored in ChromaDB on first run.
-
-**5. Run**
-
-Open `main.py`, set your question:
-
-```python
-initial_state = {
-    "question": "your question here",
-    ...
-}
-```
-
-Then run:
+**5. Ask questions**
 
 ```bash
 python main.py
+# or serve the API:
+uvicorn service:app --reload
 ```
 
----
-
-## Example Output
-
-**Question:** What is the Inverse Cloze Task and how is it used in RAG?
-
-**Answer:** The Inverse Cloze Task (ICT) is a technique that helps the model learn retrieval patterns by predicting masked text within documents. It is used in RAG as a method for pre-training the retriever.
-
-**Grounding check:** Passed — every claim is directly supported by the source document.
+Switch retrieval backends with `DEFAULT_RETRIEVER=graph-expand` (or any name
+from the table above).
 
 ---
 
-**Question:** The ICT improves the retriever's ability to fetch relevant documents.
+## Evaluation
 
-**Grounding check:** Failed — the document states ICT is used for pre-training but does not claim it improves retrieval ability. That is an inference, not a stated fact. The system loops back to regenerate.
+```bash
+python -m evals.run_retrieval --variant hybrid   # Recall@k / MRR / latency
+python -m evals.run_e2e --variant hybrid --slice multi_hop
+python -m evals.run_grounding_judge              # checker self-accuracy
+python -m evals.report                           # regenerate docs/METRICS.md
+```
+
+Offline tests (`pytest`) need no network or index; the live grounding
+benchmark runs with `pytest -m live` when an API key is set. CI runs lint +
+offline tests on every push, with a manual/nightly live-eval job.
 
 ---
 
 ## Limitations
 
-- Inference detection is imperfect even with stronger models. Plausible but unsupported conclusions can sometimes pass the grounding check.
-- The system always retrieves, so questions answerable from general knowledge will still query the vector store. This is intentional but less efficient than a retrieval decision step.
+- KG retrievers currently match but do not beat plain hybrid on multi-hop
+  end-to-end questions (see METRICS.md); retrieval-side multi-hop recall is
+  already saturated, so the remaining gap is in answer synthesis.
+- Inference detection is imperfect even with stronger models. Plausible but
+  unsupported conclusions can sometimes pass the grounding check, and valid
+  inferences are sometimes over-flagged.
+- The system always retrieves, so questions answerable from general knowledge
+  will still query the store. This is intentional but less efficient than a
+  retrieval decision step.
 - BGE-M3 runs on CPU by default. Embedding speed depends on machine resources.
