@@ -2,7 +2,7 @@
 
 POST /query runs the full graph (retrieve -> grade -> generate -> verify)
 with per-run telemetry. GET /health reports readiness. The retriever stack
-follows settings.default_retriever ('hybrid' today).
+follows settings.default_retriever.
 """
 
 import logging

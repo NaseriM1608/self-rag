@@ -11,7 +11,6 @@ RUN pip install --no-cache-dir -r requirements-dev.txt
 
 COPY *.py ./
 COPY documents/ documents/
-COPY evals/ evals/
 
 EXPOSE 8000
 

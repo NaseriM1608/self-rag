@@ -65,7 +65,9 @@ relevance_prompt = ChatPromptTemplate.from_template(
     """
 )
 
-relevance_chain = relevance_prompt | llm.with_structured_output(RelevanceVerdict, method="function_calling")
+relevance_chain = relevance_prompt | llm.with_structured_output(
+    RelevanceVerdict, method="function_calling"
+)
 
 
 # 2. Generation
@@ -140,7 +142,9 @@ grounding_prompt = ChatPromptTemplate.from_template(
     """
 )
 
-grounding_chain = grounding_prompt | llm.with_structured_output(GroundingVerdict, method="function_calling")
+grounding_chain = grounding_prompt | llm.with_structured_output(
+    GroundingVerdict, method="function_calling"
+)
 
 
 # 4. Usefulness check
@@ -172,4 +176,6 @@ usefulness_prompt = ChatPromptTemplate.from_template(
     """
 )
 
-usefulness_chain = usefulness_prompt | llm.with_structured_output(UsefulnessVerdict, method="function_calling")
+usefulness_chain = usefulness_prompt | llm.with_structured_output(
+    UsefulnessVerdict, method="function_calling"
+)

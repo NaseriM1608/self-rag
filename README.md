@@ -1,5 +1,7 @@
 # Self-RAG with LangGraph + Neo4j
 
+![CI](https://github.com/NaseriM1608/self-rag/actions/workflows/ci.yml/badge.svg)
+
 A Self-Reflective Retrieval-Augmented Generation pipeline built with LangGraph,
 OpenRouter, and Neo4j. The system retrieves documents (hybrid vector + BM25,
 optionally expanded through a knowledge graph), grades their relevance,
@@ -152,7 +154,14 @@ self-rag/
 
 ## Setup
 
-**1. Install dependencies** (Python 3.10)
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/NaseriM1608/self-rag.git
+cd self-rag
+```
+
+**2. Install dependencies** (Python 3.10)
 
 ```bash
 pip install -r requirements-dev.txt   # runtime + service + evals + tests

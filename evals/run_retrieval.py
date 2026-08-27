@@ -17,8 +17,10 @@ from pathlib import Path
 RESULTS_DIR = Path("evals/results")
 GOLDEN_FILE = Path("evals/golden/retrieval_golden.json")
 
-# Retriever variants under test. Each maps (query, k) -> list[Document];
-# new stacks (neo4j-dense, hybrid, hybrid+kg) register here as they land.
+# Retriever variants under test: the ones that return ordinary chunks.
+# kg / hybrid+kg are excluded — KG triple-documents don't contain golden
+# snippets verbatim, so snippet-based recall against them is meaningless;
+# their end-to-end effect is measured by evals.run_e2e instead.
 def _dense(query: str, k: int):
     from retrievers import get_retriever
 
@@ -204,9 +206,11 @@ def run_variant(variant: str, k: int = 10) -> dict:
 
     # Unanswerables must not be "answered" confidently — record what comes back
     # so the e2e eval can verify the graph exits via its no-documents path.
+    from config import settings
+
     unanswerable_rows = {}
     for q in unanswerable:
-        docs = retriever(q["question"], settings_n_results())
+        docs = retriever(q["question"], settings.n_results)
         unanswerable_rows[q["id"]] = len(docs)
     metrics["unanswerable_top_returned"] = unanswerable_rows
 
@@ -217,12 +221,6 @@ def run_variant(variant: str, k: int = 10) -> dict:
           f"recall@{k}={metrics[f'recall@{k}']:.3f} mrr={metrics['mrr']:.3f} "
           f"p50={metrics['p50_latency_ms']:.0f}ms -> {out}")
     return metrics
-
-
-def settings_n_results() -> int:
-    from config import settings
-
-    return settings.n_results
 
 
 if __name__ == "__main__":

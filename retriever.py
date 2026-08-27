@@ -78,7 +78,3 @@ def clean_metadata(metadata: dict) -> dict:
         for key, value in metadata.items()
         if isinstance(value, (str, int, float, bool))
     }
-
-
-# Historical name kept so existing imports/tests keep working.
-_clean_metadata = clean_metadata

@@ -13,6 +13,10 @@ from state import AgentState
 
 MAX_LLM_CALLS = settings.max_llm_calls
 
+# The budget is re-checked before every LLM-heavy stage (generation, each
+# verifier, the regeneration edge) rather than once centrally: whichever
+# stage would exceed it exits immediately instead of spending first.
+
 
 def route_after_grading(state: AgentState) -> str:
     if not state["documents"]:

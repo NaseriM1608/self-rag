@@ -3,7 +3,7 @@
 from langchain_core.documents import Document
 
 from evals.run_retrieval import is_hit, normalize
-from retriever import _clean_metadata, chunk_id
+from retriever import chunk_id, clean_metadata
 
 
 def test_chunk_id_is_deterministic_per_content():
@@ -22,7 +22,7 @@ def test_chunk_id_differs_for_different_content_or_source():
 
 def test_clean_metadata_drops_non_scalars():
     dirty = {"source": "x.txt", "start_index": 0, "note": None, "tags": ["a"]}
-    cleaned = _clean_metadata(dirty)
+    cleaned = clean_metadata(dirty)
     assert cleaned == {"source": "x.txt", "start_index": 0}
 
 

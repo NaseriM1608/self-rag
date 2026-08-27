@@ -1,13 +1,14 @@
 """Neo4j persistence layer.
 
-Stores document chunks as (:Chunk) nodes with a native vector index today;
-the knowledge-graph extraction (Phase 4) layers additional labels and
-relationships onto the same database. All writes are idempotent syncs keyed
-by content-hash chunk ids so re-ingesting an edited corpus updates exactly
-the changed pieces.
+Stores document chunks as (:Chunk) nodes under a native vector index plus a
+Lucene full-text index; the knowledge-graph layer (kg.py) adds Entity nodes
+and MENTIONS/RELATES relationships onto the same database. All writes are
+idempotent syncs keyed by content-hash chunk ids so re-ingesting an edited
+corpus updates exactly the changed pieces.
 """
 
 import logging
+import time
 from functools import lru_cache
 
 from langchain_core.documents import Document
@@ -67,8 +68,6 @@ def wait_for_index_online(name: str, timeout_s: float = 120.0) -> bool:
     Querying a vector index mid-population fails with 51N63, so callers
     should wait right after CREATE ... INDEX statements.
     """
-    import time
-
     deadline = time.monotonic() + timeout_s
     while time.monotonic() < deadline:
         with _session() as session:
@@ -152,12 +151,6 @@ def fulltext_search(query: str, k: int) -> list[Document]:
     except Exception as exc:
         logger.warning("Full-text search failed for %r: %s", query[:60], exc)
         return []
-
-
-def clear_graph() -> None:
-    """Delete every Chunk node (used when re-ingesting from scratch)."""
-    with _session() as session:
-        session.run("MATCH (c:Chunk) DETACH DELETE c")
 
 
 def sync_neo4j_index() -> dict:

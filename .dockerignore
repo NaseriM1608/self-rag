@@ -8,3 +8,8 @@ __pycache__/
 docs/
 tests/
 chroma/
+# The image runs only service.py / main.py; eval tooling and results,
+# the LICENSE, and local compose config are irrelevant inside it.
+evals/
+docker-compose.yml
+LICENSE
